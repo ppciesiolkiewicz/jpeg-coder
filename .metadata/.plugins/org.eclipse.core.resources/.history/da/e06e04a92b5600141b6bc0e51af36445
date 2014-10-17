@@ -1,0 +1,20 @@
+package JpegEncDecFactory;
+
+import org.w3c.dom.views.AbstractView;
+
+import JpegDecoder.AbstractJpegDecoder;
+import JpegEncoder.AbstractJpegEncoder;
+
+public class Jpeg2000Factory implements AbstractJpegEncoderDecoderFactory {
+
+	public AbstractJpegEncoder getEncoder() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public AbstractJpegDecoder getDecoder() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

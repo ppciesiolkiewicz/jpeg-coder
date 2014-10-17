@@ -1,0 +1,11 @@
+package DataObjects;
+
+public class ProcessedImage {
+	double[][] image;
+
+	public ProcessedImage(double[][] image_) {
+		this.image = image_;
+	}
+	
+	
+}

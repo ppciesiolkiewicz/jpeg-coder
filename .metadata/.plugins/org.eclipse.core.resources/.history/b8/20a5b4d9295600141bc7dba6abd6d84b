@@ -1,0 +1,7 @@
+package JpegMath.Transformations;
+
+import java.awt.image.BufferedImage;
+
+public interface ImageTransformationInterface {
+	public BufferedImage transform(BufferedImage img);
+}

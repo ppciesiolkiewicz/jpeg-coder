@@ -1,0 +1,8 @@
+package DataObjects;
+
+public interface Tile {
+	public double getVal(int x, int y);
+	
+	public void setVal(int x, int y, double newVal);
+	
+	public double[][] getValues();

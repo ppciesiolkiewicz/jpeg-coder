@@ -1,0 +1,7 @@
+package JpegMath.Coding;
+
+public interface CodingInterface {
+	//code
+	//decode
+
+}

@@ -1,0 +1,5 @@
+package DataObjects;
+
+public interface Tile {
+
+}

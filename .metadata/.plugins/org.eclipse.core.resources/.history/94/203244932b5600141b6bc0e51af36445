@@ -1,0 +1,20 @@
+package JpegEncDecFactory;
+
+import JpegDecoder.AbstractJpegDecoder;
+import JpegEncoder.AbstractJpegEncoder;
+
+public class JpegEncoderDecoderFactory extends AbstractJpegEncoderDecoderFactory {
+
+	@Override
+	public AbstractJpegEncoder getEncoder() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public AbstractJpegDecoder getDecoder() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,5 @@
+package JpegEncDecFactory;
+
+public class Jpeg2000Factory {
+
+}

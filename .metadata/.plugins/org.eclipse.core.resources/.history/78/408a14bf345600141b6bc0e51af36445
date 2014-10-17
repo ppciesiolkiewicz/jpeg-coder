@@ -1,0 +1,5 @@
+package DataObjects;
+
+public class ProcessedImage {
+	double[][] image;
+}

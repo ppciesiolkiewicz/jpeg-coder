@@ -1,0 +1,19 @@
+package DataObjects;
+
+
+
+
+public class Tile {
+	private double[][] values;
+	Tile(double[][] values_) {
+		this.values = values_;
+	}
+		
+	public double getVal(int x, int y) {
+		return values[x][y];
+	}
+	
+	public void setVal(int x, int y, double newVal) {
+		values[x][y]=newVal;
+	}
+}

@@ -1,0 +1,11 @@
+package DataObjects;
+
+import java.awt.image.Raster;
+
+public class Tile {
+	double[][] values;
+	Tile(double[][] values_) {
+		this.values = values_;
+	}
+		
+}

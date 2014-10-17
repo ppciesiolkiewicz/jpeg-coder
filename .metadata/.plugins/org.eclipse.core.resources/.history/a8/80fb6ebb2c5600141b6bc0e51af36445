@@ -1,0 +1,5 @@
+package JpegMath.Transformations;
+
+public interface TransformationInterface {
+
+}

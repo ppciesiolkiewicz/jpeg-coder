@@ -1,0 +1,18 @@
+1413569137362	Delete element
+1413569847420	Delete elements
+1413570492669	Rename type 'AbstractJpegEncDecFactory'
+1413570501306	Rename type 'JpegEncDecFactory'
+1413570624789	Rename type 'Jpeg2000Factory'
+1413570677898	Rename package 'JpegEncDecFactory'
+1413570934749	Delete element
+1413570955500	Move compilation unit
+1413570998292	Move compilation unit
+1413571001689	Move compilation unit
+1413571016887	Move compilation unit
+1413571045897	Rename package 'JpegMath.Tiler'
+1413571058432	Rename package 'JpegMath.Coding'
+1413572444480	Copy compilation unit
+1413574540438	Delete element
+1413575105540	Delete element
+1413576364152	Delete element
+1413577455182	Copy compilation unit

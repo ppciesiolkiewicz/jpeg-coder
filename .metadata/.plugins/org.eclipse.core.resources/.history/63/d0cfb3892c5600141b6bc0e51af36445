@@ -1,0 +1,7 @@
+package JpegMath;
+
+import JpegMath.Coding.CodingInterface;
+
+public class HuffmanCoding implements CodingInterface {
+
+}

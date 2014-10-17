@@ -1,0 +1,53 @@
+package JpegEncoder;
+
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
+
+import DataObjects.Tile;
+
+public abstract class AbstractJpegEncoder {
+	int quality;
+
+	public AbstractJpegEncoder(int quality_) {
+		quality=quality_;
+	}
+	
+	public BufferedImage encode(BufferedImage img) {
+		Tile[][] tiles = preprocessing(img);
+		transform(tiles);
+		quantize(tiles);
+		code(tiles);
+		return img;
+	}
+
+	protected Tile[][] preprocessing(BufferedImage img) {
+		Tile[][] tiles = tile(img);
+		return null;
+	}
+	
+	protectd Tile[][] tile(BufferedImage img) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	protected abstract void transform(Tile[][] tiles);
+	
+	
+	protected void quantize(Tile[][] tiles) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	protected void code(Tile[][] tiles) {
+		// TODO Auto-generated method stub
+			
+	}
+	
+	public void setQuality(int quality_) {
+		quality = quality_;
+	}
+	
+	public int getQuality() {
+		return quality;	
+	}
+}
