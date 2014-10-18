@@ -1,7 +1,0 @@
-package JpegMath;
-
-public interface CodingInterface {
-	//code
-	//decode
-
-}

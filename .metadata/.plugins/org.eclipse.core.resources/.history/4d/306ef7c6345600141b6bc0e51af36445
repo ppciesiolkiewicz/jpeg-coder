@@ -1,8 +1,0 @@
-package JpegMath.Tilers;
-
-import java.awt.image.Raster;
-
-public class Tile {
-	private Raster r;
-		
-}

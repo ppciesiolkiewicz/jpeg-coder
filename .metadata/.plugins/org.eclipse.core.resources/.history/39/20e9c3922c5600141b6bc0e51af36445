@@ -1,5 +1,0 @@
-package JpegMath;
-
-public interface QuantizierInterface {
-	public byte quantize(byte val);
-}

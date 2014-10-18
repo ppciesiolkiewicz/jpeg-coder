@@ -1,7 +1,0 @@
-package JpegEncDecFactory;
-
-import org.w3c.dom.views.AbstractView;
-
-public class Jpeg2000Factory implements AbstractJpegEncoderDecoderFactory {
-
-}

@@ -1,6 +1,0 @@
-package JpegMath.Coding;
-
-
-public class HuffmanCoding implements CodingInterface {
-
-}

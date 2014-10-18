@@ -1,9 +1,0 @@
-package JpegEncDecFactory;
-
-import JpegDecoder.AbstractJpegDecoder;
-import JpegEncoder.AbstractJpegEncoder;
-
-public abstract class AbstractJpegEncoderDecoderFactory {   
-	public abstract AbstractJpegEncoder getEncoder();
-	public abstract AbstractJpegDecoder getDecoder();
-}

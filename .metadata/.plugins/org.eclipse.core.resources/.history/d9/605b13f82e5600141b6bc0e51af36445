@@ -1,5 +1,0 @@
-package JpegMath.Tilers;
-
-public interface TilerInterface {
-	public Raster[][] tile(BufferedImage img)''
-}

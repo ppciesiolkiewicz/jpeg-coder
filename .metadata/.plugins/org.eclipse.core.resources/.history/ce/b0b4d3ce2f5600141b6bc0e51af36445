@@ -1,6 +1,0 @@
-package JpegMath.Tilers;
-
-public class Tile {
-	private Raster r;
-		
-}

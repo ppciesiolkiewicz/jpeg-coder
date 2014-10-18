@@ -1,9 +1,0 @@
-package JpegMath.Tilers;
-
-import java.awt.image.BufferedImage;
-import java.awt.image.Raster;
-
-public interface TilerInterface {
-	public Tiler[][] tile(BufferedImage img);
-	public BufferedImage connect(Tile[][] tiles);
-}
