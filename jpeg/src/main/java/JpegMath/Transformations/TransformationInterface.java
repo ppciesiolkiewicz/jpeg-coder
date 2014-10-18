@@ -1,7 +1,9 @@
 package JpegMath.Transformations;
 
+import DataObjects.Tile;
+
 public interface TransformationInterface {
 
-	public void transfom();
-	public void inverseTransform();
+	public Tile transfom(Tile t);
+	public Tile inverseTransform(Tile t);
 }

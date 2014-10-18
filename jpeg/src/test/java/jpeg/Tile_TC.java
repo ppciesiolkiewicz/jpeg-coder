@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import DataObjects.*;
 import DataObjects.Tile.IllegalTileSizeException;
-import DataObjects.Tile.IllegalTileSizeException;
 
 public class Tile_TC {
 

@@ -1,8 +1,8 @@
 import java.awt.image.BufferedImage;
 
 import Factories.AbstractJpegEncoderDecoderFactory;
+import ImageLoader.DevelopTimeImageLoader;
 import ImageLoader.ImageLoaderInterface;
-import ImageLoader.TestImageLoader;
 
 
 public class ConsoleApplication implements Application {
@@ -12,7 +12,7 @@ public class ConsoleApplication implements Application {
 	
 	
 	public void run() {
-		imgLoader = new TestImageLoader();
+		imgLoader = new DevelopTimeImageLoader();
 		BufferedImage img = imgLoader.getImage();
 	}
 	

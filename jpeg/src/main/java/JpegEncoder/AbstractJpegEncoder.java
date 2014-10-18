@@ -1,12 +1,12 @@
 package JpegEncoder;
 
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
+import java.awt.image.WritableRaster;
 
 import DataObjects.Tile;
 import JpegMath.Coders.CodingInterface;
 import JpegMath.Quantiziers.QuantizierInterface;
-import JpegMath.Tilers.TilerInterface;
+import JpegMath.Tilers.Tiler;
 
 public abstract class AbstractJpegEncoder {
 	int quality;
@@ -20,6 +20,7 @@ public abstract class AbstractJpegEncoder {
 		transform(tiles);
 		quantize(tiles);
 		code(tiles);
+		img = compose(tiles);
 		return img;
 	}
 
@@ -28,16 +29,16 @@ public abstract class AbstractJpegEncoder {
 		transformTileColor(tiles);
 		return null;
 	}
+
+	protected Tile[][] tile(BufferedImage img) {
+		Tiler tiler;
+		return null;
+	}
 	
 	protected void transformTileColor(Tile[][] tiles) {
 		
 	}
-
-	protected Tile[][] tile(BufferedImage img) {
-		TilerInterface tiler;
-		return null;
-	}
-
+	
 	protected abstract void transform(Tile[][] tiles);
 	
 	
@@ -51,6 +52,23 @@ public abstract class AbstractJpegEncoder {
 			
 	}
 	
+
+	protected BufferedImage compose(Tile[][] tiles) {
+		/*WritableRaster raster = mergeToRaster(tiles);
+		addHeader(raster); //dunnos*/
+		return null;
+	}
+	/*
+	private WritableRaster mergeToRaster(Tile[][] tiles) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	*/
+	private void addHeader(WritableRaster raster) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	public void setQuality(int quality_) {
 		quality = quality_;
 	}
