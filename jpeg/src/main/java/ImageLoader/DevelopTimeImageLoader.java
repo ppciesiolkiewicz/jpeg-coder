@@ -22,15 +22,8 @@ public class DevelopTimeImageLoader implements ImageLoaderInterface {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		ImageToArrayConverterInterface c = new FastImageToArrayConverter();
-		int[][] imageArray = c.convert(img);
-		for(int[] ii : imageArray) {
-			for(int i : ii)
-				System.out.print(Integer.toBinaryString(i)+" ");
-			System.out.println();
-		}
 
 		return img;
-	}
+	}	
 
 }

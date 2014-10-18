@@ -12,11 +12,11 @@
 hs_err_pid*
 
 # Eclipse
-.classpath
-.project
-.settings/
+jpeg/.classpath
+jpeg/.project
+jpeg/.settings/
 .metadata
 
 # Maven
-log/
-target/
+jpeg/log/
+jpeg/target/
