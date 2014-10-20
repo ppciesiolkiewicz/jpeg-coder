@@ -1,6 +1,8 @@
 package JpegMath.Tilers;
 import DataObjects.Tile;
 
+//consider e.g. 15x10pixel image, with 8x8 tiles some pixels doesen't fit. 
+//Some duplication/copying/zerofilling is needed
 public abstract class Tiler {
 	int tileSizeX, tileSizeY;
 	public Tiler(int tileSizeX_, int tileSizeY_) {
@@ -21,6 +23,6 @@ public abstract class Tiler {
 		this.tileSizeY = tileSizeXY_;
 	}
 	
-	public abstract <E extends Number> Tile<E>[][] tile(E[][] img);
+	public abstract <E extends Number> Tile<E>[][] tile(E[][] pixelMatrix);
 	public abstract <E extends Number> E[][] connect(Tile<E>[][] tiles);
 }

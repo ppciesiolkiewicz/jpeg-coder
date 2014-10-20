@@ -1,5 +1,7 @@
 package JpegMath.Quantiziers;
 
+import DataObjects.Tile;
+
 public interface QuantizierInterface {
-	public byte quantize(byte val);
+	public Tile quantize(Tile val);
 }

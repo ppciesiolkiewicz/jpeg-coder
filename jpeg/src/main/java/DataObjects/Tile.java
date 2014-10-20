@@ -9,6 +9,9 @@ public class Tile<E extends Number> implements Iterable<E> {
 	 * {{1,2,3},{4,5,6}} ->
 	 * | 1 2 3 |
 	 * | 4 5 6 |
+	 * 
+	 * | values[0][0] values[0][1] values[0][2] |
+	 * | values[1][0] values[1][1] values[1][2] |
 	 * values[y][x]
 	 */
 	protected E[][] values;
@@ -16,8 +19,11 @@ public class Tile<E extends Number> implements Iterable<E> {
 	public Tile(E[][] vals) {
 		this.setValues(vals);
 	}
-
 	
+	public Tile(E[] vals, int sizeX, int sizeY) {
+		this.setValues(vals, sizeX, sizeY);
+	}
+
 	public Tile(Tile<E> t) {
 		this.setValues(t.getValues());
 	}
@@ -65,7 +71,25 @@ public class Tile<E extends Number> implements Iterable<E> {
 		for(E[] v : values_)
 			if(v.length != values_[0].length)
 				throw new IllegalTileSizeException();
-		this.values = values_;
+		this.values = values_.clone();
+	}
+	
+	protected void setValues(E[] values_, int sizeX, int sizeY) {
+		if(sizeX == 0 || sizeY == 0)
+			throw new ZeroTileSizeException();
+		if(values_.length != sizeX*sizeY)
+			throw new InvalidSizeException();
+		
+		instantiateValuesArray(values_, sizeX, sizeY);
+
+		for(int y = 0; y < sizeY; y++)
+			for(int x = 0; x < sizeX; x++) 
+				setVal(x,y,values_[y*sizeX+x]);
+	}
+
+	@SuppressWarnings("unchecked")
+	private void instantiateValuesArray(E[] vals, int sizeX, int sizeY) {
+		values = (E[][]) Array.newInstance(vals[0].getClass(), sizeY, sizeX);
 	}
 
 	public int getSizeX() {
@@ -122,4 +146,9 @@ public class Tile<E extends Number> implements Iterable<E> {
 	public static class ZeroTileSizeException extends RuntimeException {
 		private static final long serialVersionUID = 2195901446734926722L;
 	}
+	
+	public static class InvalidSizeException extends RuntimeException {
+		private static final long serialVersionUID = 1456906910187653766L;
+	}
+
 }
