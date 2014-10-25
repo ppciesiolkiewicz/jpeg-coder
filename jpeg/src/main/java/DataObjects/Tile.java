@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Iterator;
 
 
-public class Tile<E extends Number> implements Iterable<E> {
+public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTileInterface<E> {
 	/*
 	 * {{1,2,3},{4,5,6}} ->
 	 * | 1 2 3 |
@@ -14,7 +14,7 @@ public class Tile<E extends Number> implements Iterable<E> {
 	 * | values[1][0] values[1][1] values[1][2] |
 	 * values[y][x]
 	 */
-	protected E[][] values;
+	private E[][] values;
 	
 	public Tile(E[][] vals) {
 		this.setValues(vals);
@@ -36,12 +36,20 @@ public class Tile<E extends Number> implements Iterable<E> {
 		values[y][x] = newVal;
 	}
 	
-	public void setVal(TileIterator<E> it, E val) {
-		it.setVal(val);
+	public void setVal(int pos, E val) {
+		int x = pos%getSizeX();
+		int y = pos/getSizeX();
+		setVal(x, y, val);
+	}
+	
+	public E getVal(int pos) {
+		int x = pos%getSizeX();
+		int y = pos/getSizeX();	
+		return getVal(x,y);
 	}
 	
 	protected E[][] getValues() {
-		return values;
+		return values.clone();
 	}
 	
 	public E[] toArray() {
@@ -62,6 +70,7 @@ public class Tile<E extends Number> implements Iterable<E> {
 		for(int y = 0; y < array.length; y++)
 			for(int x = 0; x < array[0].length; x++)
 				array[y][x] = values[y][x];
+
 		return array;
 	}
 	
@@ -70,7 +79,7 @@ public class Tile<E extends Number> implements Iterable<E> {
 			throw new ZeroTileSizeException();
 		for(E[] v : values_)
 			if(v.length != values_[0].length)
-				throw new IllegalTileSizeException();
+				throw new InvalidTileSizeException();
 		this.values = values_.clone();
 	}
 	
@@ -78,7 +87,7 @@ public class Tile<E extends Number> implements Iterable<E> {
 		if(sizeX == 0 || sizeY == 0)
 			throw new ZeroTileSizeException();
 		if(values_.length != sizeX*sizeY)
-			throw new InvalidSizeException();
+			throw new InvalidTileSizeException();
 		
 		instantiateValuesArray(values_, sizeX, sizeY);
 
@@ -100,6 +109,11 @@ public class Tile<E extends Number> implements Iterable<E> {
 		return values.length;
 	}
 
+
+	public int getLength() {
+		return getSizeX()*getSizeY();
+	}
+	
 	public TileIterator<E> iterator() {
 		return new TileIterator<E>(this);
 	}
@@ -127,7 +141,7 @@ public class Tile<E extends Number> implements Iterable<E> {
 		}
 		
 		protected void setVal(T newVal) {
-			tile.values[getCurrentY()][getCurrentY()] = newVal;
+			tile.values[getCurrentY()][getCurrentX()] = newVal;
 		}
 		
 		protected int getCurrentY() {
@@ -139,16 +153,11 @@ public class Tile<E extends Number> implements Iterable<E> {
 		}
 	}
 	
-	public static class IllegalTileSizeException extends RuntimeException {
+	public static class InvalidTileSizeException extends RuntimeException {
 		private static final long serialVersionUID = 3122434195001134670L;
 	}
 	
 	public static class ZeroTileSizeException extends RuntimeException {
 		private static final long serialVersionUID = 2195901446734926722L;
 	}
-	
-	public static class InvalidSizeException extends RuntimeException {
-		private static final long serialVersionUID = 1456906910187653766L;
-	}
-
 }

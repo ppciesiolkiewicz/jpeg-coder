@@ -8,7 +8,7 @@ import JpegMath.Coders.CodingInterface;
 import JpegMath.Quantiziers.QuantizierInterface;
 import JpegMath.Tilers.Tiler;
 
-public abstract class AbstractJpegEncoder {
+public abstract class AbstractJpegEncoder implements EncoderInterface{
 	int quality;
 
 	public AbstractJpegEncoder(int quality_) {

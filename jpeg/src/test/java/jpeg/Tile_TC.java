@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import DataObjects.Tile;
-import DataObjects.Tile.IllegalTileSizeException;
+import DataObjects.Tile.InvalidTileSizeException;
 import DataObjects.Tile.TileIterator;
 import DataObjects.Tile.ZeroTileSizeException;
 
@@ -31,27 +31,44 @@ public class Tile_TC {
 		assertEquals(3, t.getSizeY());
 	}
 
-	@Test(expected = IllegalTileSizeException.class)
-	public void illegalTileSize() {
+	@Test(expected = InvalidTileSizeException.class)
+	public void illegalTileSize2dConstructor() {
 		Integer[][] vals = new Integer[][] { { 1, 2, 3 }, { 4, 5 }, { 7, 8, 9 } };
-		@SuppressWarnings("unused")
 		Tile<Integer> t = new Tile<Integer>(vals);
 	}
 
 	@Test(expected = ZeroTileSizeException.class)
-	public void nullTileSizeX() {
+	public void nullTileSizeX2dConstructor() {
 		Integer[][] vals = new Integer[][] {};
-		@SuppressWarnings("unused")
 		Tile<Integer> t = new Tile<Integer>(vals);
 	}
 
 	@Test(expected = ZeroTileSizeException.class)
-	public void nullTileSizeY() {
+	public void nullTileSizeY2dConstructor() {
 		Integer[][] vals = new Integer[][] { {}, {} };
-		@SuppressWarnings("unused")
 		Tile<Integer> t = new Tile<Integer>(vals);
 	}
+	@Test(expected = InvalidTileSizeException.class)
+	public void illegalTileSize1dConstructor() {
+		Integer[] vals = new Integer[] { 1, 2, 3, 4, 5, 6 };
+		Tile<Integer> t = new Tile<Integer>(vals, 3, 3);
+	}
 
+	@Test(expected = ZeroTileSizeException.class)
+	public void nullTileSizeX1dConstructor() {
+		Integer[] vals = new Integer[] {};
+		Tile<Integer> t; 
+		t = new Tile<Integer>(vals, 0, 1);
+	}
+	
+	@Test(expected = ZeroTileSizeException.class)
+	public void nullTileSizeY1dConstructor() {
+		Integer[] vals = new Integer[] {};
+		Tile<Integer> t; 
+		t = new Tile<Integer>(vals, 1, 0);
+	}
+	
+	
 	@Test
 	public void tileIteratorIteration() {
 		Integer[][] vals = new Integer[][] { { 1, 2, 3 }, { 4, 5, 6 } };
@@ -62,29 +79,19 @@ public class Tile_TC {
 		while (it.hasNext()) {
 			Integer nextVal = it.next();
 			assertEquals(nextVal, expected++);
-			if (nextVal == 6)
+			if (expected == 7)
 				assertEquals(it.hasNext(), false);
 		}
 	}
 
-	@Test
-	public void tileIteratorChangeValue() {
+	@Test(expected=UnsupportedOperationException.class)
+	public void tileIteratorRemove() {
 		Integer[][] vals = new Integer[][] { { 1, 2, 3 }, { 4, 5, 6 } };
 		Tile<Integer> t = new Tile<Integer>(vals);
 
 		TileIterator<Integer> it = t.iterator();
-		while (it.hasNext()) {
-			Integer val = it.next();
-			t.setVal(it, val + 1);
-		}
-
-		Integer expected = 2;
-		while (it.hasNext()) {
-			Integer nextVal = it.next();
-			assertEquals(nextVal, expected++);
-			if (nextVal == 7)
-				assertEquals(it.hasNext(), false);
-		}
+		it.next();
+		it.remove();
 	}
 
 	@Test
@@ -136,9 +143,12 @@ public class Tile_TC {
 		while (it.hasNext()) {
 			Integer nextVal = it.next();
 			assertEquals(nextVal, expected++);
-			if (nextVal == 6)
+			if (expected == 7)
 				assertEquals(it.hasNext(), false);
 		}
+		
+		assertEquals(3, t.getSizeX());
+		assertEquals(2, t.getSizeY());
 	}
 
 }
