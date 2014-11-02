@@ -59,8 +59,8 @@ public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTile
 	public E[] toArray() {
 		@SuppressWarnings("unchecked")
 		final E[] array = (E[]) Array.newInstance(values[0][0].getClass(), getSizeX()*getSizeY());
-		TileIterator<E> it = iterator();
 		
+		TileIterator<E> it = iterator();
 		int i = 0;
 		while(it.hasNext())
 			array[i++] = it.next();
