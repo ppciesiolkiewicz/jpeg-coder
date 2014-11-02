@@ -20,6 +20,10 @@ public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTile
 		this.setValues(vals);
 	}
 	
+	public Tile(Class c, int sizeX, int sizeY) {
+		this.instantiateValuesArray(c, sizeX, sizeY);
+	}
+	
 	public Tile(E[] vals, int sizeX, int sizeY) {
 		this.setValues(vals, sizeX, sizeY);
 	}
@@ -89,7 +93,7 @@ public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTile
 		if(values_.length != sizeX*sizeY)
 			throw new InvalidTileSizeException();
 		
-		instantiateValuesArray(values_, sizeX, sizeY);
+		instantiateValuesArray(values_[0].getClass(), sizeX, sizeY);
 
 		for(int y = 0; y < sizeY; y++)
 			for(int x = 0; x < sizeX; x++) 
@@ -97,8 +101,8 @@ public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTile
 	}
 
 	@SuppressWarnings("unchecked")
-	private void instantiateValuesArray(E[] vals, int sizeX, int sizeY) {
-		values = (E[][]) Array.newInstance(vals[0].getClass(), sizeY, sizeX);
+	private void instantiateValuesArray(Class c, int sizeX, int sizeY) {
+		values = (E[][]) Array.newInstance(c, sizeY, sizeX);
 	}
 
 	public int getSizeX() {

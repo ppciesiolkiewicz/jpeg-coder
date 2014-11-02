@@ -14,10 +14,10 @@ import java.awt.image.BufferedImage;
  */
 public class SimpleImageToArrayConverter implements ImageToArrayConverterInterface {
 	
-	public int[][][] convert(BufferedImage image) {
+	public Integer[][][] convert(BufferedImage image) {
 		int width = image.getWidth();
 		int height = image.getHeight();
-		int[][][] result = new int[3][height][width];
+		Integer[][][] result = new Integer[3][height][width];
 
 		
 		for (int row = 0; row < height; row++) {

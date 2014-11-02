@@ -5,75 +5,83 @@ import java.awt.image.WritableRaster;
 
 import DataObjects.Tile;
 import JpegMath.Coders.CodingInterface;
+import JpegMath.ImageToArrayConverter.ImageToArrayConverterInterface;
+import JpegMath.ImageToArrayConverter.ImageToYCbCrArray;
 import JpegMath.Quantiziers.QuantizierInterface;
-import JpegMath.Tilers.Tiler;
+import JpegMath.Tilers.JpegTiler;
+import JpegMath.Tilers.TilerInterface;
 
-public abstract class AbstractJpegEncoder implements EncoderInterface{
+public abstract class AbstractJpegEncoder implements EncoderInterface {
 	int quality;
 
 	public AbstractJpegEncoder(int quality_) {
-		quality=quality_;
+		quality = quality_;
 	}
-	
+
 	public BufferedImage encode(BufferedImage img) {
-		Tile[][] tiles = preprocessing(img);
-		transform(tiles);
-		quantize(tiles);
-		code(tiles);
+		//[color component][tile y position][tile x position]
+		Tile[][][] tiles = preprocessing(img);
+		tiles = transform(tiles);
+		tiles = quantize(tiles);
+		tiles = encode(tiles);
+		
+		//this image part probably will not be used
 		img = compose(tiles);
 		return img;
 	}
 
-	protected Tile[][] preprocessing(BufferedImage img) {
-		Tile[][] tiles = tile(img);
-		transformTileColor(tiles);
+	protected Tile<Integer>[][][] preprocessing(BufferedImage image) {
+		Integer[][][] subpixels = image2Array(image);
+		Tile<Integer>[][][] tiles = tile(subpixels);
+
+		return tiles;
+	}
+
+	private Integer[][][] image2Array(BufferedImage image) {
+		ImageToArrayConverterInterface image2Array = new ImageToYCbCrArray();
+		Integer[][][] subpixels = image2Array.convert(image);
+		return subpixels;
+	}
+	
+	protected Tile<Integer>[][][] tile(Integer[][][] subpixels) {
+		TilerInterface<Integer> tiler = new JpegTiler();
+		Tile<Integer>[][][] tiles = (Tile<Integer>[][][])new Tile[3][][];
+		int component = 0;
+		// for Y[][], Cb[][], Cr[][]
+		for (Integer[][] componentArray : subpixels)
+			tiles[component++] = tiler.tile(componentArray);
+		
+		return tiles;
+	}
+
+	protected abstract Tile<Float>[][][] transform(Tile<Integer>[][][] tiles);
+
+	protected Tile<Integer>[][][] quantize(Tile<Float>[][][] tiles) {
+		QuantizierInterface quant = null;
+		return null;
+
+	}
+
+	protected Tile<Integer>[][][] encode(Tile<Integer>[][][] tiles) {
+		CodingInterface encoder = null;
 		return null;
 	}
 
-	protected Tile[][] tile(BufferedImage img) {
-		Tiler tiler;
+	//++JpegInfo?
+	protected BufferedImage compose(Tile[][][] tiles) {
+		/*
+		 * WritableRaster raster = mergeToRaster(tiles); addHeader(raster);
+		 * //dunnos dunnos dunnos
+		 */
 		return null;
-	}
-	
-	protected void transformTileColor(Tile[][] tiles) {
-		
-	}
-	
-	protected abstract void transform(Tile[][] tiles);
-	
-	
-	protected void quantize(Tile[][] tiles) {
-		QuantizierInterface quant;
-		
 	}
 
-	protected void code(Tile[][] tiles) {
-		CodingInterface coder;
-			
-	}
-	
-
-	protected BufferedImage compose(Tile[][] tiles) {
-		/*WritableRaster raster = mergeToRaster(tiles);
-		addHeader(raster); //dunnos*/
-		return null;
-	}
-	/*
-	private WritableRaster mergeToRaster(Tile[][] tiles) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	*/
-	private void addHeader(WritableRaster raster) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	public void setQuality(int quality_) {
 		quality = quality_;
 	}
-	
+
 	public int getQuality() {
-		return quality;	
+		return quality;
 	}
 }

@@ -30,18 +30,6 @@ public class ConsoleApplication implements Application {
 
 		}
 
-		JpegMath.ImageToArrayConverter.ImageToArrayConverterInterface c = new JpegMath.ImageToArrayConverter.SimpleImageToArrayConverter();
-		int[][][] imageArray = c.convert(img);
-		for (int row = 0; row < imageArray[0].length; row++) {
-			for (int col = 0; col < imageArray[0][0].length; col++) {
-				System.out.print("(");
-				for (int component = 0; component < 3; component++)
-					System.out.print(imageArray[component][row][col] + " ");
-				System.out.print(")\t");
-			}
-			System.out.print("\n");
-		}
-
 	}
 
 }
