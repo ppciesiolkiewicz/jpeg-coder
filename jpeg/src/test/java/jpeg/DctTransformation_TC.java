@@ -17,7 +17,6 @@ public class DctTransformation_TC {
 	
 	@Test
 	public void forwardInverseTransformNoFrequency() {
-
 		Integer[][] inputMatrix = { { 100, 100, 100, 100, 100, 100, 100, 100 },
 				{ 100, 100, 100, 100, 100, 100, 100, 100 },
 				{ 100, 100, 100, 100, 100, 100, 100, 100 },
@@ -36,17 +35,7 @@ public class DctTransformation_TC {
 				{ 0d, 0d, 0d, 0d, 0d, 0d, 0d, 0d },
 				{ 0d, 0d, 0d, 0d, 0d, 0d, 0d, 0d }, };
 
-		Tile<Integer> inputTile = new Tile<Integer>(inputMatrix);
-		Tile<Double> forwardTransform = dct.transfom(inputTile);
-		Tile<Double> inverseTransform = dct.inverseTransform(forwardTransform);
-
-		for (int y = 0; y < inputMatrix.length; y++)
-			for (int x = 0; x < inputMatrix[0].length; x++)
-				assertEquals(expectedTransform[y][x], forwardTransform.getVal(x, y), 0.001);
-		
-		for (int y = 0; y < inputMatrix.length; y++)
-			for (int x = 0; x < inputMatrix[0].length; x++)
-				assertEquals(inputMatrix[y][x], inverseTransform.getVal(x, y), 0.001);
+		testTransformation(inputMatrix, expectedTransform, 10e-3);	
 	}
 
 	@Test
@@ -78,18 +67,24 @@ public class DctTransformation_TC {
 				{ 71.152, -38.373, -75.924, 29.294, -16.451, -23.436, -4.213,
 						15.624 }, };
 
+		testTransformation(inputMatrix, expectedTransform, 10e-3);	
+	}
+	
+
+	private void testTransformation(Integer[][] inputMatrix,
+			Double[][] expectedTransform, Double delta) {
+		
 		Tile<Integer> inputTile = new Tile<Integer>(inputMatrix);
 		Tile<Double> forwardTransform = dct.transfom(inputTile);
 		Tile<Double> inverseTransform = dct.inverseTransform(forwardTransform);
 
 		for (int y = 0; y < inputMatrix.length; y++)
 			for (int x = 0; x < inputMatrix[0].length; x++)
-				assertEquals(expectedTransform[y][x], forwardTransform.getVal(x, y), 0.001);
+				assertEquals(expectedTransform[y][x], forwardTransform.getVal(x, y), delta);
 		
 		for (int y = 0; y < inputMatrix.length; y++)
 			for (int x = 0; x < inputMatrix[0].length; x++)
-				assertEquals(inputMatrix[y][x], inverseTransform.getVal(x, y), 0.001);
-		
+				assertEquals(inputMatrix[y][x], inverseTransform.getVal(x, y), delta);
 	}
 
 }
