@@ -1,7 +1,13 @@
 package DataObjects;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
 
 
 public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTileInterface<E> {
@@ -9,71 +15,73 @@ public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTile
 	 * {{1,2,3},{4,5,6}} ->
 	 * | 1 2 3 |
 	 * | 4 5 6 |
-	 * 
-	 * | values[0][0] values[0][1] values[0][2] |
-	 * | values[1][0] values[1][1] values[1][2] |
-	 * values[y][x]
 	 */
-	private E[][] values;
+	private List<E> values = new LinkedList<E>();
+	private Integer sizeX, sizeY;
 	
+	
+	
+	@Override
+	public String toString() {
+		String s = "";
+		for(int y = 0; y < sizeY; y++) {
+			s+="|\t";
+			for(int x = 0; x < sizeX; x++) {
+				s+=getVal(x, y)+"\t";
+			}
+			s+="|\n";
+		}
+		return s;
+	}
+
 	public Tile(E[][] vals) {
 		this.setValues(vals);
 	}
 	
-	public Tile(Class c, int sizeX, int sizeY) {
-		this.instantiateValuesArray(c, sizeX, sizeY);
+	public Tile(int sizeX, int sizeY, E initVal) {
+		this.sizeX = sizeX;
+		this.sizeY = sizeY;
+		values = new LinkedList<E>((Collection<? extends E>) Collections.nCopies(sizeX*sizeY, initVal));
 	}
 	
 	public Tile(E[] vals, int sizeX, int sizeY) {
 		this.setValues(vals, sizeX, sizeY);
 	}
-
-	public Tile(Tile<E> t) {
-		this.setValues(t.getValues());
-	}
 	
 	public E getVal(int x, int y) {
-		return values[y][x];
+		return values.get(y*sizeX+x);
 	}
 	
 	public void setVal(int x, int y, E newVal) {
-		values[y][x] = newVal;
+		values.set(y*sizeX+x, newVal);
 	}
 	
 	public void setVal(int pos, E val) {
-		int x = pos%getSizeX();
-		int y = pos/getSizeX();
-		setVal(x, y, val);
+		values.set(pos, val);
 	}
 	
 	public E getVal(int pos) {
-		int x = pos%getSizeX();
-		int y = pos/getSizeX();	
-		return getVal(x,y);
-	}
-	
-	protected E[][] getValues() {
-		return values.clone();
+		return values.get(pos);
 	}
 	
 	public E[] toArray() {
 		@SuppressWarnings("unchecked")
-		final E[] array = (E[]) Array.newInstance(values[0][0].getClass(), getSizeX()*getSizeY());
-		
+		final E[] array = (E[]) Array.newInstance(values.get(0).getClass(), getSizeX()*getSizeY());
+
 		TileIterator<E> it = iterator();
 		int i = 0;
 		while(it.hasNext())
 			array[i++] = it.next();
-		
 		return array;
-	}
+    }
+
 	
 	public E[][] toMatrix() {
 		@SuppressWarnings("unchecked")
-		final E[][] array = (E[][]) Array.newInstance(values[0][0].getClass(), getSizeY(), getSizeX());
+		final E[][] array = (E[][]) Array.newInstance(values.get(0).getClass(), getSizeY(), getSizeX());
 		for(int y = 0; y < array.length; y++)
 			for(int x = 0; x < array[0].length; x++)
-				array[y][x] = values[y][x];
+				array[y][x] = getVal(x,y);
 
 		return array;
 	}
@@ -82,9 +90,15 @@ public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTile
 		if(values_.length == 0 || values_[0].length == 0)
 			throw new ZeroTileSizeException();
 		for(E[] v : values_)
-			if(v.length != values_[0].length)
-				throw new InvalidTileSizeException();
-		this.values = values_.clone();
+        	if(v.length != values_[0].length)
+        		throw new InvalidTileSizeException();
+
+		sizeY=values_.length;
+		sizeX=values_[0].length;
+		
+		for(int y = 0; y < sizeY; y++)
+			for(int x = 0; x < sizeX; x++)
+				values.add(values_[y][x]);
 	}
 	
 	protected void setValues(E[] values_, int sizeX, int sizeY) {
@@ -93,24 +107,17 @@ public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTile
 		if(values_.length != sizeX*sizeY)
 			throw new InvalidTileSizeException();
 		
-		instantiateValuesArray(values_[0].getClass(), sizeX, sizeY);
-
-		for(int y = 0; y < sizeY; y++)
-			for(int x = 0; x < sizeX; x++) 
-				setVal(x,y,values_[y*sizeX+x]);
-	}
-
-	@SuppressWarnings("unchecked")
-	private void instantiateValuesArray(Class c, int sizeX, int sizeY) {
-		values = (E[][]) Array.newInstance(c, sizeY, sizeX);
+		this.sizeX = sizeX;
+		this.sizeY = sizeY;
+		values = Arrays.asList(values_);
 	}
 
 	public int getSizeX() {
-		return values[0].length;
+		return sizeX;
 	}
 
 	public int getSizeY() {
-		return values.length;
+		return sizeY;
 	}
 
 
@@ -123,21 +130,23 @@ public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTile
 	}
 	
 	public static class TileIterator<T extends Number> implements Iterator<T> {
-		protected Tile<T> tile;
-		protected int cur;
+		protected Tile tile;
+		protected ListIterator it;
+		protected Integer curPos;
 		
 		protected TileIterator(Tile<T> t) {
-			cur = -1;
+			it = t.values.listIterator();
 			tile = t;
+			curPos = 0;
 		}
 				
 		public boolean hasNext() {
-			return cur < tile.getSizeX()*tile.getSizeY()-1;
+			return it.hasNext();
 		}
 
 		public T next() {
-			cur++;
-			return tile.values[getCurrentY()][getCurrentX()];
+			curPos++;
+			return (T) it.next();
 		}
 
 		public void remove() {
@@ -145,15 +154,15 @@ public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTile
 		}
 		
 		protected void setVal(T newVal) {
-			tile.values[getCurrentY()][getCurrentX()] = newVal;
+			tile.setVal(curPos, newVal);
 		}
 		
 		protected int getCurrentY() {
-			return cur/tile.getSizeX();
+			return curPos/tile.getSizeX();
 		}
 		
 		protected int getCurrentX() {
-			return cur%tile.getSizeX();
+			return curPos%tile.getSizeX();
 		}
 	}
 	
