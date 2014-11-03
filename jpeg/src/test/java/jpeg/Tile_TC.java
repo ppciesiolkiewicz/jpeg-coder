@@ -29,6 +29,17 @@ public class Tile_TC {
 
 		assertEquals(3, t.getSizeX());
 		assertEquals(3, t.getSizeY());
+		
+		t = new Tile<Integer>(2,2,0);
+
+		assertEquals(2, t.getSizeX());
+		assertEquals(2, t.getSizeY());
+		
+		assertEquals(new Integer(0), t.getVal(0, 0));
+		assertEquals(new Integer(0), t.getVal(1, 0));
+		assertEquals(new Integer(0), t.getVal(0, 1));
+		assertEquals(new Integer(0), t.getVal(1, 1));
+	
 	}
 
 	@Test(expected = InvalidTileSizeException.class)
@@ -48,6 +59,7 @@ public class Tile_TC {
 		Integer[][] vals = new Integer[][] { {}, {} };
 		Tile<Integer> t = new Tile<Integer>(vals);
 	}
+	
 	@Test(expected = InvalidTileSizeException.class)
 	public void illegalTileSize1dConstructor() {
 		Integer[] vals = new Integer[] { 1, 2, 3, 4, 5, 6 };
