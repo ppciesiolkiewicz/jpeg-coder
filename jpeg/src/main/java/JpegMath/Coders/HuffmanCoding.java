@@ -1,18 +1,21 @@
 package JpegMath.Coders;
 
+import DataObjects.EncodedTile;
+import DataObjects.HuffmanEncodingTable;
 import DataObjects.Tile;
 
 
 public class HuffmanCoding implements CodingInterface {
 
-	public Tile encode(Tile t) {
-		// TODO Auto-generated method stub
-		return null;
+	public void encode(EncodedTile<Integer> t) {
+		t.huffTable = new HuffmanEncodingTable();
+
+		
 	}
 
-	public Tile decode(Tile t) {
+	public void decode(EncodedTile<Integer> t) {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
-	
+
 }

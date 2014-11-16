@@ -1,8 +1,9 @@
 package JpegMath.Coders;
 
+import DataObjects.EncodedTile;
 import DataObjects.Tile;
 
 public interface CodingInterface {
-	public Tile encode(Tile t);
-	public Tile decode(Tile t);
+	public void encode(EncodedTile<Integer> t);
+	public void decode(EncodedTile<Integer> t);
 }

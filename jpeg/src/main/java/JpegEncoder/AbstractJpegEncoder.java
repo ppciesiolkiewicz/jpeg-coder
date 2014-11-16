@@ -63,11 +63,12 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 	}
 
 	protected Tile<Integer>[][][] encode(Tile<Integer>[][][] tiles) {
+		//TODO
 		CodingInterface encoder = null;
 		return null;
 	}
 
-	//++JpegInfo?
+	//TODO ++JpegInfo?
 	protected BufferedImage compose(Tile[][][] tiles) {
 		/*
 		 * WritableRaster raster = mergeToRaster(tiles); addHeader(raster);
