@@ -8,4 +8,5 @@ public interface ArrayTileInterface<E extends Number> extends Iterable<E> {
 		public E[] toArray();
 		public int getLength();
 		public Iterator<E> iterator();
+		public Iterator<E> zigZagIterator();
 }

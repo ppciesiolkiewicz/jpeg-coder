@@ -1,0 +1,2195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_Bj16sGsiEeSL7MpMKIoahg">
+  <modelElement href="jpeg.uml#_Bf2ykGsiEeSL7MpMKIoahg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_E8OLwGsiEeSL7MpMKIoahg" sourceAnchor="0.0,14.0" targetAnchor="47.0,71.0" target="_E9v1wGsiEeSL7MpMKIoahg" source="_E8QA8GsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_ElH6YGsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwpSUGsiEeSL7MpMKIoahg" sourceX="-116" targetY="69"/>
+    <stereotypes xmi:id="_E8OLwWsiEeSL7MpMKIoahg" name="Reference">
+      <modelElement href="jpeg.uml#_ElML0GsiEeSL7MpMKIoahg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_E8OLwmsiEeSL7MpMKIoahg" text="">
+      <visualProperties xmi:id="_Fw04gGsiEeSL7MpMKIoahg" position="86.0,-19.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_E8Oy0GsiEeSL7MpMKIoahg" aggregationKind="NONE" name="">
+      <modelElement href="jpeg.uml#_ElH6YWsiEeSL7MpMKIoahg"/>
+      <visualProperties xmi:id="_Fw0RcGsiEeSL7MpMKIoahg" position="-51.50000000000001,-32.499999999999986"/>
+      <visibility xmi:id="_E8Oy0WsiEeSL7MpMKIoahg" label="+"/>
+      <cardinality xmi:id="_E8Oy0msiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_E8Oy02siEeSL7MpMKIoahg" aggregationKind="NONE" name="app" navigable="true">
+      <modelElement href="jpeg.uml#_EdH08GsiEeSL7MpMKIoahg"/>
+      <visualProperties xmi:id="_Fw1fkGsiEeSL7MpMKIoahg" position="139.0,35.99999999999998"/>
+      <visibility xmi:id="_E8Oy1GsiEeSL7MpMKIoahg" label="~"/>
+      <cardinality xmi:id="_E8Oy1WsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_E9kPkGsiEeSL7MpMKIoahg" sourceAnchor="41.0,0.0" targetAnchor="17.0,71.0" dashed="true" superClass="_E9v1wGsiEeSL7MpMKIoahg" subClass="_E9qWMGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_ENYIwGsiEeSL7MpMKIoahg"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_E9n58GsiEeSL7MpMKIoahg" sourceAnchor="9.0,0.0" targetAnchor="159.0,0.0" target="_FBH54GsiEeSL7MpMKIoahg" source="_E9qWMGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_Ek-JYGsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwqgcGsiEeSL7MpMKIoahg" sourceY="-308" targetX="555" targetY="-182"/>
+    <bendpoints xmi:id="_FwqgcWsiEeSL7MpMKIoahg" sourceX="-555" sourceY="-308" targetY="-182"/>
+    <stereotypes xmi:id="_E9n58WsiEeSL7MpMKIoahg" name="Reference">
+      <modelElement href="jpeg.uml#_ElDB4GsiEeSL7MpMKIoahg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_E9n58msiEeSL7MpMKIoahg" text="">
+      <visualProperties xmi:id="_Fw3UwGsiEeSL7MpMKIoahg" position="263.5554794386828,155.159168322581"/>
+    </nameVisual>
+    <sourceRole xmi:id="_E9n582siEeSL7MpMKIoahg" aggregationKind="NONE" name="">
+      <modelElement href="jpeg.uml#_Ek-JYWsiEeSL7MpMKIoahg"/>
+      <visualProperties xmi:id="_Fw2tsGsiEeSL7MpMKIoahg" position="3.7394130055484993,-67.06360632058693"/>
+      <visibility xmi:id="_E9n59GsiEeSL7MpMKIoahg" label="+"/>
+      <cardinality xmi:id="_E9ohAGsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_E9ohAWsiEeSL7MpMKIoahg" aggregationKind="NONE" name="imgLoader" navigable="true">
+      <modelElement href="jpeg.uml#_EcY1IGsiEeSL7MpMKIoahg"/>
+      <visualProperties xmi:id="_Fw370GsiEeSL7MpMKIoahg" position="526.5281032294442,-148.06591391202062"/>
+      <visibility xmi:id="_E9ohAmsiEeSL7MpMKIoahg" label="-"/>
+      <cardinality xmi:id="_E9ohA2siEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_E9pvIGsiEeSL7MpMKIoahg" sourceAnchor="71.0,0.0" targetAnchor="0.0,45.0" target="_FAZhIGsiEeSL7MpMKIoahg" source="_E9qWMGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_ElDo8GsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwrHgGsiEeSL7MpMKIoahg" sourceY="-135" targetX="-487"/>
+    <stereotypes xmi:id="_E9pvIWsiEeSL7MpMKIoahg" name="Reference">
+      <modelElement href="jpeg.uml#_ElHTUGsiEeSL7MpMKIoahg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_E9pvImsiEeSL7MpMKIoahg" text="">
+      <visualProperties xmi:id="_Fw5J8GsiEeSL7MpMKIoahg" position="-14.970078910802997,48.500704800248"/>
+    </nameVisual>
+    <sourceRole xmi:id="_E9pvI2siEeSL7MpMKIoahg" aggregationKind="NONE" name="">
+      <modelElement href="jpeg.uml#_ElDo8WsiEeSL7MpMKIoahg"/>
+      <visualProperties xmi:id="_Fw4i4GsiEeSL7MpMKIoahg" position="3.3308222011661712,-67.16009530495757"/>
+      <visibility xmi:id="_E9pvJGsiEeSL7MpMKIoahg" label="+"/>
+      <cardinality xmi:id="_E9pvJWsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_E9pvJmsiEeSL7MpMKIoahg" aggregationKind="NONE" name="jpegAlgorithmFactory" navigable="true">
+      <modelElement href="jpeg.uml#_Ece7wGsiEeSL7MpMKIoahg"/>
+      <visualProperties xmi:id="_Fw5xAGsiEeSL7MpMKIoahg" position="-548.3770065773988,-5.9652902928363005"/>
+      <visibility xmi:id="_E9pvJ2siEeSL7MpMKIoahg" label="-"/>
+      <cardinality xmi:id="_E9pvKGsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_E-YH4GsiEeSL7MpMKIoahg" sourceAnchor="125.0,0.0" targetAnchor="318.0,201.0" target="_E-akIGsiEeSL7MpMKIoahg" source="_E_SG0GsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_ElWj4GsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwsVoGsiEeSL7MpMKIoahg" sourceY="-255" targetX="449"/>
+    <stereotypes xmi:id="_E-YH4WsiEeSL7MpMKIoahg" name="Reference">
+      <modelElement href="jpeg.uml#_ElaOQGsiEeSL7MpMKIoahg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_E-YH4msiEeSL7MpMKIoahg" text="">
+      <visualProperties xmi:id="_Fw8NQGsiEeSL7MpMKIoahg" position="-30.94777558770636,107.55291740789721"/>
+    </nameVisual>
+    <sourceRole xmi:id="_E-YH42siEeSL7MpMKIoahg" aggregationKind="NONE" name="">
+      <modelElement href="jpeg.uml#_ElWj4WsiEeSL7MpMKIoahg"/>
+      <visualProperties xmi:id="_Fw6_IGsiEeSL7MpMKIoahg" position="-17.918556319401375,-70.00826378536749"/>
+      <visibility xmi:id="_E-YH5GsiEeSL7MpMKIoahg" label="+"/>
+      <cardinality xmi:id="_E-YH5WsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_E-YH5msiEeSL7MpMKIoahg" aggregationKind="NONE" name="tile" navigable="true">
+      <modelElement href="jpeg.uml#_Ed1moGsiEeSL7MpMKIoahg"/>
+      <visualProperties xmi:id="_Fw8NQWsiEeSL7MpMKIoahg" position="422.1032589779401,9.880344454722177"/>
+      <stereotypes xmi:id="_E-YH52siEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_Ed5RAGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_E_PDgGsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_Ed5RAGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E-YH6GsiEeSL7MpMKIoahg" label="#"/>
+      <cardinality xmi:id="_E-YH6WsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_E-Z9EGsiEeSL7MpMKIoahg" source="_E-akIGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_ElRrYGsiEeSL7MpMKIoahg"/>
+    <stereotypes xmi:id="_E-Z9EWsiEeSL7MpMKIoahg" name="Reference">
+      <modelElement href="jpeg.uml#_ElVVwGsiEeSL7MpMKIoahg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_E-Z9EmsiEeSL7MpMKIoahg" text=""/>
+    <sourceRole xmi:id="_E-Z9E2siEeSL7MpMKIoahg" aggregationKind="NONE" name="">
+      <modelElement href="jpeg.uml#_ElRrYWsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E-Z9FGsiEeSL7MpMKIoahg" label="+"/>
+      <cardinality xmi:id="_E-Z9FWsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_E-Z9FmsiEeSL7MpMKIoahg" aggregationKind="NONE" name="values" navigable="true">
+      <modelElement href="jpeg.uml#_EdXskGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E-Z9F2siEeSL7MpMKIoahg" label="-"/>
+      <cardinality xmi:id="_E-Z9GGsiEeSL7MpMKIoahg" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_E_RfwGsiEeSL7MpMKIoahg" source="_E_SG0GsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_ElbcYGsiEeSL7MpMKIoahg"/>
+    <stereotypes xmi:id="_E_RfwWsiEeSL7MpMKIoahg" name="Reference">
+      <modelElement href="jpeg.uml#_ElfGwGsiEeSL7MpMKIoahg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_E_RfwmsiEeSL7MpMKIoahg" text=""/>
+    <sourceRole xmi:id="_E_Rfw2siEeSL7MpMKIoahg" aggregationKind="NONE" name="">
+      <modelElement href="jpeg.uml#_ElbcYWsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_RfxGsiEeSL7MpMKIoahg" label="+"/>
+      <cardinality xmi:id="_E_RfxWsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_E_RfxmsiEeSL7MpMKIoahg" aggregationKind="NONE" name="it" navigable="true">
+      <modelElement href="jpeg.uml#_Ed7GMGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_Rfx2siEeSL7MpMKIoahg" label="#"/>
+      <cardinality xmi:id="_E_RfyGsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_E_xPAGsiEeSL7MpMKIoahg" sourceAnchor="159.0,0.0" targetAnchor="250.0,86.0" dashed="true" superClass="_E_3VoGsiEeSL7MpMKIoahg" subClass="_E-akIGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_EPr14GsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwrukGsiEeSL7MpMKIoahg" sourceY="-140" targetX="213"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FAExAGsiEeSL7MpMKIoahg" sourceAnchor="303.0,0.0" targetAnchor="53.0,171.0" dashed="true" superClass="_FAKQkGsiEeSL7MpMKIoahg" subClass="_E-akIGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_EPlIMGsiEeSL7MpMKIoahg"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FAxUkGsiEeSL7MpMKIoahg" sourceAnchor="142.0,0.0" targetAnchor="142.0,90.0" dashed="true" superClass="_FAZhIGsiEeSL7MpMKIoahg" subClass="_FAzw0GsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_ENjH4GsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_Fws8sGsiEeSL7MpMKIoahg" sourceY="-28" targetX="-343" targetY="27"/>
+    <bendpoints xmi:id="_Fws8sWsiEeSL7MpMKIoahg" sourceX="343" sourceY="-28" targetY="27"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FA4CQGsiEeSL7MpMKIoahg" sourceAnchor="155.0,0.0" targetAnchor="142.0,90.0" dashed="true" superClass="_FAZhIGsiEeSL7MpMKIoahg" subClass="_FA6egGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_ENh5wGsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwtjwGsiEeSL7MpMKIoahg" sourceY="-160" targetX="-187" targetY="27"/>
+    <bendpoints xmi:id="_FwtjwWsiEeSL7MpMKIoahg" sourceX="187" sourceY="-160" targetY="27"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FA_-EGsiEeSL7MpMKIoahg" sourceAnchor="156.0,0.0" targetAnchor="317.0,35.0" dashed="true" superClass="_FBH54GsiEeSL7MpMKIoahg" subClass="_FBDocGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_ENpOgGsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwuK0GsiEeSL7MpMKIoahg" sourceY="-201" targetX="58"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FBY_oGsiEeSL7MpMKIoahg" sourceAnchor="340.0,25.0" targetAnchor="170.0,71.0" dashed="true" superClass="_FBa00GsiEeSL7MpMKIoahg" subClass="_FBUuMGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_ENv8MGsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwuK0WsiEeSL7MpMKIoahg" sourceX="1049" targetY="80"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FCS-kGsiEeSL7MpMKIoahg" sourceAnchor="414.0,135.0" targetAnchor="170.0,71.0" dashed="true" superClass="_FCVa0GsiEeSL7MpMKIoahg" subClass="_FBrTgGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_EN00sGsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_Fwux4GsiEeSL7MpMKIoahg" sourceX="552" targetY="190"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FChoEGsiEeSL7MpMKIoahg" sourceAnchor="92.0,73.0" targetAnchor="92.0,90.0" dashed="true" superClass="_FCcIgGsiEeSL7MpMKIoahg" subClass="_FCkrYGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_EOLaAGsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwvY8GsiEeSL7MpMKIoahg" sourceY="154" targetX="1691" targetY="282"/>
+    <bendpoints xmi:id="_FwvY8WsiEeSL7MpMKIoahg" sourceX="-1691" sourceY="154" targetY="282"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FC2_QGsiEeSL7MpMKIoahg" sourceAnchor="358.0,36.0" targetAnchor="144.0,107.0" dashed="true" superClass="_FCt1UGsiEeSL7MpMKIoahg" subClass="_FC6poGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_EOOdUGsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwwAAGsiEeSL7MpMKIoahg" sourceX="1261" targetY="91"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FDIsEGsiEeSL7MpMKIoahg" sourceAnchor="169.0,0.0" targetAnchor="169.0,71.0" dashed="true" superClass="_FDEaoGsiEeSL7MpMKIoahg" subClass="_FDLvYGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_EOQ5kGsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwwAAWsiEeSL7MpMKIoahg" sourceY="-28" targetX="410" targetY="27"/>
+    <bendpoints xmi:id="_FwwnEGsiEeSL7MpMKIoahg" sourceX="-410" sourceY="-28" targetY="27"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FDQn4GsiEeSL7MpMKIoahg" sourceAnchor="161.0,0.0" targetAnchor="169.0,71.0" dashed="true" superClass="_FDEaoGsiEeSL7MpMKIoahg" subClass="_FDWugGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_EOSHsGsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwwnEWsiEeSL7MpMKIoahg" sourceY="-138" targetX="226" targetY="27"/>
+    <bendpoints xmi:id="_FwwnEmsiEeSL7MpMKIoahg" sourceX="-226" sourceY="-138" targetY="27"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FDqQgGsiEeSL7MpMKIoahg" targetItem="_FD0BgGsiEeSL7MpMKIoahg" sourceItem="_FDobUGsiEeSL7MpMKIoahg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FEFHQGsiEeSL7MpMKIoahg" sourceAnchor="0.0,27.0" targetAnchor="156.0,71.0" dashed="true" superClass="_FEO4QGsiEeSL7MpMKIoahg" subClass="_FD0BgGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_EOVLAGsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwxOIGsiEeSL7MpMKIoahg" sourceX="-845" targetX="80" targetY="313"/>
+    <bendpoints xmi:id="_FwxOIWsiEeSL7MpMKIoahg" sourceX="-845" sourceY="-286" targetX="80" targetY="27"/>
+    <bendpoints xmi:id="_FwxOImsiEeSL7MpMKIoahg" sourceX="-925" sourceY="-286" targetY="27"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FEeI0GsiEeSL7MpMKIoahg" sourceAnchor="0.0,48.0" targetAnchor="156.0,71.0" dashed="true" superClass="_FEO4QGsiEeSL7MpMKIoahg" subClass="_FEpvAGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_EOXAMGsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_Fwx1MGsiEeSL7MpMKIoahg" sourceX="-386" targetX="182" targetY="103"/>
+    <bendpoints xmi:id="_Fwx1MWsiEeSL7MpMKIoahg" sourceX="-386" sourceY="-76" targetX="182" targetY="27"/>
+    <bendpoints xmi:id="_FwycQGsiEeSL7MpMKIoahg" sourceX="-568" sourceY="-76" targetY="27"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_FEglEGsiEeSL7MpMKIoahg" targetItem="_FEpvAGsiEeSL7MpMKIoahg" sourceItem="_FEf-AGsiEeSL7MpMKIoahg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FFgqoGsiEeSL7MpMKIoahg" sourceAnchor="0.0,49.0" targetAnchor="234.0,3.0" dashed="true" superClass="_FFMhkGsiEeSL7MpMKIoahg" subClass="_FFte8GsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_EOaqkWsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwycQWsiEeSL7MpMKIoahg" sourceX="-895" targetX="305" targetY="208"/>
+    <bendpoints xmi:id="_FwycQmsiEeSL7MpMKIoahg" sourceX="-895" sourceY="-208" targetX="305"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_FGTU0GsiEeSL7MpMKIoahg" sourceAnchor="242.0,36.0" targetAnchor="135.0,90.0" dashed="true" superClass="_FGgJIGsiEeSL7MpMKIoahg" subClass="_FGHHkGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_EPC8sGsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwzDUGsiEeSL7MpMKIoahg" sourceX="606" targetX="2157" targetY="91"/>
+    <bendpoints xmi:id="_FwzDUWsiEeSL7MpMKIoahg" sourceX="606" sourceY="338" targetX="2157" targetY="429"/>
+    <bendpoints xmi:id="_FwzqYGsiEeSL7MpMKIoahg" sourceX="-1551" sourceY="338" targetY="429"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_FIuWsGsiEeSL7MpMKIoahg" sourceAnchor="0.0,46.0" targetAnchor="174.0,111.0" target="_FG_RUGsiEeSL7MpMKIoahg" source="_FJFjEGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_ElMy4GsiEeSL7MpMKIoahg"/>
+    <bendpoints xmi:id="_FwzqYWsiEeSL7MpMKIoahg" sourceX="-1318" targetY="101"/>
+    <stereotypes xmi:id="_FI7LAGsiEeSL7MpMKIoahg" name="Reference">
+      <modelElement href="jpeg.uml#_ElREUGsiEeSL7MpMKIoahg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_FI1EYGsiEeSL7MpMKIoahg" text="">
+      <visualProperties xmi:id="_Fw-CcGsiEeSL7MpMKIoahg" position="1269.204215687993,-15.65472981966434"/>
+    </nameVisual>
+    <sourceRole xmi:id="_FI2SgGsiEeSL7MpMKIoahg" aggregationKind="NONE" name="">
+      <modelElement href="jpeg.uml#_ElMy4WsiEeSL7MpMKIoahg"/>
+      <visualProperties xmi:id="_Fw9bYGsiEeSL7MpMKIoahg" position="-53.92173525850694,-33.001071163890856"/>
+      <visibility xmi:id="_FJAqkWsiEeSL7MpMKIoahg" label="+"/>
+      <cardinality xmi:id="_FJAqkGsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_FI2SgWsiEeSL7MpMKIoahg" aggregationKind="NONE" name="dct" navigable="true">
+      <modelElement href="jpeg.uml#_EdOioGsiEeSL7MpMKIoahg"/>
+      <visualProperties xmi:id="_Fw-pgGsiEeSL7MpMKIoahg" position="1283.7752939929765,67.70489884352014"/>
+      <visibility xmi:id="_FJB4sWsiEeSL7MpMKIoahg" label="~"/>
+      <cardinality xmi:id="_FJB4sGsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FDobUGsiEeSL7MpMKIoahg" sourceConnectionVisual="_FDqQgGsiEeSL7MpMKIoahg" text="11111111111111110000000000000000 R&#xA;11111111000000001111111100000000 G&#xA;11111111000000000000000011111111 B&#xA;11111111111111111111111111111111 Black&#xA;11111111000000000000000000000000 White" item="_FD0BgGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_Ejx2kGsiEeSL7MpMKIoahg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_FEf-AGsiEeSL7MpMKIoahg" sourceConnectionVisual="_FEglEGsiEeSL7MpMKIoahg" text="11111111111111110000000000000000 R&#xA;11111111000000001111111100000000 G&#xA;11111111000000000000000011111111 B&#xA;11111111111111111111111111111111 Black&#xA;11111111000000000000000000000000 White" item="_FEpvAGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_EjzEsGsiEeSL7MpMKIoahg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_E8QA8GsiEeSL7MpMKIoahg" name="Main" associationsOut="_E8OLwGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D_VFsGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_E8QA8WsiEeSL7MpMKIoahg" position="30.0,30.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_E8QA8msiEeSL7MpMKIoahg" label="+"/>
+    <attributes xmi:id="_E8QA82siEeSL7MpMKIoahg" name="app" staticAttribute="true">
+      <modelElement href="jpeg.uml#_EdH08GsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_E8QoAGsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EdK4QGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_E8QoAWsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EdK4QGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E8QoAmsiEeSL7MpMKIoahg" label="~"/>
+      <cardinality xmi:id="_E8QoA2siEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_E8QoBGsiEeSL7MpMKIoahg" name="Application">
+        <modelElement href="jpeg.uml#_D5eVUGsiEeSL7MpMKIoahg"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_E8QoBWsiEeSL7MpMKIoahg" name="main" staticOperation="true">
+      <modelElement href="jpeg.uml#_D_W64GsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E8QoBmsiEeSL7MpMKIoahg" label="+"/>
+      <parameters xmi:id="_E8QoB2siEeSL7MpMKIoahg" name="args">
+        <modelElement href="jpeg.uml#_D_Xh8GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E8QoCGsiEeSL7MpMKIoahg" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_E9qWMGsiEeSL7MpMKIoahg" name="ConsoleApplication" associationsOut="_E9n58GsiEeSL7MpMKIoahg _E9pvIGsiEeSL7MpMKIoahg" generalizations="_E9kPkGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D5m4MGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_E9qWMWsiEeSL7MpMKIoahg" position="-157.0,268.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_E9qWMmsiEeSL7MpMKIoahg" label="+"/>
+    <attributes xmi:id="_E9qWM2siEeSL7MpMKIoahg" name="imgLoader">
+      <modelElement href="jpeg.uml#_EcY1IGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_E9qWNGsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EcdGkGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_E9qWNWsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EcdGkGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E9qWNmsiEeSL7MpMKIoahg" label="-"/>
+      <cardinality xmi:id="_E9qWN2siEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_E9qWOGsiEeSL7MpMKIoahg" name="ImageLoaderInterface">
+        <modelElement href="jpeg.uml#_D7BNcGsiEeSL7MpMKIoahg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_E9qWOWsiEeSL7MpMKIoahg" name="jpegAlgorithmFactory">
+      <modelElement href="jpeg.uml#_Ece7wGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_E9qWOmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_Ech_EGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_E9qWO2siEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_Ech_EGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E9qWPGsiEeSL7MpMKIoahg" label="-"/>
+      <cardinality xmi:id="_E9qWPWsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_E9qWPmsiEeSL7MpMKIoahg" name="AbstractJpegEncoderDecoderFactory">
+        <modelElement href="jpeg.uml#_D6heMGsiEeSL7MpMKIoahg"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_E9qWP2siEeSL7MpMKIoahg" name="run">
+      <modelElement href="jpeg.uml#_D5p7gGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E9qWQGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_E9v1wGsiEeSL7MpMKIoahg" name="Application" associationsIn="_E8OLwGsiEeSL7MpMKIoahg" subclassedBy="_E9kPkGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D5eVUGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_E9v1wWsiEeSL7MpMKIoahg" position="-133.0,-96.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_E9wc0GsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_E9wc0WsiEeSL7MpMKIoahg" name="run">
+      <modelElement href="jpeg.uml#_D5jN0GsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E9wc0msiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_E-akIGsiEeSL7MpMKIoahg" name="Tile" associationsIn="_E-YH4GsiEeSL7MpMKIoahg" associationsOut="_E-Z9EGsiEeSL7MpMKIoahg" generalizations="_E_xPAGsiEeSL7MpMKIoahg _FAExAGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_E-akIWsiEeSL7MpMKIoahg" position="-1114.0,-397.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_E-akImsiEeSL7MpMKIoahg" name="Generics">
+      <modelElement href="jpeg.uml#_D_8wwGsiEeSL7MpMKIoahg"/>
+    </stereotypes>
+    <visibility xmi:id="_E-akI2siEeSL7MpMKIoahg" label="+"/>
+    <attributes xmi:id="_E-akJGsiEeSL7MpMKIoahg" defaultValue="new LinkedList&lt;E>()" name="values">
+      <modelElement href="jpeg.uml#_EdXskGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_E-akJWsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EdclEGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_E-akJmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EdclEGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E-akJ2siEeSL7MpMKIoahg" label="-"/>
+      <cardinality xmi:id="_E-akKGsiEeSL7MpMKIoahg" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_E-akKWsiEeSL7MpMKIoahg" name="E">
+        <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_E-akKmsiEeSL7MpMKIoahg" name="sizeX">
+      <modelElement href="jpeg.uml#_EdfBUGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_E-akK2siEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_Edg2gGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_E-akLGsiEeSL7MpMKIoahg" name="MultiDeclaration">
+        <modelElement href="jpeg.uml#_EdiEoGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E-akLWsiEeSL7MpMKIoahg" label="+"/>
+      <cardinality xmi:id="_E-akLmsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_E-akL2siEeSL7MpMKIoahg" name="Integer">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_E-akMGsiEeSL7MpMKIoahg" name="sizeY">
+      <modelElement href="jpeg.uml#_Ej2vEGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_E-akMWsiEeSL7MpMKIoahg" name="MultiDeclaration">
+        <modelElement href="jpeg.uml#_Ej39MGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_E-akMmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_Ej5LUGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E-akM2siEeSL7MpMKIoahg" label="+"/>
+      <cardinality xmi:id="_E-akNGsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_E-akNWsiEeSL7MpMKIoahg" name="Integer">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_E-akNmsiEeSL7MpMKIoahg" name="toString">
+      <modelElement href="jpeg.uml#_EABCMGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_E-akN2siEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EAC3YGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_E-akOGsiEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_EAEFgGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E-akOWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E-akOmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EACQUGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-akO2siEeSL7MpMKIoahg" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_E-akPGsiEeSL7MpMKIoahg" name="getVal">
+      <modelElement href="jpeg.uml#_EAN2gGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E-akPWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E-akPmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EZVhIGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-akP2siEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_E-akQGsiEeSL7MpMKIoahg" name="x">
+        <modelElement href="jpeg.uml#_EAN2gWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-akQWsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E-akQmsiEeSL7MpMKIoahg" name="y">
+        <modelElement href="jpeg.uml#_EAOdkGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-akQ2siEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_E-akRGsiEeSL7MpMKIoahg" name="getVal">
+      <modelElement href="jpeg.uml#_EAT9IGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E-akRWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E-akRmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EZtUkGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-akR2siEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_E-akSGsiEeSL7MpMKIoahg" name="pos">
+        <modelElement href="jpeg.uml#_EAT9IWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-akSWsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_E-akSmsiEeSL7MpMKIoahg" name="toArray">
+      <modelElement href="jpeg.uml#_EAVyUGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_E-akS2siEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EAXAcWsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E-akTGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E-akTWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EAWZYGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-akTmsiEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_E-akT2siEeSL7MpMKIoahg" name="toMatrix">
+      <modelElement href="jpeg.uml#_EAYOkGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_E-akUGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EAaDwGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E-akUWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E-akUmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EAY1oGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-akU2siEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_E-akVGsiEeSL7MpMKIoahg" name="getSizeY">
+      <modelElement href="jpeg.uml#_EAdHEGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E-akVWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E-akVmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EAduIGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-akV2siEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_E-bLMGsiEeSL7MpMKIoahg" name="getLength">
+      <modelElement href="jpeg.uml#_EAe8QGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E-bLMWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E-bLMmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EAe8QWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLM2siEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_E-bLNGsiEeSL7MpMKIoahg" name="iterator">
+      <modelElement href="jpeg.uml#_EAfjUGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_E-bLNWsiEeSL7MpMKIoahg" name="Generics">
+        <modelElement href="jpeg.uml#_EAj0wGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E-bLNmsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E-bLN2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EQDCQGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLOGsiEeSL7MpMKIoahg" name="TileIterator">
+          <modelElement href="jpeg.uml#_EAnfIGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_E-bLOWsiEeSL7MpMKIoahg" name="Tile">
+      <modelElement href="jpeg.uml#_EYvrQGsiEeSL7MpMKIoahg"/>
+      <keywords xmi:id="_E-bLOmsiEeSL7MpMKIoahg" keyword="create"/>
+      <visibility xmi:id="_E-bLO2siEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E-bLPGsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EYyukGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLPWsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_E-bLPmsiEeSL7MpMKIoahg" name="vals">
+        <modelElement href="jpeg.uml#_EYw5YGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLP2siEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_E-bLQGsiEeSL7MpMKIoahg" name="Tile">
+      <modelElement href="jpeg.uml#_EY7RcGsiEeSL7MpMKIoahg"/>
+      <keywords xmi:id="_E-bLQWsiEeSL7MpMKIoahg" keyword="create"/>
+      <visibility xmi:id="_E-bLQmsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E-bLQ2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EZDNQWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLRGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_E-bLRWsiEeSL7MpMKIoahg" name="sizeX">
+        <modelElement href="jpeg.uml#_EY74gGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLRmsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E-bLR2siEeSL7MpMKIoahg" name="sizeY">
+        <modelElement href="jpeg.uml#_EY9GoGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLSGsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E-bLSWsiEeSL7MpMKIoahg" name="initVal">
+        <modelElement href="jpeg.uml#_EZAxAGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLSmsiEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_E-bLS2siEeSL7MpMKIoahg" name="Tile">
+      <modelElement href="jpeg.uml#_EZKiAGsiEeSL7MpMKIoahg"/>
+      <keywords xmi:id="_E-bLTGsiEeSL7MpMKIoahg" keyword="create"/>
+      <visibility xmi:id="_E-bLTWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E-bLTmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EZOMYGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLT2siEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_E-bLUGsiEeSL7MpMKIoahg" name="vals">
+        <modelElement href="jpeg.uml#_EZLJEGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLUWsiEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E-bLUmsiEeSL7MpMKIoahg" name="sizeX">
+        <modelElement href="jpeg.uml#_EZLwIGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLU2siEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E-bLVGsiEeSL7MpMKIoahg" name="sizeY">
+        <modelElement href="jpeg.uml#_EZMXMGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLVWsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_E-bLVmsiEeSL7MpMKIoahg" name="setVal">
+      <modelElement href="jpeg.uml#_EZbnwGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E-bLV2siEeSL7MpMKIoahg" label="+"/>
+      <parameters xmi:id="_E-bLWGsiEeSL7MpMKIoahg" name="x">
+        <modelElement href="jpeg.uml#_EZcO0GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLWWsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E-bLWmsiEeSL7MpMKIoahg" name="y">
+        <modelElement href="jpeg.uml#_EZc14GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLW2siEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E-bLXGsiEeSL7MpMKIoahg" name="newVal">
+        <modelElement href="jpeg.uml#_EZdc8GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLXWsiEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_E-bLXmsiEeSL7MpMKIoahg" name="setVal">
+      <modelElement href="jpeg.uml#_EZkxsGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E-bLX2siEeSL7MpMKIoahg" label="+"/>
+      <parameters xmi:id="_E-bLYGsiEeSL7MpMKIoahg" name="pos">
+        <modelElement href="jpeg.uml#_EZl_0GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLYWsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E-bLYmsiEeSL7MpMKIoahg" name="val">
+        <modelElement href="jpeg.uml#_EZmm4GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLY2siEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_E-bLZGsiEeSL7MpMKIoahg" name="setValues">
+      <modelElement href="jpeg.uml#_EZ8lIGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E-bLZWsiEeSL7MpMKIoahg" label="#"/>
+      <parameters xmi:id="_E-bLZmsiEeSL7MpMKIoahg" name="values_">
+        <modelElement href="jpeg.uml#_EZ9MMGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLZ2siEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_E-bLaGsiEeSL7MpMKIoahg" name="setValues">
+      <modelElement href="jpeg.uml#_EaG9MGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E-bLaWsiEeSL7MpMKIoahg" label="#"/>
+      <parameters xmi:id="_E-bLamsiEeSL7MpMKIoahg" name="values_">
+        <modelElement href="jpeg.uml#_EaHkQGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLa2siEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E-bLbGsiEeSL7MpMKIoahg" name="sizeX">
+        <modelElement href="jpeg.uml#_EaILUGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLbWsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E-bLbmsiEeSL7MpMKIoahg" name="sizeY">
+        <modelElement href="jpeg.uml#_EaIyYGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E-bLb2siEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_E_SG0GsiEeSL7MpMKIoahg" name="TileIterator" associationsOut="_E-YH4GsiEeSL7MpMKIoahg _E_RfwGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_EAnfIGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_E_SG0WsiEeSL7MpMKIoahg" position="-472.0,59.0" size="-1.0,-1.0"/>
+    <keywords xmi:id="_E_SG0msiEeSL7MpMKIoahg" keyword="static"/>
+    <stereotypes xmi:id="_E_SG02siEeSL7MpMKIoahg" name="Generics">
+      <modelElement href="jpeg.uml#_EArwkGsiEeSL7MpMKIoahg"/>
+    </stereotypes>
+    <visibility xmi:id="_E_SG1GsiEeSL7MpMKIoahg" label="+"/>
+    <attributes xmi:id="_E_SG1WsiEeSL7MpMKIoahg" name="tile">
+      <modelElement href="jpeg.uml#_Ed1moGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_SG1msiEeSL7MpMKIoahg" label="#"/>
+      <cardinality xmi:id="_E_SG12siEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_E_SG2GsiEeSL7MpMKIoahg" name="Tile">
+        <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_E_SG2WsiEeSL7MpMKIoahg" name="it">
+      <modelElement href="jpeg.uml#_Ed7GMGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_E_SG2msiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_Ed-wkGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_E_SG22siEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_Ed-wkGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E_SG3GsiEeSL7MpMKIoahg" label="#"/>
+      <cardinality xmi:id="_E_SG3WsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_E_SG3msiEeSL7MpMKIoahg" name="ListIterator">
+        <modelElement href="jpeg.uml#_EPfBkGsiEeSL7MpMKIoahg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_E_SG32siEeSL7MpMKIoahg" name="curPos">
+      <modelElement href="jpeg.uml#_EeAlwGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_E_SG4GsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EeE3MGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E_SG4WsiEeSL7MpMKIoahg" label="#"/>
+      <cardinality xmi:id="_E_SG4msiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_E_SG42siEeSL7MpMKIoahg" name="Integer">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_E_SG5GsiEeSL7MpMKIoahg" name="hasNext">
+      <modelElement href="jpeg.uml#_EAxQIGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_SG5WsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E_SG5msiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EAx3MGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_SG52siEeSL7MpMKIoahg" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_E_SG6GsiEeSL7MpMKIoahg" name="next">
+      <modelElement href="jpeg.uml#_EAyeQGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_SG6WsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E_SG6msiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EapvwGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_SG62siEeSL7MpMKIoahg" name="T">
+          <modelElement href="jpeg.uml#_EajpIGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_E_SG7GsiEeSL7MpMKIoahg" name="remove">
+      <modelElement href="jpeg.uml#_EA0TcGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_SG7WsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_E_SG7msiEeSL7MpMKIoahg" name="getCurrentY">
+      <modelElement href="jpeg.uml#_EA2IoGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_SG72siEeSL7MpMKIoahg" label="#"/>
+      <outParameters xmi:id="_E_SG8GsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EA3WwGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_SG8WsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_E_SG8msiEeSL7MpMKIoahg" name="getCurrentX">
+      <modelElement href="jpeg.uml#_EA390GsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_SG82siEeSL7MpMKIoahg" label="#"/>
+      <outParameters xmi:id="_E_SG9GsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EA4k4GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_SG9WsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_E_SG9msiEeSL7MpMKIoahg" name="TileIterator">
+      <modelElement href="jpeg.uml#_EQKXAGsiEeSL7MpMKIoahg"/>
+      <keywords xmi:id="_E_SG92siEeSL7MpMKIoahg" keyword="create"/>
+      <visibility xmi:id="_E_SG-GsiEeSL7MpMKIoahg" label="#"/>
+      <outParameters xmi:id="_E_SG-WsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EQMzQGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_SG-msiEeSL7MpMKIoahg" name="TileIterator">
+          <modelElement href="jpeg.uml#_EAnfIGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_E_SG-2siEeSL7MpMKIoahg" name="t">
+        <modelElement href="jpeg.uml#_EQK-EGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_SG_GsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_E_SG_WsiEeSL7MpMKIoahg" name="setVal">
+      <modelElement href="jpeg.uml#_Eav2YGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_St4GsiEeSL7MpMKIoahg" label="#"/>
+      <parameters xmi:id="_E_St4WsiEeSL7MpMKIoahg" name="newVal">
+        <modelElement href="jpeg.uml#_EawdcGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_St4msiEeSL7MpMKIoahg" name="T">
+          <modelElement href="jpeg.uml#_EajpIGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_E_oFEGsiEeSL7MpMKIoahg" name="InvalidTileSizeException">
+    <modelElement href="jpeg.uml#_EBDkAGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_E_oFEWsiEeSL7MpMKIoahg" position="-266.0,396.0" size="-1.0,-1.0"/>
+    <keywords xmi:id="_E_oFEmsiEeSL7MpMKIoahg" keyword="static"/>
+    <visibility xmi:id="_E_oFE2siEeSL7MpMKIoahg" label="+"/>
+    <attributes xmi:id="_E_oFFGsiEeSL7MpMKIoahg" defaultValue="3122434195001134670L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="jpeg.uml#_EeLk4GsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_oFFWsiEeSL7MpMKIoahg" label="-"/>
+      <cardinality xmi:id="_E_oFFmsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_E_oFF2siEeSL7MpMKIoahg" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_E_sWgGsiEeSL7MpMKIoahg" name="ZeroTileSizeException">
+    <modelElement href="jpeg.uml#_EBJqoGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_E_s9kGsiEeSL7MpMKIoahg" position="-266.0,534.0" size="-1.0,-1.0"/>
+    <keywords xmi:id="_E_s9kWsiEeSL7MpMKIoahg" keyword="static"/>
+    <visibility xmi:id="_E_s9kmsiEeSL7MpMKIoahg" label="+"/>
+    <attributes xmi:id="_E_s9k2siEeSL7MpMKIoahg" defaultValue="2195901446734926722L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="jpeg.uml#_EeQdYGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_s9lGsiEeSL7MpMKIoahg" label="-"/>
+      <cardinality xmi:id="_E_s9lWsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_E_s9lmsiEeSL7MpMKIoahg" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_E_3VoGsiEeSL7MpMKIoahg" name="MatrixTileInterface" subclassedBy="_E_xPAGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D6GncGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_E_3VoWsiEeSL7MpMKIoahg" position="-1418.0,-623.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_E_3VomsiEeSL7MpMKIoahg" name="Generics">
+      <modelElement href="jpeg.uml#_D6JqwGsiEeSL7MpMKIoahg"/>
+    </stereotypes>
+    <visibility xmi:id="_E_3Vo2siEeSL7MpMKIoahg" label="+"/>
+    <attributes xmi:id="_E_3VpGsiEeSL7MpMKIoahg" name="sizeX">
+      <modelElement href="jpeg.uml#_D6RmkGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_3VpWsiEeSL7MpMKIoahg" label="+"/>
+      <cardinality xmi:id="_E_3VpmsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_E_3Vp2siEeSL7MpMKIoahg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_E_3VqGsiEeSL7MpMKIoahg" name="sizeY">
+      <modelElement href="jpeg.uml#_D6SNoGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_3VqWsiEeSL7MpMKIoahg" label="+"/>
+      <cardinality xmi:id="_E_3VqmsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_E_3Vq2siEeSL7MpMKIoahg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_E_3VrGsiEeSL7MpMKIoahg" name="getVal">
+      <modelElement href="jpeg.uml#_D6Lf8GsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_3VrWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E_3VrmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EUAVMGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_3Vr2siEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_E_3VsGsiEeSL7MpMKIoahg" name="x">
+        <modelElement href="jpeg.uml#_D6Lf8WsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_3VsWsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E_3VsmsiEeSL7MpMKIoahg" name="y">
+        <modelElement href="jpeg.uml#_D6Lf8msiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_3Vs2siEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_E_3VtGsiEeSL7MpMKIoahg" name="toMatrix">
+      <modelElement href="jpeg.uml#_D6PKUGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_E_3VtWsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_D6QYcGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_E_3VtmsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_E_3Vt2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_D6PxYGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_3VuGsiEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_E_3VuWsiEeSL7MpMKIoahg" name="setVal">
+      <modelElement href="jpeg.uml#_EUFNsGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_E_3VumsiEeSL7MpMKIoahg" label="+"/>
+      <parameters xmi:id="_E_3Vu2siEeSL7MpMKIoahg" name="x">
+        <modelElement href="jpeg.uml#_EUF0wGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_3VvGsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E_3VvWsiEeSL7MpMKIoahg" name="y">
+        <modelElement href="jpeg.uml#_EUGb0GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_3VvmsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_E_3Vv2siEeSL7MpMKIoahg" name="newVal">
+        <modelElement href="jpeg.uml#_EUHC4GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_E_3VwGsiEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_FAKQkGsiEeSL7MpMKIoahg" name="ArrayTileInterface" subclassedBy="_FAExAGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D5x3UGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FAKQkWsiEeSL7MpMKIoahg" position="-864.0,-623.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_FAKQkmsiEeSL7MpMKIoahg" name="Generics">
+      <modelElement href="jpeg.uml#_D50TkGsiEeSL7MpMKIoahg"/>
+    </stereotypes>
+    <visibility xmi:id="_FAKQk2siEeSL7MpMKIoahg" label="+"/>
+    <attributes xmi:id="_FAKQlGsiEeSL7MpMKIoahg" name="length">
+      <modelElement href="jpeg.uml#_D57oUGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FAKQlWsiEeSL7MpMKIoahg" label="+"/>
+      <cardinality xmi:id="_FAKQlmsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_FAKQl2siEeSL7MpMKIoahg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_FAKQmGsiEeSL7MpMKIoahg" name="getVal">
+      <modelElement href="jpeg.uml#_D53W4GsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FAKQmWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FAKQmmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_ET0H8GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FAKQm2siEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FAKQnGsiEeSL7MpMKIoahg" name="pos">
+        <modelElement href="jpeg.uml#_D53W4WsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FAKQnWsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FAKQnmsiEeSL7MpMKIoahg" name="toArray">
+      <modelElement href="jpeg.uml#_D55MEGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FAKQn2siEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_D56aMGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FAKQoGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FAKQoWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_D55zIGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FAKQomsiEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FAK3oGsiEeSL7MpMKIoahg" name="iterator">
+      <modelElement href="jpeg.uml#_D58PYGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FAK3oWsiEeSL7MpMKIoahg" name="Generics">
+        <modelElement href="jpeg.uml#_D5-roGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FAK3omsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FAK3o2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_ET61oGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FAK3pGsiEeSL7MpMKIoahg" name="Iterator">
+          <modelElement href="jpeg.uml#_ENTQQGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FAK3pWsiEeSL7MpMKIoahg" name="setVal">
+      <modelElement href="jpeg.uml#_ETuBUGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FAK3pmsiEeSL7MpMKIoahg" label="+"/>
+      <parameters xmi:id="_FAK3p2siEeSL7MpMKIoahg" name="pos">
+        <modelElement href="jpeg.uml#_ETuBUWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FAK3qGsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FAK3qWsiEeSL7MpMKIoahg" name="val">
+        <modelElement href="jpeg.uml#_ETvPcGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FAK3qmsiEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_ETmskGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_FAZhIGsiEeSL7MpMKIoahg" name="AbstractJpegEncoderDecoderFactory" associationsIn="_E9pvIGsiEeSL7MpMKIoahg" subclassedBy="_FAxUkGsiEeSL7MpMKIoahg _FA4CQGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D6heMGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FAZhIWsiEeSL7MpMKIoahg" position="401.0,88.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FAZhImsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FAZhI2siEeSL7MpMKIoahg" abstractOperation="true" name="getEncoder">
+      <modelElement href="jpeg.uml#_D6isUGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FAZhJGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FAZhJWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_ENhSsGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FAZhJmsiEeSL7MpMKIoahg" name="AbstractJpegEncoder">
+          <modelElement href="jpeg.uml#_D7Zn8GsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FAZhJ2siEeSL7MpMKIoahg" abstractOperation="true" name="getDecoder">
+      <modelElement href="jpeg.uml#_D6j6cGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FAZhKGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FAZhKWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_ENhSsWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FAZhKmsiEeSL7MpMKIoahg" name="AbstractJpegDecoder">
+          <modelElement href="jpeg.uml#_D7MzoGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FAzw0GsiEeSL7MpMKIoahg" name="JpegEncoderDecoderFactory" generalizations="_FAxUkGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D6wuwGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FAzw0WsiEeSL7MpMKIoahg" position="58.0,233.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FAzw0msiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FAzw02siEeSL7MpMKIoahg" name="getEncoder">
+      <modelElement href="jpeg.uml#_D6yj8GsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FAzw1GsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FAzw1WsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_ENjH4WsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FAzw1msiEeSL7MpMKIoahg" name="AbstractJpegEncoder">
+          <modelElement href="jpeg.uml#_D7Zn8GsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FAzw12siEeSL7MpMKIoahg" name="getDecoder">
+      <modelElement href="jpeg.uml#_D6zyEGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FAzw2GsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FAzw2WsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_ENjH4msiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FAzw2msiEeSL7MpMKIoahg" name="AbstractJpegDecoder">
+          <modelElement href="jpeg.uml#_D7MzoGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FA6egGsiEeSL7MpMKIoahg" name="Jpeg2000EncoderDecoderFactory" generalizations="_FA4CQGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D6oL4GsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FA6egWsiEeSL7MpMKIoahg" position="201.0,365.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FA6egmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FA6eg2siEeSL7MpMKIoahg" name="getEncoder">
+      <modelElement href="jpeg.uml#_D6paAGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FA6ehGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FA6ehWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_ENig0GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FA6ehmsiEeSL7MpMKIoahg" name="AbstractJpegEncoder">
+          <modelElement href="jpeg.uml#_D7Zn8GsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FA6eh2siEeSL7MpMKIoahg" name="getDecoder">
+      <modelElement href="jpeg.uml#_D6rPMGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FA6eiGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FA7FkGsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_ENig0WsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FA7FkWsiEeSL7MpMKIoahg" name="AbstractJpegDecoder">
+          <modelElement href="jpeg.uml#_D7MzoGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FBDocGsiEeSL7MpMKIoahg" name="DevelopTimeImageLoader" generalizations="_FA_-EGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D65RoGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FBDocWsiEeSL7MpMKIoahg" position="-643.0,378.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FBDocmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FBDoc2siEeSL7MpMKIoahg" name="getImage">
+      <modelElement href="jpeg.uml#_EUUeQGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FBDodGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FBDodWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EUWTcGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBDodmsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FBDod2siEeSL7MpMKIoahg" name="imageFile">
+        <modelElement href="jpeg.uml#_EUVFUGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBDoeGsiEeSL7MpMKIoahg" name="File">
+          <modelElement href="jpeg.uml#_ENju8GsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_FBH54GsiEeSL7MpMKIoahg" name="ImageLoaderInterface" associationsIn="_E9n58GsiEeSL7MpMKIoahg" subclassedBy="_FA_-EGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D7BNcGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FBH54WsiEeSL7MpMKIoahg" position="-862.0,142.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FBH54msiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FBH542siEeSL7MpMKIoahg" name="getImage">
+      <modelElement href="jpeg.uml#_EUdoMGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FBH55GsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FBH55WsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EUfdYGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBH55msiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FBH552siEeSL7MpMKIoahg" name="imageFile">
+        <modelElement href="jpeg.uml#_EUePQGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBH56GsiEeSL7MpMKIoahg" name="File">
+          <modelElement href="jpeg.uml#_ENju8GsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_FBPOoGsiEeSL7MpMKIoahg" name="ImageSaverInterface">
+    <modelElement href="jpeg.uml#_D7GtAGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FBPOoWsiEeSL7MpMKIoahg" position="-223.0,676.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FBPOomsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FBPOo2siEeSL7MpMKIoahg" name="save">
+      <modelElement href="jpeg.uml#_EUtf0GsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FBPOpGsiEeSL7MpMKIoahg" label="+"/>
+      <parameters xmi:id="_FBPOpWsiEeSL7MpMKIoahg" name="os">
+        <modelElement href="jpeg.uml#_EUtf0WsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBPOpmsiEeSL7MpMKIoahg" name="OutputStream">
+          <modelElement href="jpeg.uml#_ENsR0GsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FBPOp2siEeSL7MpMKIoahg" name="o">
+        <modelElement href="jpeg.uml#_EUuG4GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBPOqGsiEeSL7MpMKIoahg" name="Object">
+          <modelElement href="jpeg.uml#_EUmLEGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FBUuMGsiEeSL7MpMKIoahg" name="AbstractJpegDecoder" abstractClass="true" generalizations="_FBY_oGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D7MzoGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FBUuMWsiEeSL7MpMKIoahg" position="-674.0,494.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FBUuMmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FBUuM2siEeSL7MpMKIoahg" name="decode">
+      <modelElement href="jpeg.uml#_EU2CsGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FBUuNGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FBUuNWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EU334GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBUuNmsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FBUuN2siEeSL7MpMKIoahg" name="img">
+        <modelElement href="jpeg.uml#_EU2pwGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBUuOGsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_FBa00GsiEeSL7MpMKIoahg" name="DecoderInterface" subclassedBy="_FBY_oGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D7UIYGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FBa00WsiEeSL7MpMKIoahg" position="545.0,368.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FBa00msiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FBa002siEeSL7MpMKIoahg" name="decode">
+      <modelElement href="jpeg.uml#_EU_MoGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FBa01GsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FBa01WsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EVBB0GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBa01msiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FBa012siEeSL7MpMKIoahg" name="img">
+        <modelElement href="jpeg.uml#_EU_zsGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBa02GsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FBrTgGsiEeSL7MpMKIoahg" name="AbstractJpegEncoder" abstractClass="true" generalizations="_FCS-kGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D7Zn8GsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FBrTgWsiEeSL7MpMKIoahg" position="175.0,540.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FBrTgmsiEeSL7MpMKIoahg" label="+"/>
+    <attributes xmi:id="_FBrTg2siEeSL7MpMKIoahg" name="quality">
+      <modelElement href="jpeg.uml#_Ecp64GsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FBrThGsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EctlQGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FBrThWsiEeSL7MpMKIoahg" label="~"/>
+      <cardinality xmi:id="_FBrThmsiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_FBrTh2siEeSL7MpMKIoahg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_FBrTiGsiEeSL7MpMKIoahg" name="AbstractJpegEncoder">
+      <modelElement href="jpeg.uml#_D7d5YGsiEeSL7MpMKIoahg"/>
+      <keywords xmi:id="_FBrTiWsiEeSL7MpMKIoahg" keyword="create"/>
+      <visibility xmi:id="_FBrTimsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FBrTi2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_D7fHgmsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBrTjGsiEeSL7MpMKIoahg" name="AbstractJpegEncoder">
+          <modelElement href="jpeg.uml#_D7Zn8GsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FBrTjWsiEeSL7MpMKIoahg" name="quality_">
+        <modelElement href="jpeg.uml#_D7egcGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBrTjmsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FBrTj2siEeSL7MpMKIoahg" name="tile">
+      <modelElement href="jpeg.uml#_D7jY8GsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FBrTkGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_D7lOIGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FBrTkWsiEeSL7MpMKIoahg" name="Generics">
+        <modelElement href="jpeg.uml#_D7nqYGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FBrTkmsiEeSL7MpMKIoahg" label="#"/>
+      <outParameters xmi:id="_FBrTk2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_D7knEGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBrTlGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FBrTlWsiEeSL7MpMKIoahg" name="subpixels">
+        <modelElement href="jpeg.uml#_D7kAAGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBrTlmsiEeSL7MpMKIoahg" name="Integer">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FBrTl2siEeSL7MpMKIoahg" name="setQuality">
+      <modelElement href="jpeg.uml#_D7txAGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FBrTmGsiEeSL7MpMKIoahg" label="+"/>
+      <parameters xmi:id="_FBrTmWsiEeSL7MpMKIoahg" name="quality_">
+        <modelElement href="jpeg.uml#_D7txAWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBrTmmsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FBrTm2siEeSL7MpMKIoahg" name="getQuality">
+      <modelElement href="jpeg.uml#_D7u_IGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FBr6kGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FBr6kWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_D7vmMGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6kmsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_FBr6k2siEeSL7MpMKIoahg" abstractOperation="true" name="transform">
+      <modelElement href="jpeg.uml#_EN2C0GsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FBr6lGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EN3Q8WsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FBr6lWsiEeSL7MpMKIoahg" name="Generics">
+        <modelElement href="jpeg.uml#_EN4fEGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FBr6lmsiEeSL7MpMKIoahg" label="#"/>
+      <outParameters xmi:id="_FBr6l2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EN2p4WsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6mGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FBr6mWsiEeSL7MpMKIoahg" name="tiles">
+        <modelElement href="jpeg.uml#_EN2p4GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6mmsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FBr6m2siEeSL7MpMKIoahg" name="quantize">
+      <modelElement href="jpeg.uml#_EN67UWsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FBr6nGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EN7iYmsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FBr6nWsiEeSL7MpMKIoahg" name="Generics">
+        <modelElement href="jpeg.uml#_EN9XkGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FBr6nmsiEeSL7MpMKIoahg" label="#"/>
+      <outParameters xmi:id="_FBr6n2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EN7iYGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6oGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FBr6oWsiEeSL7MpMKIoahg" name="tiles">
+        <modelElement href="jpeg.uml#_EN67UmsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6omsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FBr6o2siEeSL7MpMKIoahg" name="encode">
+      <modelElement href="jpeg.uml#_EN_z0GsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FBr6pGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EOAa4WsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FBr6pWsiEeSL7MpMKIoahg" name="Generics">
+        <modelElement href="jpeg.uml#_EOBpAGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FBr6pmsiEeSL7MpMKIoahg" label="#"/>
+      <outParameters xmi:id="_FBr6p2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EN_z0msiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6qGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FBr6qWsiEeSL7MpMKIoahg" name="tiles">
+        <modelElement href="jpeg.uml#_EN_z0WsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6qmsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FBr6q2siEeSL7MpMKIoahg" name="compose">
+      <modelElement href="jpeg.uml#_EOEsUGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FBr6rGsiEeSL7MpMKIoahg" label="#"/>
+      <outParameters xmi:id="_FBr6rWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EVsXQGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6rmsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FBr6r2siEeSL7MpMKIoahg" name="tiles">
+        <modelElement href="jpeg.uml#_EOEsUWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6sGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FBr6sWsiEeSL7MpMKIoahg" name="encode">
+      <modelElement href="jpeg.uml#_EVKLwGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FBr6smsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FBr6s2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EVMA8GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6tGsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FBr6tWsiEeSL7MpMKIoahg" name="img">
+        <modelElement href="jpeg.uml#_EVKy0GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6tmsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FBr6t2siEeSL7MpMKIoahg" name="preprocessing">
+      <modelElement href="jpeg.uml#_EVSHkGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FBr6uGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EVVx8GsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FBr6uWsiEeSL7MpMKIoahg" name="Generics">
+        <modelElement href="jpeg.uml#_EVbRgGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FBr6umsiEeSL7MpMKIoahg" label="#"/>
+      <outParameters xmi:id="_FBr6u2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EVT8wGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6vGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FBr6vWsiEeSL7MpMKIoahg" name="image">
+        <modelElement href="jpeg.uml#_EVSuoGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6vmsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FBr6v2siEeSL7MpMKIoahg" name="image2Array">
+      <modelElement href="jpeg.uml#_EVimQGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FBr6wGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EVmQoGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FBr6wWsiEeSL7MpMKIoahg" label="-"/>
+      <outParameters xmi:id="_FBr6wmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EVkbcGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6w2siEeSL7MpMKIoahg" name="Integer">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FBr6xGsiEeSL7MpMKIoahg" name="image">
+        <modelElement href="jpeg.uml#_EVjNUGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FBr6xWsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_FCVa0GsiEeSL7MpMKIoahg" name="EncoderInterface" subclassedBy="_FCS-kGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D8nI4GsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FCVa0WsiEeSL7MpMKIoahg" position="971.0,414.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FCVa0msiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FCVa02siEeSL7MpMKIoahg" name="encode">
+      <modelElement href="jpeg.uml#_EV3WYGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FCVa1GsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FCVa1WsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EV5yoGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCVa1msiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FCVa12siEeSL7MpMKIoahg" name="img">
+        <modelElement href="jpeg.uml#_EV4kgGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCVa2GsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_FCcIgGsiEeSL7MpMKIoahg" name="CodingInterface" subclassedBy="_FChoEGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D8socGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FCcIgWsiEeSL7MpMKIoahg" position="-2154.0,525.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FCcIgmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FCcIg2siEeSL7MpMKIoahg" name="encode">
+      <modelElement href="jpeg.uml#_EOJk0GsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FCcIhGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FCcIhWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EOKL4WsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCcIhmsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FCcIh2siEeSL7MpMKIoahg" name="t">
+        <modelElement href="jpeg.uml#_EOKL4GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCcIiGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FCcIiWsiEeSL7MpMKIoahg" name="decode">
+      <modelElement href="jpeg.uml#_EOKy8GsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FCcIimsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FCcIi2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EOKy8msiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCcIjGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FCcIjWsiEeSL7MpMKIoahg" name="t">
+        <modelElement href="jpeg.uml#_EOKy8WsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCcIjmsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FCkrYGsiEeSL7MpMKIoahg" name="HuffmanCoding" generalizations="_FChoEGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D82ZcGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FCkrYWsiEeSL7MpMKIoahg" position="-463.0,670.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FCkrYmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FCkrY2siEeSL7MpMKIoahg" name="encode">
+      <modelElement href="jpeg.uml#_EOMBEGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FCkrZGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FCkrZWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EOMoIGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCkrZmsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FCkrZ2siEeSL7MpMKIoahg" name="t">
+        <modelElement href="jpeg.uml#_EOMBEWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCkraGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FCkraWsiEeSL7MpMKIoahg" name="decode">
+      <modelElement href="jpeg.uml#_EOMoIWsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FCkramsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FCkra2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EONPMWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCkrbGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FCkrbWsiEeSL7MpMKIoahg" name="t">
+        <modelElement href="jpeg.uml#_EONPMGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCkrbmsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_FCt1UGsiEeSL7MpMKIoahg" name="ColorConverterInterface" subclassedBy="_FC2_QGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D9BYkGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FCt1UWsiEeSL7MpMKIoahg" position="1210.0,647.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_FCt1UmsiEeSL7MpMKIoahg" name="Generics">
+      <modelElement href="jpeg.uml#_D9FC8GsiEeSL7MpMKIoahg"/>
+    </stereotypes>
+    <visibility xmi:id="_FCt1U2siEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FCt1VGsiEeSL7MpMKIoahg" name="conversion">
+      <modelElement href="jpeg.uml#_EWK4YGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FCt1VWsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EWOiwGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FCt1VmsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FCt1V2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EWMtkGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCt1WGsiEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_EWAgUGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FCt1WWsiEeSL7MpMKIoahg" name="elems">
+        <modelElement href="jpeg.uml#_EWMGgGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCt1WmsiEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_EWAgUGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FCt1W2siEeSL7MpMKIoahg" name="inverse_conversion">
+      <modelElement href="jpeg.uml#_EWXFoGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FCt1XGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EWawAGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FCt1XWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FCt1XmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EWY60GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCt1X2siEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_EWAgUGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FCt1YGsiEeSL7MpMKIoahg" name="elems">
+        <modelElement href="jpeg.uml#_EWXssGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FCt1YWsiEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_EWAgUGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FC6poGsiEeSL7MpMKIoahg" name="RgbToYCbCrConverter" generalizations="_FC2_QGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D9Oz8GsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FC6poWsiEeSL7MpMKIoahg" position="-265.0,809.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FC6pomsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FC6po2siEeSL7MpMKIoahg" name="conversion">
+      <modelElement href="jpeg.uml#_D9R3QGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FC6ppGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_D9TFYGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FC6ppWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FC6ppmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_D9SeUGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FC7QsGsiEeSL7MpMKIoahg" name="Integer">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FC7QsWsiEeSL7MpMKIoahg" name="rgb">
+        <modelElement href="jpeg.uml#_D9R3QWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FC7QsmsiEeSL7MpMKIoahg" name="Integer">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FC7Qs2siEeSL7MpMKIoahg" name="inverse_conversion">
+      <modelElement href="jpeg.uml#_D9U6kGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FC7QtGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_D9WIsGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FC7QtWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FC7QtmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_D9VhoGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FC7Qt2siEeSL7MpMKIoahg" name="Integer">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FC7QuGsiEeSL7MpMKIoahg" name="ycbcr">
+        <modelElement href="jpeg.uml#_D9U6kWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FC7QuWsiEeSL7MpMKIoahg" name="Integer">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_FDEaoGsiEeSL7MpMKIoahg" name="ImageToArrayConverterInterface" subclassedBy="_FDIsEGsiEeSL7MpMKIoahg _FDQn4GsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D9ZzEGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FDEaoWsiEeSL7MpMKIoahg" position="-1281.0,126.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FDEaomsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FDEao2siEeSL7MpMKIoahg" name="convert">
+      <modelElement href="jpeg.uml#_EWj58GsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FDEapGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EWnkUGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FDEapWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FDEapmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EWlvIGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FDEap2siEeSL7MpMKIoahg" name="Integer">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FDEaqGsiEeSL7MpMKIoahg" name="image">
+        <modelElement href="jpeg.uml#_EWkhAGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FDEaqWsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FDLvYGsiEeSL7MpMKIoahg" name="ImageToYCbCrArray" generalizations="_FDIsEGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D9ggwGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FDLvYWsiEeSL7MpMKIoahg" position="-871.0,252.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FDLvYmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FDLvY2siEeSL7MpMKIoahg" name="convert">
+      <modelElement href="jpeg.uml#_EWwHMGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FDLvZGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EW0_sGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FDLvZWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FDLvZmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EWzKgGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FDLvZ2siEeSL7MpMKIoahg" name="Integer">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FDLvaGsiEeSL7MpMKIoahg" name="image">
+        <modelElement href="jpeg.uml#_EWx8YGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FDLvaWsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FDWugGsiEeSL7MpMKIoahg" name="SimpleImageToArrayConverter" generalizations="_FDQn4GsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D9n1gGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FDXVkGsiEeSL7MpMKIoahg" position="-1047.0,362.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FDXVkWsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FDXVkmsiEeSL7MpMKIoahg" name="convert">
+      <modelElement href="jpeg.uml#_EW87gGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FDXVk2siEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EXBM8GsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FDXVlGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FDXVlWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EW_XwGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FDXVlmsiEeSL7MpMKIoahg" name="Integer">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FDXVl2siEeSL7MpMKIoahg" name="image">
+        <modelElement href="jpeg.uml#_EW-JoGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FDXVmGsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FD0BgGsiEeSL7MpMKIoahg" comments="_FDobUGsiEeSL7MpMKIoahg" targetConnectionVisual="_FDqQgGsiEeSL7MpMKIoahg" name="FastImageToArrayConverter" generalizations="_FEFHQGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D9vKQGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FD0BgWsiEeSL7MpMKIoahg" position="-1067.0,504.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FD0BgmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FD0Bg2siEeSL7MpMKIoahg" name="convert">
+      <modelElement href="jpeg.uml#_EXIhsGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FD0BhGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EXMzIGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FD0BhWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FD0okGsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EXK98GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FD0okWsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FD0okmsiEeSL7MpMKIoahg" name="image">
+        <modelElement href="jpeg.uml#_EXJIwGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FD0ok2siEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_FEO4QGsiEeSL7MpMKIoahg" name="ImageToArrayConverterInterface" subclassedBy="_FEFHQGsiEeSL7MpMKIoahg _FEeI0GsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D92fAGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FEO4QWsiEeSL7MpMKIoahg" position="-2148.0,147.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FEO4QmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FEO4Q2siEeSL7MpMKIoahg" name="convert">
+      <modelElement href="jpeg.uml#_EXUu8GsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FEO4RGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EXaOgGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FEPfUGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FEPfUWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EXXyQGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FEPfUmsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FEPfU2siEeSL7MpMKIoahg" name="image">
+        <modelElement href="jpeg.uml#_EXWkIGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FEPfVGsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FEpvAGsiEeSL7MpMKIoahg" comments="_FEf-AGsiEeSL7MpMKIoahg" targetConnectionVisual="_FEglEGsiEeSL7MpMKIoahg" name="SimpleImageToArrayConverter" generalizations="_FEeI0GsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D97-kGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FEpvAWsiEeSL7MpMKIoahg" position="-1424.0,273.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FEpvAmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FEpvA2siEeSL7MpMKIoahg" name="convert">
+      <modelElement href="jpeg.uml#_EXixYGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FEpvBGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EXmbwGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FEpvBWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FEpvBmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EXkmkGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FEpvB2siEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FEpvCGsiEeSL7MpMKIoahg" name="image">
+        <modelElement href="jpeg.uml#_EXjYcGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FEpvCWsiEeSL7MpMKIoahg" name="BufferedImage">
+          <modelElement href="jpeg.uml#_ENQ0AGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_FE60wGsiEeSL7MpMKIoahg" name="QuantizierInterface">
+    <modelElement href="jpeg.uml#_D-D6YGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FE60wWsiEeSL7MpMKIoahg" position="-1337.0,406.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FE60wmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FE60w2siEeSL7MpMKIoahg" name="quantize">
+      <modelElement href="jpeg.uml#_EOYOUGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FE60xGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FE60xWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EOY1YGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FE60xmsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FE60x2siEeSL7MpMKIoahg" name="val">
+        <modelElement href="jpeg.uml#_EOYOUWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FE60yGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_FFMhkGsiEeSL7MpMKIoahg" name="TilerInterface" subclassedBy="_FFgqoGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D-djAGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FFNIoGsiEeSL7MpMKIoahg" position="-2481.0,459.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_FFNIoWsiEeSL7MpMKIoahg" name="Generics">
+      <modelElement href="jpeg.uml#_D-hNYGsiEeSL7MpMKIoahg"/>
+    </stereotypes>
+    <visibility xmi:id="_FFNIomsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FFNIo2siEeSL7MpMKIoahg" name="connect">
+      <modelElement href="jpeg.uml#_EOhYQGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FFNIpGsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EOimYWsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FFNIpWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FFNIpmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EOh_UWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FFNIp2siEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_EXwMwGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FFNIqGsiEeSL7MpMKIoahg" name="tiles">
+        <modelElement href="jpeg.uml#_EOh_UGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FFNIqWsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FFNIqmsiEeSL7MpMKIoahg" name="tile">
+      <modelElement href="jpeg.uml#_EX3hgGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FFNIq2siEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EX7L4GsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FFNIrGsiEeSL7MpMKIoahg" name="Generics">
+        <modelElement href="jpeg.uml#_EYDHsGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FFNIrWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FFNIrmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EX5WsGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FFNIr2siEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FFNIsGsiEeSL7MpMKIoahg" name="pixelMatrix">
+        <modelElement href="jpeg.uml#_EX4IkGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FFNIsWsiEeSL7MpMKIoahg" name="E">
+          <modelElement href="jpeg.uml#_EXwMwGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FFte8GsiEeSL7MpMKIoahg" name="JpegTiler" generalizations="_FFgqoGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D-KBAGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FFte8WsiEeSL7MpMKIoahg" position="-1047.0,621.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FFte8msiEeSL7MpMKIoahg" label="+"/>
+    <attributes xmi:id="_FFte82siEeSL7MpMKIoahg" defaultValue="8" name="tileSize">
+      <modelElement href="jpeg.uml#_Ec7nsGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FFte9GsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EdBHQGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FFte9WsiEeSL7MpMKIoahg" label="~"/>
+      <cardinality xmi:id="_FFte9msiEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_FFte92siEeSL7MpMKIoahg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_FFte-GsiEeSL7MpMKIoahg" name="tile">
+      <modelElement href="jpeg.uml#_D-NEUGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FFte-WsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_D-PgkGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FFte-msiEeSL7MpMKIoahg" name="Generics">
+        <modelElement href="jpeg.uml#_D-R80GsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FFte-2siEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FFte_GsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_D-O5gGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FFte_WsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FFte_msiEeSL7MpMKIoahg" name="pixelMatrix">
+        <modelElement href="jpeg.uml#_D-NEUWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FFte_2siEeSL7MpMKIoahg" name="Integer">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FFtfAGsiEeSL7MpMKIoahg" name="connect">
+      <modelElement href="jpeg.uml#_EOdG0GsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FFtfAWsiEeSL7MpMKIoahg" name="Array">
+        <modelElement href="jpeg.uml#_EOeU8GsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FFtfAmsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FFtfA2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EOdt4GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FFtfBGsiEeSL7MpMKIoahg" name="Integer">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FFtfBWsiEeSL7MpMKIoahg" name="tiles">
+        <modelElement href="jpeg.uml#_EOdG0WsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FFtfBmsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FGHHkGsiEeSL7MpMKIoahg" name="WaveletTransformation" generalizations="_FGTU0GsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D_IRYGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FGHHkWsiEeSL7MpMKIoahg" position="-1373.0,553.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FGHHkmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FGHHk2siEeSL7MpMKIoahg" name="transfom">
+      <modelElement href="jpeg.uml#_EPEK0GsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FGHHlGsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FGHHlWsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EPEx4GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FGHHlmsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FGHHl2siEeSL7MpMKIoahg" name="t">
+        <modelElement href="jpeg.uml#_EPEK0WsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FGHHmGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FGHHmWsiEeSL7MpMKIoahg" name="inverseTransform">
+      <modelElement href="jpeg.uml#_EPFY8GsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FGHHmmsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FGHHm2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EPGnEGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FGHHnGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FGHHnWsiEeSL7MpMKIoahg" name="t">
+        <modelElement href="jpeg.uml#_EPGAAGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FGHHnmsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_FGgJIGsiEeSL7MpMKIoahg" name="TransformationInterface" subclassedBy="_FGTU0GsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D--gYGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FGgJIWsiEeSL7MpMKIoahg" position="-2817.0,408.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FGgJImsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FGgJI2siEeSL7MpMKIoahg" name="transfom">
+      <modelElement href="jpeg.uml#_EO2vcGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FGgJJGsiEeSL7MpMKIoahg" name="TypeParameterDeclaration">
+        <modelElement href="jpeg.uml#_EO3WgGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FGgJJWsiEeSL7MpMKIoahg" name="Generics">
+        <modelElement href="jpeg.uml#_EO4koGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FGgwMGsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EO5ywGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FGgwMWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FGgwMmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EO5LsGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FGgwM2siEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FGgwNGsiEeSL7MpMKIoahg" name="t">
+        <modelElement href="jpeg.uml#_EO2vcWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FGgwNWsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FGgwNmsiEeSL7MpMKIoahg" name="inverseTransform">
+      <modelElement href="jpeg.uml#_EO8PAGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FGgwN2siEeSL7MpMKIoahg" name="TypeParameterDeclaration">
+        <modelElement href="jpeg.uml#_EO9dIGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FGgwOGsiEeSL7MpMKIoahg" name="Generics">
+        <modelElement href="jpeg.uml#_EO-rQGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FGgwOWsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EO_5YGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FGgwOmsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FGgwO2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EO_SUGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FGgwPGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FGgwPWsiEeSL7MpMKIoahg" name="t">
+        <modelElement href="jpeg.uml#_EO82EGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FGgwPmsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FG_RUGsiEeSL7MpMKIoahg" name="DctTransformation" associationsIn="_FIuWsGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D-q-YGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FG_RUWsiEeSL7MpMKIoahg" position="-2568.0,624.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FG_RUmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FG_RU2siEeSL7MpMKIoahg" name="transfom">
+      <modelElement href="jpeg.uml#_EOm30GsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FG_RVGsiEeSL7MpMKIoahg" name="Generics">
+        <modelElement href="jpeg.uml#_EOoF8GsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FG_RVWsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FG_RVmsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EOotAGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FG_RV2siEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FG_RWGsiEeSL7MpMKIoahg" name="input">
+        <modelElement href="jpeg.uml#_EOm30WsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FG_RWWsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FG_RWmsiEeSL7MpMKIoahg" name="calcDctCoeff">
+      <modelElement href="jpeg.uml#_EOqiMGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FG_RW2siEeSL7MpMKIoahg" label="-"/>
+      <outParameters xmi:id="_FG_RXGsiEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EYZF8GsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FG_RXWsiEeSL7MpMKIoahg" name="Double">
+          <modelElement href="jpeg.uml#_EYQjEGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FG_RXmsiEeSL7MpMKIoahg" name="input">
+        <modelElement href="jpeg.uml#_EOrJQGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FG_RX2siEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FG_RYGsiEeSL7MpMKIoahg" name="u">
+        <modelElement href="jpeg.uml#_EOrJQWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FG_RYWsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FG_RYmsiEeSL7MpMKIoahg" name="v">
+        <modelElement href="jpeg.uml#_EOrJQmsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FG_RY2siEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FG_RZGsiEeSL7MpMKIoahg" name="inverseTransform">
+      <modelElement href="jpeg.uml#_EOuMkGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FG_RZWsiEeSL7MpMKIoahg" name="Generics">
+        <modelElement href="jpeg.uml#_EOvasGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FG_RZmsiEeSL7MpMKIoahg" label="+"/>
+      <outParameters xmi:id="_FG_RZ2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EOwBwGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FG_RaGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FG_RaWsiEeSL7MpMKIoahg" name="input">
+        <modelElement href="jpeg.uml#_EOuMkWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FG_4YGsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_FG_4YWsiEeSL7MpMKIoahg" name="calcIdctCoeff">
+      <modelElement href="jpeg.uml#_EOyeAGsiEeSL7MpMKIoahg"/>
+      <visibility xmi:id="_FG_4YmsiEeSL7MpMKIoahg" label="-"/>
+      <outParameters xmi:id="_FG_4Y2siEeSL7MpMKIoahg">
+        <modelElement href="jpeg.uml#_EYelgGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FG_4ZGsiEeSL7MpMKIoahg" name="Double">
+          <modelElement href="jpeg.uml#_EYQjEGsiEeSL7MpMKIoahg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_FG_4ZWsiEeSL7MpMKIoahg" name="input">
+        <modelElement href="jpeg.uml#_EOyeAWsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FG_4ZmsiEeSL7MpMKIoahg" name="Tile">
+          <modelElement href="jpeg.uml#_D_5GYGsiEeSL7MpMKIoahg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FG_4Z2siEeSL7MpMKIoahg" name="x">
+        <modelElement href="jpeg.uml#_EOyeAmsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FG_4aGsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_FG_4aWsiEeSL7MpMKIoahg" name="y">
+        <modelElement href="jpeg.uml#_EOzFEGsiEeSL7MpMKIoahg"/>
+        <type xmi:id="_FG_4amsiEeSL7MpMKIoahg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FHmVUGsiEeSL7MpMKIoahg" name="Tile_TC">
+    <modelElement href="jpeg.uml#_ECGs4GsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FHmVUWsiEeSL7MpMKIoahg" position="-1765.0,43.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FHm8YGsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FHm8YWsiEeSL7MpMKIoahg" name="tileBasics">
+      <modelElement href="jpeg.uml#_ECIiEGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FHm8YmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_ECJwMGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FHm8Y2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_ECK-UGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FHm8ZGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FHm8ZWsiEeSL7MpMKIoahg" name="illegalTileSize2dConstructor">
+      <modelElement href="jpeg.uml#_ECLlYGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FHm8ZmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_ECMzgGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FHm8Z2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_ECNakGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FHm8aGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FHm8aWsiEeSL7MpMKIoahg" name="nullTileSizeX2dConstructor">
+      <modelElement href="jpeg.uml#_ECOosGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FHm8amsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_ECP20GsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FHm8a2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_ECQd4GsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FHm8bGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FHm8bWsiEeSL7MpMKIoahg" name="nullTileSizeY2dConstructor">
+      <modelElement href="jpeg.uml#_ECRsAGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FHm8bmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_ECS6IGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FHm8b2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_ECThMGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FHm8cGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FHm8cWsiEeSL7MpMKIoahg" name="illegalTileSize1dConstructor">
+      <modelElement href="jpeg.uml#_ECUvUGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FHm8cmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_ECV9cGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FHm8c2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_ECWkgGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FHm8dGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FHm8dWsiEeSL7MpMKIoahg" name="nullTileSizeX1dConstructor">
+      <modelElement href="jpeg.uml#_ECXyoGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FHm8dmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_ECZAwGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FHm8d2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_ECZn0GsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FHm8eGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FHm8eWsiEeSL7MpMKIoahg" name="nullTileSizeY1dConstructor">
+      <modelElement href="jpeg.uml#_ECaO4GsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FHm8emsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_ECbdAGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FHm8e2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_ECcrIGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FHm8fGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FHm8fWsiEeSL7MpMKIoahg" name="tileIteratorIteration">
+      <modelElement href="jpeg.uml#_ECd5QGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FHm8fmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_ECfHYGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FHm8f2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_ECfucGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FHm8gGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FHm8gWsiEeSL7MpMKIoahg" name="tileIteratorRemove">
+      <modelElement href="jpeg.uml#_ECgVgGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FHm8gmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_ECg8kGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FHm8g2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_ECiKsGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FHm8hGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FHm8hWsiEeSL7MpMKIoahg" name="tileToArray">
+      <modelElement href="jpeg.uml#_ECixwGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FHm8hmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_ECj_4GsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FHm8h2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_ECkm8GsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FHm8iGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FHm8iWsiEeSL7MpMKIoahg" name="tileToMatrix">
+      <modelElement href="jpeg.uml#_EClOAWsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FHm8imsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_ECmcIGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FHm8i2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_ECnDMGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FHm8jGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FHm8jWsiEeSL7MpMKIoahg" name="instantiateFrom1dArray">
+      <modelElement href="jpeg.uml#_ECnqQWsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FHm8jmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_ECo4YGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FHm8j2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_ECpfcGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FHm8kGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FIftMGsiEeSL7MpMKIoahg" name="JpegTiler_TC">
+    <modelElement href="jpeg.uml#_D_tgMGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FIftMWsiEeSL7MpMKIoahg" position="-714.0,632.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FIgUQGsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FIgUQWsiEeSL7MpMKIoahg" name="onlyOneTile">
+      <modelElement href="jpeg.uml#_D_vVYGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FIgUQmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_D_wjgGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FIgUQ2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_D_xKkGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FIgURGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FIgURWsiEeSL7MpMKIoahg" name="moreTiles">
+      <modelElement href="jpeg.uml#_D_xxoGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FIgURmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_D_yYsGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FIgUR2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_D_zm0GsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FIgUSGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FIgUSWsiEeSL7MpMKIoahg" name="unequalSize">
+      <modelElement href="jpeg.uml#_D_0N4GsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FIgUSmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_D_008GsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FIgUS2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_D_2DEGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FIgUTGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FJFjEGsiEeSL7MpMKIoahg" name="DctTransformation_TC" associationsOut="_FIuWsGsiEeSL7MpMKIoahg">
+    <modelElement href="jpeg.uml#_D_gE0GsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FJFjEWsiEeSL7MpMKIoahg" position="-1076.0,790.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FJFjEmsiEeSL7MpMKIoahg" label="+"/>
+    <attributes xmi:id="_FJGKIGsiEeSL7MpMKIoahg" name="dct">
+      <modelElement href="jpeg.uml#_EdOioGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FJGKIWsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EdSNAGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FJDG0GsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_EdSNAGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FJGKImsiEeSL7MpMKIoahg" label="~"/>
+      <cardinality xmi:id="_FJGKI2siEeSL7MpMKIoahg" label="1" max="1" min="1"/>
+      <type xmi:id="_FJGKJGsiEeSL7MpMKIoahg" name="DctTransformation">
+        <modelElement href="jpeg.uml#_D-q-YGsiEeSL7MpMKIoahg"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_FJGKJWsiEeSL7MpMKIoahg" name="setUp">
+      <modelElement href="jpeg.uml#_D_ihEGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FJGKJmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_D_jIIGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FJGKJ2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_D_kWQGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FJGKKGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FJGKKWsiEeSL7MpMKIoahg" name="forwardInverseTransformNoFrequency">
+      <modelElement href="jpeg.uml#_D_kWQmsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FJGKKmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_D_lkYGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FJGKK2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_D_mLcGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FJGKLGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+    <operations xmi:id="_FJGKLWsiEeSL7MpMKIoahg" name="forwardInverseTransform">
+      <modelElement href="jpeg.uml#_D_mygGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FJGKLmsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_D_nZkGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FJGKL2siEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_D_oAoGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FJGKMGsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FJVasGsiEeSL7MpMKIoahg" name="ArrayTile_TC">
+    <modelElement href="jpeg.uml#_D_bMUGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FJVasWsiEeSL7MpMKIoahg" position="-1262.0,700.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FJVasmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FJVas2siEeSL7MpMKIoahg" name="test">
+      <modelElement href="jpeg.uml#_D_cacWsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FJVatGsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_D_dokGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FJVatWsiEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_D_ePoGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FJVatmsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_FJdWgGsiEeSL7MpMKIoahg" name="MatrixTile_TC">
+    <modelElement href="jpeg.uml#_D6Y7UGsiEeSL7MpMKIoahg"/>
+    <visualProperties xmi:id="_FJdWgWsiEeSL7MpMKIoahg" position="-1518.0,396.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_FJdWgmsiEeSL7MpMKIoahg" label="+"/>
+    <operations xmi:id="_FJdWg2siEeSL7MpMKIoahg" name="test">
+      <modelElement href="jpeg.uml#_D6aJcGsiEeSL7MpMKIoahg"/>
+      <stereotypes xmi:id="_FJdWhGsiEeSL7MpMKIoahg" name="LegacyStyledElement">
+        <modelElement href="jpeg.uml#_D6bXkGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_FJdWhWsiEeSL7MpMKIoahg" name="Annotations">
+        <modelElement href="jpeg.uml#_D6dMwGsiEeSL7MpMKIoahg"/>
+      </stereotypes>
+      <visibility xmi:id="_FJdWhmsiEeSL7MpMKIoahg" label="+"/>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
