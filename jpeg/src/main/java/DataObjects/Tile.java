@@ -16,6 +16,7 @@ public class Tile<E extends Number> implements ArrayTileInterface<E> {
 	 * | 4 5 6 |
 	 */
 	private List<E> values = new LinkedList<E>();
+	private E typeHolder;
 	private Integer sizeX, sizeY;
 
 	public Tile(E initVal) {
@@ -23,16 +24,19 @@ public class Tile<E extends Number> implements ArrayTileInterface<E> {
 	}
 
 	public Tile(E[][] vals) {
+		typeHolder = vals[0][0];
 		this.setValues(vals);
 	}
 	
 	public Tile(int sizeX, int sizeY, E initVal) {
+		typeHolder = initVal;
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;
 		values = new LinkedList<E>((Collection<? extends E>) Collections.nCopies(sizeX*sizeY, initVal));
 	}
 	
 	public Tile(E[] vals, int sizeX, int sizeY) {
+		typeHolder = vals[0];
 		this.setValues(vals, sizeX, sizeY);
 	}
 	
@@ -54,7 +58,7 @@ public class Tile<E extends Number> implements ArrayTileInterface<E> {
 	
 	public E[] toArray() {
 		@SuppressWarnings("unchecked")
-		final E[] array = (E[]) Array.newInstance(values.get(0).getClass(), getSizeX()*getSizeY());
+		final E[] array = (E[]) Array.newInstance(typeHolder.getClass(), getSizeX()*getSizeY());
 
 		TileIterator<E> it = iterator();
 		int i = 0;
@@ -124,7 +128,8 @@ public class Tile<E extends Number> implements ArrayTileInterface<E> {
 		protected Tile<T> tile;
 		protected Integer curPos;
 		
-		protected static Integer[] zigZagOrder = {0,  1,  8, 16,  9,  2,  3, 10,
+		protected static Integer[] zigZagOrder = 
+				{0,  1,  8, 16,  9,  2,  3, 10,
 		         17, 24, 32, 25, 18, 11,  4,  5,
 		         12, 19, 26, 33, 40, 48, 41, 34,
 		         27, 20, 13,  6,  7, 14, 21, 28,
@@ -135,19 +140,27 @@ public class Tile<E extends Number> implements ArrayTileInterface<E> {
 		
 		protected ZigZagTileIterator(Tile<T> t) {
 			tile = t;
-			curPos = 0;
+			curPos = -1;
 		}
 				
 		public boolean hasNext() {
-			return curPos < tile.getLength();
+			int i = curPos;
+			while(++i < zigZagOrder.length && tile.getVal(zigZagOrder[i]) == null)
+				if(zigZagOrder[i] == tile.getLength())
+					return false;
+			
+			return i < zigZagOrder.length;
 		}
 
 		public T next() {
-			return tile.getVal(zigZagOrder[curPos++]);
+			while(++curPos < zigZagOrder.length && tile.getVal(zigZagOrder[curPos]) == null)
+				if(zigZagOrder[curPos]  >= tile.getLength())
+					throw new RuntimeException();
+			return tile.getVal(zigZagOrder[curPos]);
 		}
 
 		public void remove() {
-			tile.values.remove(curPos);
+			tile.setVal(zigZagOrder[curPos], null);
 		}
 	}
 	
@@ -194,8 +207,6 @@ public class Tile<E extends Number> implements ArrayTileInterface<E> {
 	
 	public static class ZeroTileSizeException extends RuntimeException {
 		private static final long serialVersionUID = 2195901446734926722L;
-		
-		
 	}
 	
 	@Override
@@ -209,5 +220,32 @@ public class Tile<E extends Number> implements ArrayTileInterface<E> {
 			s+="|\n";
 		}
 		return s;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Tile other = (Tile) obj;
+		if (sizeX == null) {
+			if (other.sizeX != null)
+				return false;
+		} else if (!sizeX.equals(other.sizeX))
+			return false;
+		if (sizeY == null) {
+			if (other.sizeY != null)
+				return false;
+		} else if (!sizeY.equals(other.sizeY))
+			return false;
+		if (values == null) {
+			if (other.values != null)
+				return false;
+		} else if (!values.equals(other.values))
+			return false;
+		return true;
 	}
 }
