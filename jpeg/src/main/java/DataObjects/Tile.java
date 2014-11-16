@@ -9,8 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-
-public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTileInterface<E> {
+public class Tile<E extends Number> implements ArrayTileInterface<E> {
 	/*
 	 * {{1,2,3},{4,5,6}} ->
 	 * | 1 2 3 |
@@ -116,6 +115,40 @@ public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTile
 	
 	public TileIterator<E> iterator() {
 		return new TileIterator<E>(this);
+	}
+	public ZigZagTileIterator<E> zigZagiterator() {
+		return new ZigZagTileIterator<E>(this);
+	}
+	
+	public static class ZigZagTileIterator<T extends Number> implements Iterator<T> {
+		protected Tile<T> tile;
+		protected Integer curPos;
+		
+		protected static Integer[] zigZagOrder = {0,  1,  8, 16,  9,  2,  3, 10,
+		         17, 24, 32, 25, 18, 11,  4,  5,
+		         12, 19, 26, 33, 40, 48, 41, 34,
+		         27, 20, 13,  6,  7, 14, 21, 28,
+		         35, 42, 49, 56, 57, 50, 43, 36,
+		         29, 22, 15, 23, 30, 37, 44, 51,
+		         58, 59, 52, 45, 38, 31, 39, 46,
+		         53, 60, 61, 54, 47, 55, 62, 63 };
+		
+		protected ZigZagTileIterator(Tile<T> t) {
+			tile = t;
+			curPos = 0;
+		}
+				
+		public boolean hasNext() {
+			return curPos < tile.getLength();
+		}
+
+		public T next() {
+			return tile.getVal(zigZagOrder[curPos++]);
+		}
+
+		public void remove() {
+			tile.values.remove(curPos);
+		}
 	}
 	
 	public static class TileIterator<T extends Number> implements Iterator<T> {
