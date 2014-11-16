@@ -1,10 +1,10 @@
 package DataObjects;
 
-import DataObjects.Huffman.HuffmanEncodingTable;
+import java.util.HashMap;
 
 public class EncodedTile<E extends Number> {
 	public ArrayTileInterface<E> tile;
 	public Tile<Double> quantTable;
-	public HuffmanEncodingTable huffTable;
+	public HashMap<E,String> huffTable;
 	
 }

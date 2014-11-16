@@ -1,8 +1,5 @@
 package DataObjects.Huffman;
 
-import java.util.Iterator;
-import java.util.Stack;
-
 public class HuffmanTree<E extends Number>{
 
 	private int weight;
@@ -40,32 +37,4 @@ public class HuffmanTree<E extends Number>{
 	public E getValue(){
 		return value;
 	}
-
-	public PreOrder<HuffmanTree<E>> iterator() {
-		return new PreOrder<HuffmanTree<E>>(this);
-	}
-	
-	private class PreOrder<HuffmanTree<E>> implements Iterator<HuffmanTree<E>>{
-		
-		Stack<HuffmanTree<E>> stack = new Stack<HuffmanTree<E>>();
-		
-		public PreOrder(HuffmanTree<E> root) {
-
-			stack.push(root);
-		}
-		
-		public boolean hasNext() {
-			return !stack.isEmpty();
-		}
-
-		public HuffmanTree<E> next() {
-			return null;
-		}
-	
-		public void remove() {
-			throw new UnsupportedOperationException();
-			
-		}
-	}
-	
 }

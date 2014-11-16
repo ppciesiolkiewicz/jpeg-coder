@@ -2,10 +2,8 @@ package JpegMath.Coders;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 import DataObjects.EncodedTile;
-import DataObjects.Tile;
 import DataObjects.Huffman.FrequencyTable;
 import DataObjects.Huffman.HuffmanEncodingTable;
 import DataObjects.Huffman.HuffmanTree;
@@ -16,8 +14,10 @@ public class HuffmanCoding<E extends Number> implements CodingInterface {
 
 	public void encode(EncodedTile<Integer> t) {
 		
-		FrequencyTable<E> table = new FrequencyTable<E>();
-		Iterator<E> tileIterator = (Iterator<E>) t.tile.zigZagIterator();
+		HuffmanEncodingTable<Integer, String> encTable;
+		
+		FrequencyTable<Integer> table = new FrequencyTable<Integer>();
+		Iterator<Integer> tileIterator = t.tile.zigZagIterator();
 			
 		
 //		count occurrences
@@ -26,39 +26,31 @@ public class HuffmanCoding<E extends Number> implements CodingInterface {
 		}	
 		
 		
-		HuffmanTreeList<E> list = new HuffmanTreeList<E>();
+		HuffmanTreeList<Integer> list = new HuffmanTreeList<Integer>();
 		
 //		create linked list of tree elements		
-		for(E key : table.freq.keySet()){
+		for(Integer key : table.freq.keySet()){
 			list.add(key, table.getWeight(key));
 		}
+		
+		HuffmanTreeList<Integer> staticList = (HuffmanTreeList<Integer>) list.clone();
 		
 		
 //		as long there are 2 elements, take the 2 smallest, create a subtree with them and readd
 		
-		while (list.size()>2){
-			HuffmanTree<E> first = list.getSmallestWeightElement();
-			HuffmanTree<E> second = list.getSmallestWeightElement();
+		while (list.size()>1){
+			HuffmanTree<Integer> first = list.getSmallestWeightElement();
+			HuffmanTree<Integer> second = list.getSmallestWeightElement();
 			
-			list.add(new HuffmanTree<E>(first, second));
+			list.add(new HuffmanTree<Integer>(first, second));
 		}
 		
 
+		t.huffTable = new HashMap<Integer,String>();
 //		generate code for each base element
-		
-		
-//		return encoding table
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		t.huffTable = new HuffmanEncodingTable();
-
+		for(HuffmanTree<Integer> leaf : staticList){
+			t.huffTable.put((Integer) leaf.getValue(), leaf.getCode());
+		}
 		
 	}
 
