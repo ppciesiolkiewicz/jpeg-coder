@@ -2,6 +2,7 @@ package JpegMath.Quantiziers;
 
 import java.util.Iterator;
 
+import DataObjects.EncodedTile;
 import DataObjects.Tile;
 import DataObjects.Tile.TileIterator;
 
@@ -31,14 +32,18 @@ public class JpegUniformQuantizier {
 		}
 	}
 
-	public Tile quantize(Tile<Double> t) {
+	public EncodedTile<Integer> quantize(Tile<Double> t) {
+		EncodedTile<Integer> encTile = new EncodedTile<Integer>();
 		Tile<Integer> out = new Tile<Integer>(0);
 
 		for (int c = 0; c < out.getLength(); c++)
 			out.setVal(c,
 					(int) Math.round(t.getVal(c) / quantizationTable.getVal(c)));
 
-		return out;
+		encTile.tile = out;
+		encTile.quantTable = quantizationTable;
+
+		return encTile;
 	}
 
 	public Tile dequantize(Tile t) {
