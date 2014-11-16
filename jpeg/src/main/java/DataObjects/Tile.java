@@ -18,20 +18,9 @@ public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTile
 	 */
 	private List<E> values = new LinkedList<E>();
 	private Integer sizeX, sizeY;
-	
-	
-	
-	@Override
-	public String toString() {
-		String s = "";
-		for(int y = 0; y < sizeY; y++) {
-			s+="|\t";
-			for(int x = 0; x < sizeX; x++) {
-				s+=getVal(x, y)+"\t";
-			}
-			s+="|\n";
-		}
-		return s;
+
+	public Tile(E initVal) {
+		this(8, 8, initVal);
 	}
 
 	public Tile(E[][] vals) {
@@ -172,5 +161,20 @@ public class Tile<E extends Number> implements ArrayTileInterface<E>, MatrixTile
 	
 	public static class ZeroTileSizeException extends RuntimeException {
 		private static final long serialVersionUID = 2195901446734926722L;
+		
+		
+	}
+	
+	@Override
+	public String toString() {
+		String s = "";
+		for(int y = 0; y < sizeY; y++) {
+			s+="|\t";
+			for(int x = 0; x < sizeX; x++) {
+				s+=getVal(x, y)+"\t";
+			}
+			s+="|\n";
+		}
+		return s;
 	}
 }
