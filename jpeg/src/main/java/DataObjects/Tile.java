@@ -145,7 +145,7 @@ public class Tile<E extends Number> implements ArrayTileInterface<E> {
 				
 		public boolean hasNext() {
 			int i = curPos;
-			while(++i < zigZagOrder.length && zigZagOrder[i] == null)
+			while(++i < zigZagOrder.length && tile.getVal(zigZagOrder[i]) == null)
 				if(zigZagOrder[i] == tile.getLength())
 					return false;
 			
