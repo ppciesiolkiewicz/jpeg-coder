@@ -1,5 +1,7 @@
 package JpegMath.Quantiziers;
 
+import java.util.Iterator;
+
 import DataObjects.EncodedTile;
 import DataObjects.Tile;
 
@@ -7,6 +9,11 @@ public class JpegUniformQuantizier {
 	Tile<Double> quantizationTable;
 
 	public JpegUniformQuantizier(Double quality) {
+		setQuantizationTableDefaultValues();
+		scaleQuantizationMatrix(quality);
+	}
+
+	private void setQuantizationTableDefaultValues() {
 		quantizationTable = new Tile<Double>(new Double[][] {
 				{ 16d, 11d, 10d, 16d, 24d, 40d, 51d, 61d },
 				{ 12d, 12d, 14d, 19d, 26d, 58d, 60d, 55d },
@@ -18,7 +25,9 @@ public class JpegUniformQuantizier {
 				{ 72d, 92d, 95d, 98d, 112d, 100d, 103d, 99d },
 
 		});
+	}
 
+	private void scaleQuantizationMatrix(Double quality) {
 		for (int i = 0; i < quantizationTable.getLength(); i++) {
 			Double temp = (quantizationTable.getVal(i) * quality + 50) / 100;
 			if (temp <= 0)
@@ -31,16 +40,33 @@ public class JpegUniformQuantizier {
 
 	public EncodedTile<Integer> quantize(Tile<Double> t) {
 		EncodedTile<Integer> encTile = new EncodedTile<Integer>();
-		Tile<Integer> out = new Tile<Integer>(0);
+		
+		Tile<Integer> out = calculateQuantiziedValues(t);
+		removeRedundantElements(encTile, out);
 
-		for (int c = 0; c < out.getLength(); c++)
-			out.setVal(c,
-					(int) Math.round(t.getVal(c) / quantizationTable.getVal(c)));
+		return encTile;
+	}
+
+	private void removeRedundantElements(EncodedTile<Integer> encTile,
+			Tile<Integer> out) {
+		Iterator<Integer> it = out.zigZagiterator();
+		Iterator<Integer> lastNotZero = it;
+		while(it.hasNext())
+			if(it.next() != 0)
+				lastNotZero = it;
+		while(lastNotZero.hasNext())
+			lastNotZero.remove();
 
 		encTile.tile = out;
 		encTile.quantTable = quantizationTable;
+	}
 
-		return encTile;
+	private Tile<Integer> calculateQuantiziedValues(Tile<Double> t) {
+		Tile<Integer> out = new Tile<Integer>(0);
+		for (int c = 0; c < out.getLength(); c++)
+			out.setVal(c,
+					(int) Math.round(t.getVal(c) / quantizationTable.getVal(c)));
+		return out;
 	}
 
 	public Tile dequantize(Tile t) {
