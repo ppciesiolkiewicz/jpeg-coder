@@ -1,10 +1,7 @@
 package JpegMath.Quantiziers;
 
-import java.util.Iterator;
-
 import DataObjects.EncodedTile;
 import DataObjects.Tile;
-import DataObjects.Tile.TileIterator;
 
 public class JpegUniformQuantizier {
 	Tile<Double> quantizationTable;
