@@ -1,6 +1,5 @@
 package JpegMath.Coders;
 
-import java.util.HashMap;
 import java.util.Iterator;
 
 import DataObjects.EncodedTile;
@@ -8,6 +7,7 @@ import DataObjects.Binary;
 import DataObjects.Tile;
 import DataObjects.ZigZagTileIterator;
 import DataObjects.Huffman.FrequencyTable;
+import DataObjects.Huffman.HuffmanTable;
 import DataObjects.Huffman.HuffmanTree;
 import DataObjects.Huffman.HuffmanTreeList;
 
@@ -53,7 +53,7 @@ public class HuffmanCoding<E extends Number> implements CodingInterface {
 		}
 		
 
-		outTile.huffTable = new HashMap<Integer,Binary>();
+		outTile.huffTable = new HuffmanTable<Integer,Binary>();
 //		generate code for each base element
 		for(HuffmanTree<Integer> leaf : staticList){
 			t.huffTable.put((Integer) leaf.getValue(), leaf.getCode());
@@ -69,7 +69,7 @@ public class HuffmanCoding<E extends Number> implements CodingInterface {
 			
 		while(quantizationIterator.hasNext()){
 			if (outputIterator.hasNext()){
-				outputIterator.setNext(outTile.huffTable.get(quantizationIterator.next()));
+				outputIterator.setNext(outTile.huffTable.getCode(quantizationIterator.next()));
 			}
 		}	
 		
@@ -78,9 +78,20 @@ public class HuffmanCoding<E extends Number> implements CodingInterface {
 	}
 
 	public EncodedTile<Integer> decode(EncodedTile<Binary> t) {
-		return null;
-		// TODO Auto-generated method stub
 		
+		EncodedTile<Integer> outTile = new EncodedTile<Integer>();
+		outTile.tile=new Tile<Integer>(0);
+
+		Iterator<Binary> huffmanCodeIterator = t.tile.zigZagIterator();
+		ZigZagTileIterator<Integer>  outputIterator = outTile.tile.zigZagIterator();
+			
+		while(huffmanCodeIterator.hasNext()){
+			if (outputIterator.hasNext()){
+				outputIterator.setNext(outTile.huffTable.getWord(huffmanCodeIterator.next()));
+			}
+		}	
+		
+		return outTile;
 	}
 
 }
