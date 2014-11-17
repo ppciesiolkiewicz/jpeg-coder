@@ -4,18 +4,24 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import DataObjects.EncodedTile;
+import DataObjects.Binary;
+import DataObjects.Tile;
 import DataObjects.Huffman.FrequencyTable;
-import DataObjects.Huffman.HuffmanEncodingTable;
 import DataObjects.Huffman.HuffmanTree;
 import DataObjects.Huffman.HuffmanTreeList;
 
 
 public class HuffmanCoding<E extends Number> implements CodingInterface {
 
-	public void encode(EncodedTile<Integer> t) {
+	public EncodedTile<Binary> encode(EncodedTile<Integer> t) {
 		
-		HuffmanEncodingTable<Integer, String> encTable;
+		EncodedTile<Binary> outTile = new EncodedTile<Binary>();
 		
+//		copy quantization table
+		
+		outTile.quantTable = t.quantTable;
+		
+				
 		FrequencyTable<Integer> table = new FrequencyTable<Integer>();
 		Iterator<Integer> tileIterator = t.tile.zigZagIterator();
 			
@@ -46,15 +52,30 @@ public class HuffmanCoding<E extends Number> implements CodingInterface {
 		}
 		
 
-		t.huffTable = new HashMap<Integer,String>();
+		outTile.huffTable = new HashMap<Integer,Binary>();
 //		generate code for each base element
 		for(HuffmanTree<Integer> leaf : staticList){
 			t.huffTable.put((Integer) leaf.getValue(), leaf.getCode());
 		}
 		
+////	update tile
+
+		outTile.tile=new Tile<Binary>(new Binary("0"));
+		
+//		just another iterator
+		Iterator<Integer> quantizationIterator = t.tile.zigZagIterator();
+		Iterator<Binary>  outputIterator = outTile.tile.zigZagIterator();
+			
+		while(quantizationIterator.hasNext()){
+//			TODO update elements
+		}	
+		
+		
+		return outTile
+		
 	}
 
-	public void decode(EncodedTile<Integer> t) {
+	public EncodedTile<Integer> decode(EncodedTile<Binary> t) {
 		// TODO Auto-generated method stub
 		
 	}

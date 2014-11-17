@@ -1,15 +1,17 @@
 package DataObjects.Huffman;
 
+import DataObjects.Binary;
+
 public class HuffmanTree<E extends Number>{
 
 	private int weight;
 	private E value;
-	private String code;
+	private Binary code;
 	private HuffmanTree<E> left, right;
 	
 	public HuffmanTree (E value, int weight){
 		this.value=value;
-		this.code="";
+		this.code=new Binary("");
 		this.weight=weight;
 	}
 	
@@ -27,10 +29,10 @@ public class HuffmanTree<E extends Number>{
 	}
 	
 	public void addToCode(char binary){
-		code= binary+code;
+		code.value= binary+code.value;
 	}
 	
-	public String getCode(){
+	public Binary getCode(){
 		return code;
 	}
 	
