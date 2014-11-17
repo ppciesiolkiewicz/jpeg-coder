@@ -6,6 +6,7 @@ import java.util.Iterator;
 import DataObjects.EncodedTile;
 import DataObjects.Binary;
 import DataObjects.Tile;
+import DataObjects.ZigZagTileIterator;
 import DataObjects.Huffman.FrequencyTable;
 import DataObjects.Huffman.HuffmanTree;
 import DataObjects.Huffman.HuffmanTreeList;
@@ -64,18 +65,20 @@ public class HuffmanCoding<E extends Number> implements CodingInterface {
 		
 //		just another iterator
 		Iterator<Integer> quantizationIterator = t.tile.zigZagIterator();
-		Iterator<Binary>  outputIterator = outTile.tile.zigZagIterator();
+		ZigZagTileIterator<Binary>  outputIterator = outTile.tile.zigZagIterator();
 			
 		while(quantizationIterator.hasNext()){
-//			TODO update elements
+			if (outputIterator.hasNext()){
+				outputIterator.setNext(outTile.huffTable.get(quantizationIterator.next()));
+			}
 		}	
 		
-		
-		return outTile
+		return outTile;
 		
 	}
 
 	public EncodedTile<Integer> decode(EncodedTile<Binary> t) {
+		return null;
 		// TODO Auto-generated method stub
 		
 	}
