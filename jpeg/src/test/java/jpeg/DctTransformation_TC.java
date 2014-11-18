@@ -10,6 +10,7 @@ import JpegMath.Transformations.DctTransformation;
 
 public class DctTransformation_TC {
 	DctTransformation dct;
+	
 	@Before
 	public void setUp() {
 		dct = new DctTransformation();

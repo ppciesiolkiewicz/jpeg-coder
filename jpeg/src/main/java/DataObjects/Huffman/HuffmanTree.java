@@ -1,6 +1,7 @@
 package DataObjects.Huffman;
 
-import DataObjects.Binary;
+import java.util.Iterator;
+import java.util.Stack;
 
 public class HuffmanTree<E extends Number> {
 
@@ -12,21 +13,13 @@ public class HuffmanTree<E extends Number> {
 
 	private int weight;
 	private E value;
-	private Binary code;
+	private String code;
 	private HuffmanTree<E> left, right;
-<<<<<<< HEAD
 
 	public HuffmanTree(E value, int weight) {
 		this.value = value;
 		this.code = "";
 		this.weight = weight;
-=======
-	
-	public HuffmanTree (E value, int weight){
-		this.value=value;
-		this.code=new Binary("");
-		this.weight=weight;
->>>>>>> f28afa62e7f7c922fdbc8c29cfd5667cb343760b
 	}
 
 	public HuffmanTree(HuffmanTree<E> leftChild, HuffmanTree<E> rightChild) {
@@ -41,28 +34,18 @@ public class HuffmanTree<E extends Number> {
 	public int getWeight() {
 		return weight;
 	}
-<<<<<<< HEAD
 
 	public void addToCode(char binary) {
 		code = binary + code;
 	}
 
 	public String getCode() {
-=======
-	
-	public void addToCode(char binary){
-		code.value= binary+code.value;
-	}
-	
-	public Binary getCode(){
->>>>>>> f28afa62e7f7c922fdbc8c29cfd5667cb343760b
 		return code;
 	}
 
 	public E getValue() {
 		return value;
 	}
-<<<<<<< HEAD
 
 	public PreOrder<HuffmanTree<E>> iterator() {
 		return new PreOrder<HuffmanTree<E>>(this);
@@ -93,6 +76,3 @@ public class HuffmanTree<E extends Number> {
 	}
 
 }
-=======
-}
->>>>>>> f28afa62e7f7c922fdbc8c29cfd5667cb343760b
