@@ -22,14 +22,12 @@ public class Binary extends Number {
 
 	@Override
 	public int intValue() {
-		// TODO Auto-generated method stub
-		return -1;
+		return Integer.parseInt(value, 2);
 	}
 
 	@Override
 	public long longValue() {
-		// TODO Auto-generated method stub
-		return -1;
+		return Long.parseLong(value);
 	}
 	
 	@Override
