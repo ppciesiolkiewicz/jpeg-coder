@@ -4,13 +4,6 @@ import java.util.Iterator;
 import java.util.Stack;
 
 public class HuffmanTree<E extends Number> {
-
-	@Override
-	public String toString() {
-		return "[weight=" + weight + ", value=" + value + ", code="
-				+ code + "]";
-	}
-
 	private int weight;
 	private E value;
 	private String code;
@@ -26,7 +19,7 @@ public class HuffmanTree<E extends Number> {
 		left = leftChild;
 		right = rightChild;
 		weight = left.getWeight() + right.getWeight();
-
+		code = "";
 		left.addToCode('0');
 		right.addToCode('1');
 	}
@@ -37,6 +30,10 @@ public class HuffmanTree<E extends Number> {
 
 	public void addToCode(char binary) {
 		code = binary + code;
+		if (left != null)
+			left.addToCode(binary);
+		if (right != null)
+			right.addToCode(binary);
 	}
 
 	public String getCode() {
@@ -57,7 +54,6 @@ public class HuffmanTree<E extends Number> {
 		Stack<HuffmanTree<E>> stack = new Stack<HuffmanTree<E>>();
 
 		public PreOrder(HuffmanTree<E> root) {
-
 			stack.push(root);
 		}
 
@@ -66,13 +62,45 @@ public class HuffmanTree<E extends Number> {
 		}
 
 		public HuffmanTree<E> next() {
-			return null;
+			HuffmanTree<E> e = stack.pop();
+			if (e.right != null)
+				stack.push(e.right);
+			if (e.left != null)
+				stack.push(e.left);
+			return e;
 		}
 
 		public void remove() {
 			throw new UnsupportedOperationException();
-
 		}
+	}
+
+	static Integer toStringIndent = 0;
+
+	@Override
+	public String toString() {
+		String s = "[weight=" + weight + ", value=" + value + ", code=" + code
+				+ "]";
+
+		toStringIndent++;
+
+		s += "\n";
+		for (int i = 0; i < toStringIndent; i++)
+			s += "\t";
+
+		s += "LEFT: ";
+		if (left != null)
+			s += left.toString();
+
+		s += "\n";
+		for (int i = 0; i < toStringIndent; i++)
+			s += "\t";
+
+		s += "RIGHT: ";
+		if (right != null)
+			s += right.toString();
+		toStringIndent--;
+		return s;
 	}
 
 }
