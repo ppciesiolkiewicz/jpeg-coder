@@ -120,7 +120,7 @@ public class Tile<E extends Number> implements ArrayTileInterface<E> {
 	public TileIterator<E> iterator() {
 		return new TileIterator<E>(this);
 	}
-	public ZigZagTileIterator<E> zigZagiterator() {
+	public Iterator<E> zigZagIterator() {
 		return new ZigZagTileIterator<E>(this);
 	}
 	
