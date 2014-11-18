@@ -10,6 +10,7 @@ import org.junit.Test;
 import DataObjects.EncodedTile;
 import DataObjects.Tile;
 import DataObjects.Huffman.FrequencyTable;
+import DataObjects.Huffman.HuffmanTable;
 import DataObjects.Huffman.HuffmanTree;
 import DataObjects.Huffman.HuffmanTreeList;
 import JpegMath.Coders.HuffmanCoding;
@@ -29,6 +30,9 @@ public class HuffmanCoding_TC {
 		public FrequencyTable<E> countOccurences(EncodedTile<Integer> t) {
 			return super.countOccurences(t);
 		}
+		public HuffmanTable<E, String> createCodeMap(HuffmanTreeList<E> list) {
+			return super.createCodeMap(list);			
+		}
 	}
 
 	TestHuffmanCoding<Integer> hc;
@@ -43,9 +47,9 @@ public class HuffmanCoding_TC {
 		EncodedTile<Integer> t = new EncodedTile<Integer>();
 		t.tile = new Tile<Integer>(8,8,5);
 		
-		for(int i = 0; i < 4; i++)
+		for(int i = 0; i < 3; i++)
 			t.tile.setVal(i, 1);
-		for(int i = 4; i < 8; i++)
+		for(int i = 3; i < 8; i++)
 			t.tile.setVal(i, 2);
 		for(int i = 8; i < 16; i++)
 			t.tile.setVal(i, 3);
@@ -55,9 +59,9 @@ public class HuffmanCoding_TC {
 		FrequencyTable<Integer> freqTable = hc.countOccurences(t);
 		for(Integer k : freqTable.getKeys()) {
 			if( k == 1)
-				assertEquals(4, freqTable.getWeight(k));
+				assertEquals(3, freqTable.getWeight(k));
 			if( k == 2)
-				assertEquals(4, freqTable.getWeight(k));
+				assertEquals(5, freqTable.getWeight(k));
 			if( k == 3)
 				assertEquals(8, freqTable.getWeight(k));
 			if( k == 4)
@@ -75,12 +79,19 @@ public class HuffmanCoding_TC {
 		System.out.println("\n\n");
 		
 		hc.buildTree(list);
-
 		it = list.iterator();
 		while(it.hasNext())
 			System.out.println(it.next().toString());
 		
-		System.out.println(t.tile);
-		System.out.println(t.huffTable);
+		
+		HuffmanTable<Integer, String> codeMap = hc.createCodeMap(list);
+		System.out.println(codeMap.toString());
+		
+		assertEquals("1110",codeMap.getCode(1));
+		assertEquals("1111",codeMap.getCode(2));
+		assertEquals("110",codeMap.getCode(3));
+		assertEquals("10",codeMap.getCode(4));
+		assertEquals("0",codeMap.getCode(5));
+
 	}
 }
