@@ -38,5 +38,4 @@ public class PreOrderIterator_TC {
 			assertEquals(expectedWeights[i++].intValue(), e.getWeight());
 		}
 	}
-
 }

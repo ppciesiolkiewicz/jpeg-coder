@@ -7,6 +7,7 @@ import java.util.Iterator;
 import org.junit.Before;
 import org.junit.Test;
 
+import DataObjects.Binary;
 import DataObjects.EncodedTile;
 import DataObjects.Tile;
 import DataObjects.Huffman.FrequencyTable;
@@ -30,7 +31,7 @@ public class HuffmanCoding_TC {
 		public FrequencyTable<E> countOccurences(EncodedTile<Integer> t) {
 			return super.countOccurences(t);
 		}
-		public HuffmanTable<E, String> createCodeMap(HuffmanTreeList<E> list) {
+		public HuffmanTable<E, Binary> createCodeMap(HuffmanTreeList<E> list) {
 			return super.createCodeMap(list);			
 		}
 	}
@@ -84,14 +85,14 @@ public class HuffmanCoding_TC {
 			System.out.println(it.next().toString());
 		
 		
-		HuffmanTable<Integer, String> codeMap = hc.createCodeMap(list);
+		HuffmanTable<Integer, Binary> codeMap = hc.createCodeMap(list);
 		System.out.println(codeMap.toString());
 		
-		assertEquals("1110",codeMap.getCode(1));
-		assertEquals("1111",codeMap.getCode(2));
-		assertEquals("110",codeMap.getCode(3));
-		assertEquals("10",codeMap.getCode(4));
-		assertEquals("0",codeMap.getCode(5));
+		assertEquals("1110",codeMap.getCode(1).value);
+		assertEquals("1111",codeMap.getCode(2).value);
+		assertEquals("110",codeMap.getCode(3).value);
+		assertEquals("10",codeMap.getCode(4).value);
+		assertEquals("0",codeMap.getCode(5).value);
 
 	}
 }

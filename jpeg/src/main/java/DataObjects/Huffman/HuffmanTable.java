@@ -5,13 +5,15 @@ import java.util.Map;
 
 public class HuffmanTable<Word, Code> {
 	Map<Word, Code> wordCode;
-	Map<Code, Word> codeWord; 
+	Map<Code, Word> codeWord;
 
 	public HuffmanTable() {
 		wordCode = new HashMap<Word, Code>();
+		wordCode.put(null, null);
 		codeWord = new HashMap<Code, Word>();
+		codeWord.put(null, null);
 	}
-	
+
 	public void put(Word word, Code code) {
 		wordCode.put(word, code);
 		codeWord.put(code, word);

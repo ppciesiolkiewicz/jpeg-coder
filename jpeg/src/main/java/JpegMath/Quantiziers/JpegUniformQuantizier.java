@@ -6,8 +6,8 @@ import DataObjects.EncodedTile;
 import DataObjects.Tile;
 
 public class JpegUniformQuantizier {
-	private Tile<Double> quantumLuminance;
-	private Tile<Double> quantumChrominance;
+	private Tile<Integer> quantumLuminance;
+	private Tile<Integer> quantumChrominance;
 
 	public JpegUniformQuantizier(Double quality) {
 		setQuantumValues();
@@ -15,56 +15,63 @@ public class JpegUniformQuantizier {
 	}
 
 	private void setQuantumValues() {
-		quantumLuminance = new Tile<Double>(new Double[][] {
-				{ 16d, 11d, 10d, 16d, 24d, 40d, 51d, 61d },
-				{ 12d, 12d, 14d, 19d, 26d, 58d, 60d, 55d },
-				{ 14d, 13d, 16d, 24d, 40d, 57d, 69d, 56d },
-				{ 14d, 17d, 22d, 29d, 51d, 87d, 80d, 62d },
-				{ 18d, 22d, 37d, 56d, 68d, 109d, 103d, 77d },
-				{ 24d, 35d, 55d, 64d, 81d, 104d, 113d, 92d },
-				{ 49d, 64d, 78d, 87d, 103d, 121d, 120d, 101d },
-				{ 72d, 92d, 95d, 98d, 112d, 100d, 103d, 99d },
+		quantumLuminance = new Tile<Integer>(new Integer[][] {
+				{ 16, 11, 10, 16, 24, 40, 51, 61 },
+				{ 12, 12, 14, 19, 26, 58, 60, 55 },
+				{ 14, 13, 16, 24, 40, 57, 69, 56 },
+				{ 14, 17, 22, 29, 51, 87, 80, 62 },
+				{ 18, 22, 37, 56, 68, 109, 103, 77 },
+				{ 24, 35, 55, 64, 81, 104, 113, 92 },
+				{ 49, 64, 78, 87, 103, 121, 120, 101 },
+				{ 72, 92, 95, 98, 112, 100, 103, 99 },
 
 		});
-		quantumChrominance = new Tile<Double>(new Double[][] {
-				{ 17d, 18d, 24d, 47d, 99d, 99d, 99d, 99d },
-				{ 18d, 21d, 26d, 66d, 99d, 99d, 99d, 99d },
-				{ 24d, 26d, 56d, 99d, 99d, 99d, 99d, 99d },
-				{ 47d, 66d, 99d, 99d, 99d, 99d, 99d, 99d },
-				{ 99d, 99d, 99d, 99d, 99d, 99d, 99d, 99d },
-				{ 99d, 99d, 99d, 99d, 99d, 99d, 99d, 99d },
-				{ 99d, 99d, 99d, 99d, 99d, 99d, 99d, 99d },
-				{ 99d, 99d, 99d, 99d, 99d, 99d, 99d, 99d } });
+		quantumChrominance = new Tile<Integer>(new Integer[][] {
+				{ 17, 18, 24, 47, 99, 99, 99, 99 },
+				{ 18, 21, 26, 66, 99, 99, 99, 99 },
+				{ 24, 26, 56, 99, 99, 99, 99, 99 },
+				{ 47, 66, 99, 99, 99, 99, 99, 99 },
+				{ 99, 99, 99, 99, 99, 99, 99, 99 },
+				{ 99, 99, 99, 99, 99, 99, 99, 99 },
+				{ 99, 99, 99, 99, 99, 99, 99, 99 },
+				{ 99, 99, 99, 99, 99, 99, 99, 99 } });
+	}
+
+	public Tile<Integer> getQuantumLuminance() {
+		return quantumLuminance;
+	}
+
+	public Tile<Integer> getQuantumChrominance() {
+		return quantumChrominance;
 	}
 
 	private void scaleQuantumMatrixes(Double quality) {
 		for (int i = 0; i < quantumLuminance.getLength(); i++) {
-			Double temp = (quantumLuminance.getVal(i) * (quality + 50d)) / 100d;
+			Integer temp = (int) ((quantumLuminance.getVal(i) * (quality + 50d)) / 100d);
 			if (temp <= 0)
-				temp = 1.0;
+				temp = 1;
 			if (temp > 255)
-				temp = 255.0;
+				temp = 255;
 			quantumLuminance.setVal(i, temp);
 		}
 
 		for (int i = 0; i < quantumChrominance.getLength(); i++) {
-			Double temp = (quantumChrominance.getVal(i) * (quality + 50)) / 100;
+			Integer temp = (int) ((quantumChrominance.getVal(i) * (quality + 50)) / 100);
 			if (temp <= 0)
-				temp = 1.0;
+				temp = 1;
 			if (temp > 255)
-				temp = 255.0;
+				temp = 255;
 			quantumChrominance.setVal(i, temp);
 		}
 	}
 
-	public EncodedTile<Integer> quantize(Tile<Double> t) {
+	public Tile<Integer> quantize(Tile<Double> t) {
 		EncodedTile<Integer> encTile = new EncodedTile<Integer>();
 
 		Tile<Integer> out = calculateQuantiziedValues(t);
-		removeRedundantElements(out);
-		encTile.tile = out;
-		encTile.quantTable = quantumLuminance;
-		return encTile;
+		//removeRedundantElements(out); We don't need to remove them...... SHIT, IT WAS HARD AND USELESS IMPLEMENTATION
+		
+		return out;
 	}
 
 	private void removeRedundantElements(Tile<Integer> out) {

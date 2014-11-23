@@ -48,6 +48,9 @@ public class HuffmanTree<E extends Number> {
 		return new PreOrder<HuffmanTree<E>>(this);
 	}
 
+	/*
+	 * left first
+	 */
 	private class PreOrder<T extends HuffmanTree<E>> implements
 			Iterator<HuffmanTree<E>> {
 

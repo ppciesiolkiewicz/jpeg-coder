@@ -5,6 +5,6 @@ import DataObjects.EncodedTile;
 import DataObjects.Tile;
 
 public interface CodingInterface {
-	public EncodedTile<Binary> encode(EncodedTile<Integer> t);
-	public EncodedTile<Integer> decode(EncodedTile<Binary> t);
+	public EncodedTile<Binary> encode(Tile<Integer> t, Integer lastDcValue, Integer dcTableNum, Integer acTableNum);
+	public EncodedTile<Integer> decode(Tile<Binary> t);
 }
