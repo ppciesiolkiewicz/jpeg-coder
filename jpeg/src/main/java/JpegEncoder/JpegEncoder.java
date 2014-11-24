@@ -5,7 +5,6 @@ import java.util.List;
 
 import DataObjects.Tile;
 import JpegMath.Transformations.DctTransformation;
-import JpegMath.Transformations.TransformationInterface;
 
 public class JpegEncoder extends AbstractJpegEncoder {
 
