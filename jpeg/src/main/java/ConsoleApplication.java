@@ -16,7 +16,7 @@ public class ConsoleApplication implements Application {
 	public void run() {
 		imgLoader = new DevelopTimeImageLoader();
 		BufferedImage img = imgLoader.getImage(null);
-		JpegEncoderDecoderFactory factory = new JpegEncoderDecoderFactory(50.0);
+		JpegEncoderDecoderFactory factory = new JpegEncoderDecoderFactory(100);
 		AbstractJpegEncoder enc = factory.getEncoder();
 		enc.encode(img);
 	}

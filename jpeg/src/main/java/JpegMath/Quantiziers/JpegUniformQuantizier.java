@@ -9,7 +9,7 @@ public class JpegUniformQuantizier {
 	private Tile<Integer> quantumLuminance;
 	private Tile<Integer> quantumChrominance;
 
-	public JpegUniformQuantizier(Double quality) {
+	public JpegUniformQuantizier(Integer quality) {
 		setQuantumValues();
 		scaleQuantumMatrixes(quality);
 	}
@@ -45,9 +45,16 @@ public class JpegUniformQuantizier {
 		return quantumChrominance;
 	}
 
-	private void scaleQuantumMatrixes(Double quality) {
+	private void scaleQuantumMatrixes(Integer quality) {
+		double S;
+		if( quality > 100)
+			quality = 100;
+		if (quality <50)
+			S= 5000/quality;
+		else
+			S= 200-(2*quality);
 		for (int i = 0; i < quantumLuminance.getLength(); i++) {
-			Integer temp = (int) ((quantumLuminance.getVal(i) * (quality + 50d)) / 100d);
+			Integer temp = (int) ((S* quantumLuminance.getVal(i) +50)/ 100);
 			if (temp <= 0)
 				temp = 1;
 			if (temp > 255)
@@ -56,7 +63,7 @@ public class JpegUniformQuantizier {
 		}
 
 		for (int i = 0; i < quantumChrominance.getLength(); i++) {
-			Integer temp = (int) ((quantumChrominance.getVal(i) * (quality + 50)) / 100);
+			Integer temp =  (int) ((S* quantumLuminance.getVal(i) +50)/ 100);
 			if (temp <= 0)
 				temp = 1;
 			if (temp > 255)

@@ -19,12 +19,12 @@ import JpegMath.Tilers.JpegTiler;
 import JpegMath.Tilers.TilerInterface;
 
 public abstract class AbstractJpegEncoder implements EncoderInterface {
-	Double quality;
+	Integer quality;
 	FileOutputStream fileOutput;
 	HuffmanCoding encoder;
 	JpegUniformQuantizier quant;
 
-	public AbstractJpegEncoder(Double quality_) {
+	public AbstractJpegEncoder(Integer quality_) {
 		quality = quality_;
 		try {
 			fileOutput = new FileOutputStream("output.jpg");
@@ -122,11 +122,11 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 		return null;
 	}
 
-	public void setQuality(Double quality_) {
+	public void setQuality(Integer quality_) {
 		quality = quality_;
 	}
 
-	public Double getQuality() {
+	public Integer getQuality() {
 		return quality;
 	}
 
