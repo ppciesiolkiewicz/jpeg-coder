@@ -3,7 +3,7 @@ package JpegMath.Transformations;
 import DataObjects.Tile;
 
 //Sequential DCT-based mode of operation.
-public class DctTransformation {// implements TransformationInterface {
+public class DctTransformation implements TransformationInterface {
 
 	public Tile<Double> transfom(Tile<Integer> input) {
 		Tile<Double> output = new Tile<Double>(input.getSizeX(),
@@ -36,9 +36,9 @@ public class DctTransformation {// implements TransformationInterface {
 		return dctCoeff;
 	}
 
-	public Tile<Double> inverseTransform(Tile<Double> input) {
-		Tile<Double> output = new Tile<Double>(input.getSizeX(),
-				input.getSizeY(), 0d);
+	public Tile<Integer> inverseTransform(Tile<Double> input) {
+		Tile<Integer> output = new Tile<Integer>(input.getSizeX(),
+				input.getSizeY(), 0);
 
 		for (int x = 0; x < output.getSizeX(); x++)
 			for (int y = 0; y < output.getSizeY(); y++)
@@ -47,7 +47,7 @@ public class DctTransformation {// implements TransformationInterface {
 		return output;
 	}
 
-	private Double calcIdctCoeff(Tile<Double> input, int x, int y) {
+	private Integer calcIdctCoeff(Tile<Double> input, int x, int y) {
 		Double idctCoeff = 0d;
 		for (int u = 0; u < input.getSizeX(); u++) {
 			for (int v = 0; v < input.getSizeY(); v++) {
@@ -62,6 +62,8 @@ public class DctTransformation {// implements TransformationInterface {
 						* Math.cos((2 * y + 1) * v * Math.PI / 16);
 			}
 		}
-		return idctCoeff / 4;
+		
+		idctCoeff = (idctCoeff / 4);
+		return idctCoeff.intValue();
 	}
 }
