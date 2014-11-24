@@ -97,10 +97,13 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 		List<List<Tile<Integer>>> out = new ArrayList<List<Tile<Integer>>>();
 		for (List<Tile<Double>> t : tiles) {
 			List<Tile<Integer>> comp = new ArrayList<Tile<Integer>>();
-
+			
+			Integer tableNo = 0;
 			for (Tile<Double> component : t) {
-				comp.add(quant.quantize(component));
+				comp.add(quant.quantize(component, tableNo));
+				tableNo = 1; //2nd. and 3rd. component should be quantizied with chrominance table
 			}
+
 			out.add(comp);
 		}
 
