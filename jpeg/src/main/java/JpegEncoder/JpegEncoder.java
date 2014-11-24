@@ -9,7 +9,7 @@ import JpegMath.Transformations.TransformationInterface;
 
 public class JpegEncoder extends AbstractJpegEncoder {
 
-	public JpegEncoder(Double quality_) {
+	public JpegEncoder(Integer quality_) {
 		super(quality_);
 	}
 

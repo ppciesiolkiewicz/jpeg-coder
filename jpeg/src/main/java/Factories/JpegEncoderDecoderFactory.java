@@ -5,8 +5,8 @@ import JpegEncoder.AbstractJpegEncoder;
 import JpegEncoder.JpegEncoder;
 
 public class JpegEncoderDecoderFactory implements AbstractJpegEncoderDecoderFactory {
-	Double quality;
-	public JpegEncoderDecoderFactory(Double quality_) {
+	Integer quality;
+	public JpegEncoderDecoderFactory(Integer quality_) {
 		quality = quality_;
 	}
 	public AbstractJpegEncoder getEncoder() {
