@@ -10,7 +10,6 @@ public class FastDctTransformation implements TransformationInterface {
 		Double tmp10, tmp11, tmp12, tmp13;
 		Double z1, z2, z3, z4, z5, z11, z13;
 
-		// Subtracts 128 from the input values
 		for (int i = 0; i < 8; i++)
 			for ( int j = 0; j < 8; j++)
 				output[i][j] = input.getVal(i, j).doubleValue();

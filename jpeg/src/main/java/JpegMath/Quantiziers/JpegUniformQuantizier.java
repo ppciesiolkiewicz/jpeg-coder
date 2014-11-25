@@ -72,16 +72,14 @@ public class JpegUniformQuantizier {
 		}
 	}
 
-	public Tile<Integer> quantize(Tile<Double> t) {
-		EncodedTile<Integer> encTile = new EncodedTile<Integer>();
-
-		Tile<Integer> out = calculateQuantiziedValues(t);
+	public Tile<Integer> quantize(Tile<Double> t, Integer tableNo) {
+		Tile<Integer> out = calculateQuantiziedValues(t, tableNo);
 		//removeRedundantElements(out); We don't need to remove them...... SHIT, IT WAS HARD AND USELESS IMPLEMENTATION
 		
 		return out;
 	}
 
-	private void removeRedundantElements(Tile<Integer> out) {
+	private void removeRedundantElements(Tile<Integer> out, Integer tableNo) {
 		Iterator<Integer> it = out.zigZagIterator();
 
 		int lastNotZeroIndex = 0, i = 0;
@@ -100,11 +98,13 @@ public class JpegUniformQuantizier {
 		}
 	}
 
-	private Tile<Integer> calculateQuantiziedValues(Tile<Double> t) {
+	private Tile<Integer> calculateQuantiziedValues(Tile<Double> t, Integer tableNo) {
+		Tile<Integer> quantTable = tableNo==0 ? quantumLuminance : quantumChrominance;
 		Tile<Integer> out = new Tile<Integer>(0);
+		
 		for (int c = 0; c < out.getLength(); c++)
 			out.setVal(c,
-					(int) Math.round(t.getVal(c) / quantumLuminance.getVal(c)));
+					(int) Math.round(t.getVal(c) / quantTable.getVal(c)));
 
 		return out;
 	}
