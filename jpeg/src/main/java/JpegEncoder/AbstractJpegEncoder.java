@@ -26,12 +26,6 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 
 	public AbstractJpegEncoder(Integer quality_) {
 		quality = quality_;
-		try {
-			fileOutput = new FileOutputStream("output.jpg");
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 
 		encoder = new HuffmanCoding();
 		quant = new JpegUniformQuantizier(quality);
@@ -40,7 +34,7 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 
 	public BufferedImage encode(BufferedImage img) {
 		JpegInfo info = new JpegInfo(img);
-		writer.writeHeaders(fileOutput, info);
+		writer.writeHeaders("output.jpg", info);
 
 		// [color component][tile y position][tile x position]
 		Tile[][][] tiles = preprocessing(img);

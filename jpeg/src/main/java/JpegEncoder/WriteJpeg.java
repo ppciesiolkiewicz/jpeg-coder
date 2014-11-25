@@ -1,5 +1,6 @@
 package JpegEncoder;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Iterator;
@@ -19,13 +20,21 @@ public class WriteJpeg {
 		this.encoder = encoder;
 	}
 	
-	public void writeHeaders(FileOutputStream fileOutput2, JpegInfo JpegObj) {
+	public void writeHeaders(String filename, JpegInfo JpegObj) {
 		int i, j, index, offset, length;
 		int tempArray[];
+		
+		FileOutputStream fileOutput = null;
+		try {
+			fileOutput = new FileOutputStream(filename);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		// the SOI marker
 		byte[] SOI = { (byte) 0xFF, (byte) 0xD8 };
-		writeMarker(SOI, fileOutput2);
+		writeMarker(SOI, fileOutput);
 
 		// The order of the following headers is quiet inconsequential.
 		// the JFIF header
@@ -48,10 +57,10 @@ public class WriteJpeg {
 		JFIF[15] = (byte) 0x01;
 		JFIF[16] = (byte) 0x00;
 		JFIF[17] = (byte) 0x00;
-		writeArray(JFIF, fileOutput2);
+		writeArray(JFIF, fileOutput);
 
 		// Comment Header
-		String comment = "A";
+		String comment = "";
 		length = comment.length();
 		byte COM[] = new byte[length + 4];
 		COM[0] = (byte) 0xFF;
@@ -86,7 +95,7 @@ public class WriteJpeg {
 		}
 		
 
-		writeArray(DQT, fileOutput2);
+		writeArray(DQT, fileOutput);
 
 		// Start of Frame Header
 		byte SOF[] = new byte[19];
@@ -106,7 +115,7 @@ public class WriteJpeg {
 			SOF[index++] = (byte) ((JpegObj.HsampFactor[i] << 4) + JpegObj.VsampFactor[i]);
 			SOF[index++] = (byte) JpegObj.QtableNumber[i];
 		}
-		writeArray(SOF, fileOutput2);
+		writeArray(SOF, fileOutput);
 
 		// The DHT Header
 		byte DHT1[], DHT2[], DHT3[], DHT4[];
@@ -142,7 +151,7 @@ public class WriteJpeg {
 		}
 		DHT4[2] = (byte) (((index - 2) >> 8) & 0xFF);
 		DHT4[3] = (byte) ((index - 2) & 0xFF);
-		writeArray(DHT4, fileOutput2);
+		writeArray(DHT4, fileOutput);
 
 		// Start of Scan Header
 		byte SOS[] = new byte[14];
@@ -159,7 +168,7 @@ public class WriteJpeg {
 		SOS[index++] = (byte) 0;
 		SOS[index++] = (byte) 63;
 		SOS[index++] = (byte) ((0 << 4) + 0);
-		writeArray(SOS, fileOutput2);
+		writeArray(SOS, fileOutput);
 	}
 
 	protected void writeMarker(byte[] data, FileOutputStream out) {
