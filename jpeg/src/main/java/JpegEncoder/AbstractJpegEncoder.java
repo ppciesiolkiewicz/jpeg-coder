@@ -2,6 +2,7 @@ package JpegEncoder;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -32,22 +33,24 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 		encoder = new HuffmanCoding();
 		quant = new JpegUniformQuantizier(quality);
 		writer = new WriteJpeg(quant,encoder);
+		try {
+			fileOutput = new FileOutputStream(outputPath);
+		} catch (FileNotFoundException e) {
+			System.err.println("Cannot create output file");
+			System.exit(-1);
+		}
 	}
 
 	public BufferedImage encode(BufferedImage img) {
 		JpegInfo info = new JpegInfo(img);
-		writer.writeHeaders(outputPath, info);
 
 		// [color component][tile y position][tile x position]
 		Tile[][][] tiles = preprocessing(img);
-		System.out.println(tiles[0][0][0].toString() + "\n\n\n");
 		List<List<Tile<Double>>> transformedTiles = transform(tiles);
-		System.out
-				.println(transformedTiles.get(0).get(0).toString() + "\n\n\n");
 		List<List<Tile<Integer>>> quantiziedTiles = quantize(transformedTiles);
-		System.out.println(quantiziedTiles.get(0).get(0).toString() + "\n\n\n");
 		ByteArrayOutputStream os = entropyCoding(quantiziedTiles);
 
+		writer.writeHeaders(fileOutput, info);
 		try {
 			os.writeTo(fileOutput);
 			writer.writeEOI(fileOutput);

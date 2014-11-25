@@ -20,17 +20,9 @@ public class WriteJpeg {
 		this.encoder = encoder;
 	}
 	
-	public void writeHeaders(String filename, JpegInfo JpegObj) {
+	public void writeHeaders(FileOutputStream fileOutput, JpegInfo JpegObj) {
 		int i, j, index, offset, length;
 		int tempArray[];
-		
-		FileOutputStream fileOutput = null;
-		try {
-			fileOutput = new FileOutputStream(filename);
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 
 		// the SOI marker
 		byte[] SOI = { (byte) 0xFF, (byte) 0xD8 };
