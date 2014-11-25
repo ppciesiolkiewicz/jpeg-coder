@@ -6,11 +6,14 @@ import JpegEncoder.JpegEncoder;
 
 public class JpegEncoderDecoderFactory implements AbstractJpegEncoderDecoderFactory {
 	Integer quality;
-	public JpegEncoderDecoderFactory(Integer quality_) {
+	String outputPath;
+	
+	public JpegEncoderDecoderFactory(Integer quality_, String outputPath_) {
 		quality = quality_;
+		outputPath = outputPath_;
 	}
 	public AbstractJpegEncoder getEncoder() {
-		return new JpegEncoder(quality);
+		return new JpegEncoder(quality, outputPath);
 	}
 
 	public AbstractJpegDecoder getDecoder() {

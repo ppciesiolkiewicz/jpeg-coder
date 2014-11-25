@@ -3,8 +3,12 @@
 public class Main {
 	static Application app;
 	public static void main(String[] args) {
+		final String inputPath = args[0];
+		final String outputPath = args[1];
+		final Integer quality = Integer.parseInt(args[2]);
+		
 		app = new ConsoleApplication();
-		app.run();
+		app.run(inputPath, outputPath, quality);
 	}
 	
 }

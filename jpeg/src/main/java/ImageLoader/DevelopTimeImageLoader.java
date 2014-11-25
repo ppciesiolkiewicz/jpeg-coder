@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 public class DevelopTimeImageLoader implements ImageLoaderInterface {
 
 	public BufferedImage getImage(File imageFile) {
-		imageFile = new File("example_bmp/example1.bmp");
+		//imageFile = new File("example_bmp/example1.bmp");
 		BufferedImage img = null;
 
 		try {

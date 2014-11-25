@@ -23,11 +23,14 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 	FileOutputStream fileOutput;
 	HuffmanCoding encoder;
 	JpegUniformQuantizier quant;
+	String outputPath;
 
-	public AbstractJpegEncoder(Integer quality_) {
+	public AbstractJpegEncoder(Integer quality_, String outputPath_) {
 		quality = quality_;
+		outputPath = outputPath_;
+		
 		try {
-			fileOutput = new FileOutputStream("output.jpg");
+			fileOutput = new FileOutputStream(outputPath);
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

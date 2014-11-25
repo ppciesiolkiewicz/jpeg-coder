@@ -1,4 +1,5 @@
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.Iterator;
 
 import DataObjects.Tile;
@@ -14,9 +15,16 @@ public class ConsoleApplication implements Application {
 	private AbstractJpegEncoderDecoderFactory jpegAlgorithmFactory;
 
 	public void run() {
+		
+	}
+
+	public void run(String inputPath, String outputPath, int quality) {
+		// TODO Auto-generated method stub
+		File inputFile = new File(inputPath);
+		
 		imgLoader = new DevelopTimeImageLoader();
-		BufferedImage img = imgLoader.getImage(null);
-		JpegEncoderDecoderFactory factory = new JpegEncoderDecoderFactory(100);
+		BufferedImage img = imgLoader.getImage(inputFile);
+		JpegEncoderDecoderFactory factory = new JpegEncoderDecoderFactory(quality, outputPath);
 		AbstractJpegEncoder enc = factory.getEncoder();
 		enc.encode(img);
 	}
