@@ -10,19 +10,18 @@ import DataObjects.Tile;
 import JpegMath.Coders.HuffmanCoding;
 import JpegMath.Quantiziers.JpegUniformQuantizier;
 
-public class WriteJpeg {
+public class JpegFileWriter {
 	
 	HuffmanCoding encoder;
 	JpegUniformQuantizier quant;
 	
-	public WriteJpeg(JpegUniformQuantizier quant, HuffmanCoding encoder){
+	public JpegFileWriter(JpegUniformQuantizier quant, HuffmanCoding encoder){
 		this.quant = quant;
 		this.encoder = encoder;
 	}
 	
 	public void writeHeaders(FileOutputStream fileOutput, JpegInfo JpegObj) {
 		int i, j, index, offset, length;
-		int tempArray[];
 
 		// the SOI marker
 		byte[] SOI = { (byte) 0xFF, (byte) 0xD8 };
