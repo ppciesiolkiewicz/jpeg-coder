@@ -44,8 +44,8 @@ public class JpegUniformQuantizier_TC {
 
 	@Test
 	public void test() {
-		JpegUniformQuantizier q = new JpegUniformQuantizier(80d);
-		Tile<Integer> output = q.quantize(testInput);
+		JpegUniformQuantizier q = new JpegUniformQuantizier(80);
+		Tile<Integer> output = q.quantize(testInput, 0);
 		System.out.println(output.toString());
 		//System.out.println(quantiziedExpected.toString());
 		//assertEquals(output, quantiziedExpected);
