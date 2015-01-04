@@ -1,6 +1,8 @@
 package JpegMath.Coders;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
@@ -92,15 +94,14 @@ public class HuffmanCoding {
 
 	public ByteArrayOutputStream encodeImage(List<List<Tile<Integer>>> tiles) {
 		Integer componentsAmount = tiles.get(0).size();
-		Integer[] lastDCval = {0,0,0};
-		Integer[] dcTable = {0,1,1};
-		Integer[] acTable = {0,1,1};
-		Integer i = 0;
-		Integer tilesPerComponent = tiles.size() / componentsAmount;
+		Integer[] lastDCval = { 0, 0, 0 };
+		Integer[] dcTable = { 0, 1, 1 };
+		Integer[] acTable = { 0, 1, 1 };
 		for (List<Tile<Integer>> t : tiles) {
 			int componentNo = 0;
 			for (Tile<Integer> c : t) {
-				encodeTile(c, lastDCval[componentNo], dcTable[componentNo], acTable[componentNo]);
+				encodeTile(c, lastDCval[componentNo], dcTable[componentNo],
+						acTable[componentNo]);
 				lastDCval[componentNo++] = c.getVal(0);
 			}
 		}
@@ -108,8 +109,8 @@ public class HuffmanCoding {
 		return outStream;
 	}
 
-	private void encodeTile(Tile<Integer> tile, int lastDCval, int DCcode,
-			int ACcode) {
+	private void encodeTile(Tile<Integer> tile, int lastDCval, int DCtable,
+			int ACtable) {
 		int temp, temp2, nbits, r, i;
 		Iterator<Integer> it = tile.zigZagIterator();
 
@@ -126,7 +127,7 @@ public class HuffmanCoding {
 			temp >>= 1;
 		}
 		// if (nbits > 11) nbits = 11;
-		bufferIt(DC_matrix[DCcode][nbits][0], DC_matrix[DCcode][nbits][1]);
+		bufferIt(DC_matrix[DCtable][nbits][0], DC_matrix[DCtable][nbits][1]);
 		// The arguments in bufferIt are code and size.
 		if (nbits != 0) {
 			bufferIt(temp2, nbits);
@@ -141,8 +142,8 @@ public class HuffmanCoding {
 				r++;
 			} else {
 				while (r > 15) {
-					bufferIt(AC_matrix[ACcode][0xF0][0],
-							AC_matrix[ACcode][0xF0][1]);
+					bufferIt(AC_matrix[ACtable][0xF0][0],
+							AC_matrix[ACtable][0xF0][1]);
 					r -= 16;
 				}
 				temp2 = temp;
@@ -155,7 +156,7 @@ public class HuffmanCoding {
 					nbits++;
 				}
 				i = (r << 4) + nbits;
-				bufferIt(AC_matrix[ACcode][i][0], AC_matrix[ACcode][i][1]);
+				bufferIt(AC_matrix[ACtable][i][0], AC_matrix[ACtable][i][1]);
 				bufferIt(temp2, nbits);
 
 				r = 0;
@@ -163,7 +164,7 @@ public class HuffmanCoding {
 		}
 
 		if (r > 0) {
-			bufferIt(AC_matrix[ACcode][0][0], AC_matrix[ACcode][0][1]);
+			bufferIt(AC_matrix[ACtable][0][0], AC_matrix[ACtable][0][1]);
 		}
 
 	}
@@ -354,6 +355,32 @@ public class HuffmanCoding {
 		DC_matrix[1] = DC_matrix1;
 		AC_matrix[0] = AC_matrix0;
 		AC_matrix[1] = AC_matrix1;
+	}
+
+	public List<List<Tile<Integer>>> decodeImage(ByteArrayInputStream bais) {
+		int sym;
+		while ((sym = bais.read()) != -1) {
+			if (sym == 0 && (sym = bais.read()) != -1)
+				if (sym == 63 && (sym = bais.read()) != -1)
+					if (sym == 0)
+						break;
+		}
+
+		System.out.println("\n\n====" + bais.available() + "====");
+		int i = 0;
+		Integer[] lastDCval = { 0, 0, 0 };
+		Integer[] dcTable = { 0, 1, 1 };
+		Integer[] acTable = { 0, 1, 1 };
+		List<List<Tile<Integer>>> tiles = new ArrayList<List<Tile<Integer>>>(3);
+		while ((sym = bais.read()) != -1) {
+			if (i < 12) {
+				System.out.print(String.format("%8s",
+						Integer.toBinaryString(sym & 0xFF)).replace(' ', '0')
+						+ "(" + (0xff & sym) + ") ");
+			}
+			i++;
+		}
+		return null;
 	}
 
 }
