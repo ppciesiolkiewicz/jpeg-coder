@@ -22,7 +22,7 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 	Integer quality;
 	FileOutputStream fileOutput;
 	HuffmanCoding encoder;
-	WriteJpeg writer;
+	JpegFileWriter writer;
 	JpegUniformQuantizier quant;
 	String outputPath;
 
@@ -32,7 +32,7 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 
 		encoder = new HuffmanCoding();
 		quant = new JpegUniformQuantizier(quality);
-		writer = new WriteJpeg(quant,encoder);
+		writer = new JpegFileWriter(quant,encoder);
 		try {
 			fileOutput = new FileOutputStream(outputPath);
 		} catch (FileNotFoundException e) {
