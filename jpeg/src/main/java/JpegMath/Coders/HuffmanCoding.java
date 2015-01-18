@@ -1,11 +1,14 @@
 package JpegMath.Coders;
 
+import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
+
 import javax.imageio.*;
 
 import DataObjects.Tile;
@@ -359,6 +362,11 @@ public class HuffmanCoding {
 	}
 
 	public List<List<Tile<Integer>>> decodeImage(ByteArrayInputStream bais) {
+		try {
+			BufferedImage bImageFromConvert = ImageIO.read(bais);
+		} catch (IOException e) {
+			throw new RuntimeException("unexpected fail");
+		}
 		/*int sym;
 		while ((sym = bais.read()) != -1) {
 			if (sym == 0 && (sym = bais.read()) != -1)

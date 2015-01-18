@@ -15,8 +15,8 @@ public class DevelopTimeImageLoader implements ImageLoaderInterface {
 		try {
 			img = ImageIO.read(imageFile);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println("File "+imageFile+" not found");
+			System.exit(-1);
 		}
 
 		return img;
