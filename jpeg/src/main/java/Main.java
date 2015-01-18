@@ -11,7 +11,8 @@ public class Main {
 			//app = new GuiApplication(); TODO
 		}
 		
-		System.out.print(info.toString());
+		System.out.println(info.toString());
 		app.run(info);
+		System.out.println("Finished sucessfully");
 	}
 }

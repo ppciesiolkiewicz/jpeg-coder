@@ -19,8 +19,7 @@ public class JpegEncoderDecoderFactory implements AbstractJpegEncoderDecoderFact
 	}
 
 	public DecoderInterface getDecoder() {
-		throw new RuntimeException("not implemented");
-		//return null;
+		return new JpegDecoder(outputPath);
 	}
 
 }
