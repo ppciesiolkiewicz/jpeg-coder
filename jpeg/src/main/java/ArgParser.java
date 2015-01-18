@@ -4,21 +4,20 @@ public class ArgParser {
 		ArgInfo info = new ArgInfo();
 		try {
 			for(int i = 0; i < args.length; i++) {
-				switch(args[i]) {
-					case "-q":
-						info.quality = Integer.parseInt(args[++i]);
-						break;
-					case "-i":
-						info.input = args[++i];
-						break;
-					case "-o":
-						info.output = args[++i];
-						break;
-					case "--gui":
-						info.gui = true;
-						break;
-					default:
-						throw new RuntimeException();
+				if (args[i].equals("-q")) {
+					info.quality = Integer.parseInt(args[++i]);
+
+				} else if (args[i].equals("-i")) {
+					info.input = args[++i];
+
+				} else if (args[i].equals("-o")) {
+					info.output = args[++i];
+
+				} else if (args[i].equals("--gui")) {
+					info.gui = true;
+
+				} else {
+					throw new RuntimeException();
 				}
 			}
 		
