@@ -1,7 +1,9 @@
 package Factories;
 
-import JpegDecoder.AbstractJpegDecoder;
+import JpegDecoder.DecoderInterface;
+import JpegDecoder.JpegDecoder;
 import JpegEncoder.AbstractJpegEncoder;
+import JpegEncoder.EncoderInterface;
 import JpegEncoder.JpegEncoder;
 
 public class JpegEncoderDecoderFactory implements AbstractJpegEncoderDecoderFactory {
@@ -12,11 +14,11 @@ public class JpegEncoderDecoderFactory implements AbstractJpegEncoderDecoderFact
 		quality = quality_;
 		outputPath = outputPath_;
 	}
-	public AbstractJpegEncoder getEncoder() {
+	public EncoderInterface getEncoder() {
 		return new JpegEncoder(quality, outputPath);
 	}
 
-	public AbstractJpegDecoder getDecoder() {
+	public DecoderInterface getDecoder() {
 		throw new RuntimeException("not implemented");
 		//return null;
 	}

@@ -1,15 +1,13 @@
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.util.Iterator;
 
-import DataObjects.Tile;
 import Factories.AbstractJpegEncoderDecoderFactory;
 import Factories.Jpeg2000EncoderDecoderFactory;
 import Factories.JpegEncoderDecoderFactory;
 import ImageLoader.DevelopTimeImageLoader;
 import ImageLoader.ImageLoaderInterface;
-import JpegDecoder.AbstractJpegDecoder;
-import JpegEncoder.AbstractJpegEncoder;
+import JpegDecoder.DecoderInterface;
+import JpegEncoder.EncoderInterface;
 
 public class ConsoleApplication implements Application {
 	private ImageLoaderInterface imgLoader;
@@ -33,11 +31,11 @@ public class ConsoleApplication implements Application {
 		}
 		
 		if( info.doEncode() ) {
-			AbstractJpegEncoder enc = factory.getEncoder();
+			EncoderInterface enc = factory.getEncoder();
 			enc.encode(img);
 		}
 		else {
-			AbstractJpegDecoder dec = factory.getDecoder();
+			DecoderInterface dec = factory.getDecoder();
 			dec.decode(img);
 		}
 	}

@@ -1,9 +1,9 @@
 package Factories;
 
-import JpegDecoder.AbstractJpegDecoder;
-import JpegEncoder.AbstractJpegEncoder;
+import JpegDecoder.DecoderInterface;
+import JpegEncoder.EncoderInterface;
 
 public interface AbstractJpegEncoderDecoderFactory {   
-	public abstract AbstractJpegEncoder getEncoder();
-	public abstract AbstractJpegDecoder getDecoder();
+	public abstract EncoderInterface getEncoder();
+	public abstract DecoderInterface getDecoder();
 }

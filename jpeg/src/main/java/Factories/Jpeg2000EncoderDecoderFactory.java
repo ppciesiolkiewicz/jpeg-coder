@@ -1,11 +1,8 @@
 package Factories;
 
 
-import javax.management.RuntimeErrorException;
-
-import JpegDecoder.AbstractJpegDecoder;
-import JpegEncoder.AbstractJpegEncoder;
-import JpegEncoder.JpegEncoder;
+import JpegDecoder.DecoderInterface;
+import JpegEncoder.EncoderInterface;
 
 public class Jpeg2000EncoderDecoderFactory implements AbstractJpegEncoderDecoderFactory {
 	Integer quality;
@@ -15,12 +12,12 @@ public class Jpeg2000EncoderDecoderFactory implements AbstractJpegEncoderDecoder
 		quality = quality_;
 		outputPath = outputPath_;
 	}
-	public AbstractJpegEncoder getEncoder() {
+	public EncoderInterface getEncoder() {
 		throw new RuntimeException("not implemented");
 		//return null;
 	}
 
-	public AbstractJpegDecoder getDecoder() {
+	public DecoderInterface getDecoder() {
 		throw new RuntimeException("not implemented");
 		//return null;
 	}
