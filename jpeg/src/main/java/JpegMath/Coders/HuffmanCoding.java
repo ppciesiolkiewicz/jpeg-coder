@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
+import javax.imageio.*;
 
 import DataObjects.Tile;
 
@@ -358,7 +359,7 @@ public class HuffmanCoding {
 	}
 
 	public List<List<Tile<Integer>>> decodeImage(ByteArrayInputStream bais) {
-		int sym;
+		/*int sym;
 		while ((sym = bais.read()) != -1) {
 			if (sym == 0 && (sym = bais.read()) != -1)
 				if (sym == 63 && (sym = bais.read()) != -1)
@@ -373,14 +374,14 @@ public class HuffmanCoding {
 		Integer[] acTable = { 0, 1, 1 };
 		List<List<Tile<Integer>>> tiles = new ArrayList<List<Tile<Integer>>>(3);
 		while ((sym = bais.read()) != -1) {
-			if (i < 12) {
-				System.out.print(String.format("%8s",
+			if (i < 512) {
+				/*System.out.print(String.format("%8s",
 						Integer.toBinaryString(sym & 0xFF)).replace(' ', '0')
 						+ "(" + (0xff & sym) + ") ");
+				System.out.print((0xff & sym) + " ");
 			}
 			i++;
-		}
+		}*/
 		return null;
 	}
-
 }
