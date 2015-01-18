@@ -18,13 +18,14 @@ public class ConsoleApplication implements Application {
 		
 	}
 
-	public void run(String inputPath, String outputPath, int quality) {
+	public void run(ArgInfo info) {
 		// TODO Auto-generated method stub
-		File inputFile = new File(inputPath);
+		File inputFile = new File(info.input);
 		
 		imgLoader = new DevelopTimeImageLoader();
 		BufferedImage img = imgLoader.getImage(inputFile);
-		JpegEncoderDecoderFactory factory = new JpegEncoderDecoderFactory(quality, outputPath);
+		JpegEncoderDecoderFactory factory = 
+				new JpegEncoderDecoderFactory(info.quality, info.output);
 		AbstractJpegEncoder enc = factory.getEncoder();
 		enc.encode(img);
 	}
