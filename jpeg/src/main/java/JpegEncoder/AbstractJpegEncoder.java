@@ -41,7 +41,7 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 		}
 	}
 
-	public BufferedImage encode(BufferedImage img) {
+	public void encode(BufferedImage img) {
 		JpegInfo info = new JpegInfo(img);
 
 		// [color component][tile y position][tile x position]
@@ -64,7 +64,6 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 		// System.out.println(it.next().tile.toString()+"\n");
 		// this image part probably will not be used
 		// img = compose(tiles);
-		return img;
 	}
 
 	protected Tile<Integer>[][][] preprocessing(BufferedImage image) {
