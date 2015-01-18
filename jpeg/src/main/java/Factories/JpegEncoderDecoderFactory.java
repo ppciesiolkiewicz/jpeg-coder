@@ -17,8 +17,8 @@ public class JpegEncoderDecoderFactory implements AbstractJpegEncoderDecoderFact
 	}
 
 	public AbstractJpegDecoder getDecoder() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new RuntimeException("not implemented");
+		//return null;
 	}
 
 }

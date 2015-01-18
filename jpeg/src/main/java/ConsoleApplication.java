@@ -8,6 +8,7 @@ import Factories.Jpeg2000EncoderDecoderFactory;
 import Factories.JpegEncoderDecoderFactory;
 import ImageLoader.DevelopTimeImageLoader;
 import ImageLoader.ImageLoaderInterface;
+import JpegDecoder.AbstractJpegDecoder;
 import JpegEncoder.AbstractJpegEncoder;
 
 public class ConsoleApplication implements Application {
@@ -19,15 +20,26 @@ public class ConsoleApplication implements Application {
 	}
 
 	public void run(ArgInfo info) {
-		// TODO Auto-generated method stub
 		File inputFile = new File(info.input);
-		
 		imgLoader = new DevelopTimeImageLoader();
 		BufferedImage img = imgLoader.getImage(inputFile);
-		JpegEncoderDecoderFactory factory = 
-				new JpegEncoderDecoderFactory(info.quality, info.output);
-		AbstractJpegEncoder enc = factory.getEncoder();
-		enc.encode(img);
+		
+		AbstractJpegEncoderDecoderFactory factory = null;
+		if( info.isJpeg() ) {
+			factory = new JpegEncoderDecoderFactory(info.quality, info.output);
+		}
+		else if( info.isJpeg2000() ) {
+			factory = new Jpeg2000EncoderDecoderFactory(info.quality, info.output);
+		}
+		
+		if( info.doEncode() ) {
+			AbstractJpegEncoder enc = factory.getEncoder();
+			enc.encode(img);
+		}
+		else {
+			AbstractJpegDecoder dec = factory.getDecoder();
+			dec.decode(img);
+		}
 	}
 
 }
