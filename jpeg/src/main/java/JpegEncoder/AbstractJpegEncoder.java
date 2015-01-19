@@ -20,20 +20,25 @@ import JpegMath.Tilers.JpegTiler;
 import JpegMath.Tilers.TilerInterface;
 
 public abstract class AbstractJpegEncoder implements EncoderInterface {
+	String inputPath;
+	String outputPath;
 	Integer quality;
+	
 	FileOutputStream fileOutput;
 	HuffmanCoding encoder;
 	JpegFileWriter writer;
 	JpegUniformQuantizier quant;
-	String outputPath;
+	
 
-	public AbstractJpegEncoder(Integer quality_, String outputPath_) {
+	public AbstractJpegEncoder(String inputPath_, String outputPath_,
+			Integer quality_) {
 		quality = quality_;
 		outputPath = outputPath_;
-
+		inputPath = inputPath_;
+		
 		encoder = new HuffmanCoding();
 		quant = new JpegUniformQuantizier(quality);
-		writer = new JpegFileWriter(quant,encoder);
+		writer = new JpegFileWriter(quant, encoder);
 		try {
 			fileOutput = new FileOutputStream(outputPath);
 		} catch (FileNotFoundException e) {
@@ -97,11 +102,12 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 		List<List<Tile<Integer>>> out = new ArrayList<List<Tile<Integer>>>();
 		for (List<Tile<Double>> t : tiles) {
 			List<Tile<Integer>> comp = new ArrayList<Tile<Integer>>();
-			
+
 			Integer tableNo = 0;
 			for (Tile<Double> component : t) {
 				comp.add(quant.quantize(component, tableNo));
-				tableNo = 1; //2nd. and 3rd. component should be quantizied with chrominance table
+				tableNo = 1; // 2nd. and 3rd. component should be quantizied
+								// with chrominance table
 			}
 
 			out.add(comp);
@@ -132,5 +138,5 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 	public Integer getQuality() {
 		return quality;
 	}
-	
+
 }

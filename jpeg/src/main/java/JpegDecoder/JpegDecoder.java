@@ -11,9 +11,10 @@ import javax.imageio.ImageIO;
 import JpegInterfaces.DecoderInterface;
 
 public class JpegDecoder implements DecoderInterface {
+	String inputPath;
 	String outputPath;
 
-	public JpegDecoder(String outputPath_) {
+	public JpegDecoder(String inputPath_, String outputPath_) {
 		outputPath = outputPath_;
 	}
 

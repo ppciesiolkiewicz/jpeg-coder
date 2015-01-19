@@ -1,3 +1,4 @@
+import ArgParser.ArgInfo;
 import Factories.AbstractJpegEncoderDecoderFactory;
 
 

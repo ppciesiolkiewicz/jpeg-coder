@@ -9,12 +9,19 @@ import java.awt.image.BufferedImage;
  * Created by krzaczek on 18.01.15.
  */
 public class Jpeg2000Encoder implements EncoderInterface {
-	public void encode(BufferedImage img) {
-		String[] args =  new String[]{"-i", "/home/krzaczek/PWr/JPEG_coder_decoder/jpeg/src/main/java/Jpeg2000Encoder/relax.jp2", "-o", "/home/krzaczek/Desktop/tmp.pgx"};
-		new CmdLnEncoder(args);
+	String input;
+	String output;
+	Integer quality;
+
+	public Jpeg2000Encoder(String input, String output, Integer quality) {
+		super();
+		this.input = input;
+		this.output = output;
+		this.quality = quality;
 	}
 
-	public static void main(String[] args) {
-		new Jpeg2000Encoder().encode(null);
+	public void encode(BufferedImage img) {
+		String[] args = new String[] { "-i", input, "-o", output };
+		CmdLnEncoder.main(args);
 	}
 }

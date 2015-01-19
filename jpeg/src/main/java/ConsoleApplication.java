@@ -1,6 +1,7 @@
 import java.awt.image.BufferedImage;
 import java.io.File;
 
+import ArgParser.ArgInfo;
 import Factories.AbstractJpegEncoderDecoderFactory;
 import Factories.Jpeg2000EncoderDecoderFactory;
 import Factories.JpegEncoderDecoderFactory;
@@ -24,10 +25,10 @@ public class ConsoleApplication implements Application {
 		
 		AbstractJpegEncoderDecoderFactory factory = null;
 		if( info.isJpeg() ) {
-			factory = new JpegEncoderDecoderFactory(info.quality, info.output);
+			factory = new JpegEncoderDecoderFactory(info);
 		}
 		else if( info.isJpeg2000() ) {
-			factory = new Jpeg2000EncoderDecoderFactory(info.quality, info.output);
+			factory = new Jpeg2000EncoderDecoderFactory(info);
 		}
 		
 		if( info.doEncode() ) {

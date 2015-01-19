@@ -10,8 +10,8 @@ import JpegMath.Transformations.TransformationInterface;
 
 public class JpegEncoder extends AbstractJpegEncoder {
 
-	public JpegEncoder(Integer quality_, String outputPath_) {
-		super(quality_, outputPath_);
+	public JpegEncoder(String inputPath_, String outputPath_,Integer quality_) {
+		super(inputPath_, outputPath_, quality_);
 	}
 
 	@Override
