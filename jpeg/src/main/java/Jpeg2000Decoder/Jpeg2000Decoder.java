@@ -26,10 +26,6 @@ public class Jpeg2000Decoder implements DecoderInterface {
 	}
 
 	public void decode() {
-		File inputFile = new File(input);
-		ImageLoaderInterface imgLoader = new SimpleImageLoader();
-		BufferedImage img = imgLoader.getImage(inputFile);
-		
 		String[] args = new String[] { "-i", input, "-o", output };
 		CmdLnDecoder.main(args);
 	}

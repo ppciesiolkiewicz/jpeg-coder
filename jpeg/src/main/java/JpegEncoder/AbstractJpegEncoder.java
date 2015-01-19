@@ -52,7 +52,7 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 	public void encode() {
 		File inputFile = new File(inputPath);
 		ImageLoaderInterface imgLoader = new SimpleImageLoader();
-		BufferedImage img = imgLoader.getImage(inputFile);
+		BufferedImage img = imgLoader.getImage(inputPath);
 		
 		JpegInfo info = new JpegInfo(img);
 

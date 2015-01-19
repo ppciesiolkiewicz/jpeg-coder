@@ -20,9 +20,8 @@ public class JpegDecoder implements DecoderInterface {
 	}
 
 	public void decode() {
-		File inputFile = new File(inputPath);
 		ImageLoaderInterface imgLoader = new SimpleImageLoader();
-		BufferedImage img = imgLoader.getImage(inputFile);
+		BufferedImage img = imgLoader.getImage(inputPath);
 		
 		int dotPosition = outputPath.indexOf(".");
 		try {
