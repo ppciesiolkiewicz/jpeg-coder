@@ -3,5 +3,5 @@ package JpegInterfaces;
 import java.awt.image.BufferedImage;
 
 public interface EncoderInterface {
-	public void encode(BufferedImage img);
+	public void encode();
 }

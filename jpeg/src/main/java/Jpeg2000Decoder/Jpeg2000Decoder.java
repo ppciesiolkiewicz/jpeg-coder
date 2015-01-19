@@ -1,11 +1,14 @@
 package Jpeg2000Decoder;
 
+import ImageLoader.ImageLoaderInterface;
+import ImageLoader.SimpleImageLoader;
 import JpegInterfaces.DecoderInterface;
 import JpegInterfaces.EncoderInterface;
 import jj2000.j2k.decoder.CmdLnDecoder;
 import jj2000.j2k.encoder.CmdLnEncoder;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
 
 /**
  * Created by krzaczek on 18.01.15.
@@ -22,7 +25,11 @@ public class Jpeg2000Decoder implements DecoderInterface {
 		this.quality = quality;
 	}
 
-	public void decode(BufferedImage img) {
+	public void decode() {
+		File inputFile = new File(input);
+		ImageLoaderInterface imgLoader = new SimpleImageLoader();
+		BufferedImage img = imgLoader.getImage(inputFile);
+		
 		String[] args = new String[] { "-i", input, "-o", output };
 		CmdLnDecoder.main(args);
 	}

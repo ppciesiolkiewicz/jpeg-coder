@@ -11,7 +11,6 @@ import JpegInterfaces.DecoderInterface;
 import JpegInterfaces.EncoderInterface;
 
 public class ConsoleApplication implements Application {
-	private ImageLoaderInterface imgLoader;
 	private AbstractJpegEncoderDecoderFactory jpegAlgorithmFactory;
 
 	public void run() {
@@ -19,10 +18,6 @@ public class ConsoleApplication implements Application {
 	}
 
 	public void run(ArgInfo info) {
-		File inputFile = new File(info.input);
-		imgLoader = new SimpleImageLoader();
-		BufferedImage img = imgLoader.getImage(inputFile);
-		
 		AbstractJpegEncoderDecoderFactory factory = null;
 		if( info.isJpeg() ) {
 			factory = new JpegEncoderDecoderFactory(info);
@@ -33,11 +28,11 @@ public class ConsoleApplication implements Application {
 		
 		if( info.doEncode() ) {
 			EncoderInterface enc = factory.getEncoder();
-			enc.encode(img);
+			enc.encode();
 		}
 		else {
 			DecoderInterface dec = factory.getDecoder();
-			dec.decode(img);
+			dec.decode();
 		}
 	}
 

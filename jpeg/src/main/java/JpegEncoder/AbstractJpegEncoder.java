@@ -11,6 +11,8 @@ import java.util.List;
 
 import DataObjects.JpegInfo;
 import DataObjects.Tile;
+import ImageLoader.ImageLoaderInterface;
+import ImageLoader.SimpleImageLoader;
 import JpegInterfaces.EncoderInterface;
 import JpegMath.Coders.HuffmanCoding;
 import JpegMath.ImageToArrayConverter.ImageToArrayConverterInterface;
@@ -47,7 +49,11 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 		}
 	}
 
-	public void encode(BufferedImage img) {
+	public void encode() {
+		File inputFile = new File(inputPath);
+		ImageLoaderInterface imgLoader = new SimpleImageLoader();
+		BufferedImage img = imgLoader.getImage(inputFile);
+		
 		JpegInfo info = new JpegInfo(img);
 
 		// [color component][tile y position][tile x position]

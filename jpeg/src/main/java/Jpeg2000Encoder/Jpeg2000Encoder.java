@@ -1,9 +1,12 @@
 package Jpeg2000Encoder;
 
+import ImageLoader.ImageLoaderInterface;
+import ImageLoader.SimpleImageLoader;
 import JpegInterfaces.EncoderInterface;
 import jj2000.j2k.encoder.CmdLnEncoder;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
 
 /**
  * Created by krzaczek on 18.01.15.
@@ -20,7 +23,12 @@ public class Jpeg2000Encoder implements EncoderInterface {
 		this.quality = quality;
 	}
 
-	public void encode(BufferedImage img) {
+	public void encode() {
+		File inputFile = new File(input);
+		ImageLoaderInterface imgLoader = new SimpleImageLoader();
+		BufferedImage img = imgLoader.getImage(inputFile);
+		
+		
 		String[] args = new String[] { "-i", input, "-o", output };
 		CmdLnEncoder.main(args);
 	}
