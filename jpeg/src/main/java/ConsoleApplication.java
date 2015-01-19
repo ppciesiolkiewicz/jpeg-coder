@@ -5,7 +5,7 @@ import ArgParser.ArgInfo;
 import Factories.AbstractJpegEncoderDecoderFactory;
 import Factories.Jpeg2000EncoderDecoderFactory;
 import Factories.JpegEncoderDecoderFactory;
-import ImageLoader.DevelopTimeImageLoader;
+import ImageLoader.SimpleImageLoader;
 import ImageLoader.ImageLoaderInterface;
 import JpegInterfaces.DecoderInterface;
 import JpegInterfaces.EncoderInterface;
@@ -20,7 +20,7 @@ public class ConsoleApplication implements Application {
 
 	public void run(ArgInfo info) {
 		File inputFile = new File(info.input);
-		imgLoader = new DevelopTimeImageLoader();
+		imgLoader = new SimpleImageLoader();
 		BufferedImage img = imgLoader.getImage(inputFile);
 		
 		AbstractJpegEncoderDecoderFactory factory = null;

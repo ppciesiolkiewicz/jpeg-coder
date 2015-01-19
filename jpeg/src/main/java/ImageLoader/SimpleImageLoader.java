@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class DevelopTimeImageLoader implements ImageLoaderInterface {
+public class SimpleImageLoader implements ImageLoaderInterface {
 
 	public BufferedImage getImage(File imageFile) {
 		//imageFile = new File("example_bmp/example1.bmp");
