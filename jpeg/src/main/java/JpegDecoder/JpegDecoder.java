@@ -16,6 +16,7 @@ public class JpegDecoder implements DecoderInterface {
 
 	public JpegDecoder(String inputPath_, String outputPath_) {
 		outputPath = outputPath_;
+		inputPath = inputPath_;
 	}
 
 	public void decode() {

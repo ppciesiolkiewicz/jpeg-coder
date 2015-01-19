@@ -9,14 +9,18 @@ import javax.imageio.ImageIO;
 public class SimpleImageLoader implements ImageLoaderInterface {
 
 	public BufferedImage getImage(File imageFile) {
-		//imageFile = new File("example_bmp/example1.bmp");
 		BufferedImage img = null;
 
 		try {
 			img = ImageIO.read(imageFile);
 		} catch (IOException e) {
-			System.err.println("File "+imageFile+" not found");
+			System.err.println("Error while loading file" + imageFile.getAbsolutePath());
 			System.exit(-1);
+		}
+		
+		if(img == null) {
+			System.err.println("Error while loading file" + imageFile.getAbsolutePath());
+			System.exit(-1);	
 		}
 
 		return img;
