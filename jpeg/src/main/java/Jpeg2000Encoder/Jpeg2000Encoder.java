@@ -1,6 +1,6 @@
 package Jpeg2000Encoder;
 
-import JpegEncoder.EncoderInterface;
+import JpegInterfaces.EncoderInterface;
 import jj2000.j2k.encoder.CmdLnEncoder;
 
 import java.awt.image.BufferedImage;

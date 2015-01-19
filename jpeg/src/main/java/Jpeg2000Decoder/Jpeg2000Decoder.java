@@ -1,7 +1,7 @@
 package Jpeg2000Decoder;
 
-import JpegDecoder.DecoderInterface;
-import JpegEncoder.EncoderInterface;
+import JpegInterfaces.DecoderInterface;
+import JpegInterfaces.EncoderInterface;
 import jj2000.j2k.decoder.CmdLnDecoder;
 import jj2000.j2k.encoder.CmdLnEncoder;
 

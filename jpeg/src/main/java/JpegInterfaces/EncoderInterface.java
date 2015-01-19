@@ -1,4 +1,4 @@
-package JpegEncoder;
+package JpegInterfaces;
 
 import java.awt.image.BufferedImage;
 

@@ -6,8 +6,8 @@ import Factories.Jpeg2000EncoderDecoderFactory;
 import Factories.JpegEncoderDecoderFactory;
 import ImageLoader.DevelopTimeImageLoader;
 import ImageLoader.ImageLoaderInterface;
-import JpegDecoder.DecoderInterface;
-import JpegEncoder.EncoderInterface;
+import JpegInterfaces.DecoderInterface;
+import JpegInterfaces.EncoderInterface;
 
 public class ConsoleApplication implements Application {
 	private ImageLoaderInterface imgLoader;

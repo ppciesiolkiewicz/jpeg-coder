@@ -8,6 +8,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import JpegInterfaces.DecoderInterface;
+
 public class JpegDecoder implements DecoderInterface {
 	String outputPath;
 

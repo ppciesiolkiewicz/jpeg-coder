@@ -1,10 +1,10 @@
 package Factories;
 
-import JpegDecoder.DecoderInterface;
 import JpegDecoder.JpegDecoder;
 import JpegEncoder.AbstractJpegEncoder;
-import JpegEncoder.EncoderInterface;
 import JpegEncoder.JpegEncoder;
+import JpegInterfaces.DecoderInterface;
+import JpegInterfaces.EncoderInterface;
 
 public class JpegEncoderDecoderFactory implements AbstractJpegEncoderDecoderFactory {
 	Integer quality;

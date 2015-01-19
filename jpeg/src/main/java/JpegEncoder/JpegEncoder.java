@@ -5,6 +5,8 @@ import java.util.List;
 
 import DataObjects.Tile;
 import JpegMath.Transformations.DctTransformation;
+import JpegMath.Transformations.FastDctTransformation;
+import JpegMath.Transformations.TransformationInterface;
 
 public class JpegEncoder extends AbstractJpegEncoder {
 
@@ -14,7 +16,7 @@ public class JpegEncoder extends AbstractJpegEncoder {
 
 	@Override
 	protected List<List<Tile<Double>>> transform(Tile<Integer>[][][] tiles) {
-		DctTransformation dct = new DctTransformation();
+		TransformationInterface dct = new FastDctTransformation();
 		List<List<Tile<Double>>> out = new ArrayList<List<Tile<Double>>>();
 
 		for (int j = 0; j < tiles[0].length; j++)

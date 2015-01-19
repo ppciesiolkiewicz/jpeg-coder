@@ -11,6 +11,7 @@ import java.util.List;
 
 import DataObjects.JpegInfo;
 import DataObjects.Tile;
+import JpegInterfaces.EncoderInterface;
 import JpegMath.Coders.HuffmanCoding;
 import JpegMath.ImageToArrayConverter.ImageToArrayConverterInterface;
 import JpegMath.ImageToArrayConverter.ImageToYCbCrArray;
