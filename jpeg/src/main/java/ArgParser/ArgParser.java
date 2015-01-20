@@ -3,9 +3,10 @@ package ArgParser;
 public class ArgParser {
 	public static ArgInfo parseArg(String[] args) {
 		ArgInfo info = new ArgInfo();
-		info.action = args[0];
+		
 		
 		try {
+			info.action = args[0];
 			for(int i = 1; i < args.length; i++) {
 				if (args[i].equals("-q")) {
 					info.quality = Integer.parseInt(args[++i]);
@@ -39,11 +40,11 @@ public class ArgParser {
 	
 	public static String getInfo() {
 		String s = "Usage:\n";
-		s += "application encode/decode -i input_file\n";
-		s += "-o output file path (default output.jpg)\n";
-		s += "-q quality of image in percent (default 80)\n";
+		s += "java -jar jpeg.jar encode/decode -i input_file ";
+		s += "-o output_file (default output.jpg) ";
+		s += "-q quality_of_image_in_percent (default 80)\n";
 		
-		s += "--gui- opens graphical user interface\n";
+		s += "OR\njava -jar jpeg.jar --gui- opens graphical user interface\n";
 		return s;
 	}
 }

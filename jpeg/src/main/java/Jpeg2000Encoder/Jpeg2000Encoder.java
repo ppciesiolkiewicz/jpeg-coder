@@ -3,6 +3,7 @@ package Jpeg2000Encoder;
 import ImageLoader.ImageLoaderInterface;
 import ImageLoader.SimpleImageLoader;
 import JpegInterfaces.EncoderInterface;
+import PPM.ToPPM;
 import jj2000.j2k.encoder.CmdLnEncoder;
 
 import java.awt.image.BufferedImage;
