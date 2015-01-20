@@ -1,14 +1,11 @@
 package Jpeg2000Decoder;
 
-import ImageLoader.ImageLoaderInterface;
 import ImageLoader.SimpleImageLoader;
 import JpegInterfaces.DecoderInterface;
-import JpegInterfaces.EncoderInterface;
+import PPM.ToPPM;
 import jj2000.j2k.decoder.CmdLnDecoder;
-import jj2000.j2k.encoder.CmdLnEncoder;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by krzaczek on 18.01.15.
@@ -25,8 +22,9 @@ public class Jpeg2000Decoder implements DecoderInterface {
 		this.quality = quality;
 	}
 
-	public void decode() {
-		String[] args = new String[] { "-i", input, "-o", output };
+	public void decode() throws IOException {
+		ToPPM.convert(new SimpleImageLoader().getImage(input));
+		String[] args = new String[] { "-i", "/tmp/tmp.ppm", "-o", output };
 		CmdLnDecoder.main(args);
 	}
 
