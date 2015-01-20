@@ -1,5 +1,6 @@
 package PPM;
 
+import ImageLoader.ImageLoaderInterface;
 import ImageLoader.SimpleImageLoader;
 
 import java.awt.image.BufferedImage;
@@ -12,18 +13,24 @@ import java.io.PrintWriter;
  */
 public class ToPPM {
 
-	public static void convert(BufferedImage bufferedImage) throws IOException {
+	public static void saveAsPpm(String imagePath, String outputPath) throws IOException {
+		ImageLoaderInterface loader = new SimpleImageLoader();
+		BufferedImage bufferedImage = loader.getImage(imagePath);
+		
 		int height = bufferedImage.getHeight();
 		int width = bufferedImage.getWidth();
-		PrintWriter out = new PrintWriter("/tmp/tmp.ppm");
+
+		PrintWriter out = new PrintWriter(outputPath);
 		out.println("P3");
 		out.println(width + " " + height);
 		out.println("255");
-		for (int i = 0; i < height; i++) {
-			for (int j = 0; j < width; j++) {
+		
+		for (int i = 0; i < width; i++) {
+			for (int j = 0; j < height; j++) {
 				printPixelARGB(bufferedImage.getRGB(i,j), out);
 			}
 			out.println("");
+			
 		}
 		out.close();
 	}
