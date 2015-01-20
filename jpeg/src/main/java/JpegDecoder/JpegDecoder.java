@@ -2,20 +2,27 @@ package JpegDecoder;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import ImageLoader.ImageLoaderInterface;
+import ImageLoader.SimpleImageLoader;
+import JpegInterfaces.DecoderInterface;
+
 public class JpegDecoder implements DecoderInterface {
+	String inputPath;
 	String outputPath;
 
-	public JpegDecoder(String outputPath_) {
+	public JpegDecoder(String inputPath_, String outputPath_) {
 		outputPath = outputPath_;
+		inputPath = inputPath_;
 	}
 
-	public void decode(BufferedImage img) {
+	public void decode() {
+		ImageLoaderInterface imgLoader = new SimpleImageLoader();
+		BufferedImage img = imgLoader.getImage(inputPath);
+		
 		int dotPosition = outputPath.indexOf(".");
 		try {
 			ImageIO.write(img, outputPath.substring(dotPosition+1, outputPath.length()), 

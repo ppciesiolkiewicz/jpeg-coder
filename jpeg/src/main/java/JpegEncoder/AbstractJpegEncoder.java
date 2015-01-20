@@ -11,6 +11,9 @@ import java.util.List;
 
 import DataObjects.JpegInfo;
 import DataObjects.Tile;
+import ImageLoader.ImageLoaderInterface;
+import ImageLoader.SimpleImageLoader;
+import JpegInterfaces.EncoderInterface;
 import JpegMath.Coders.HuffmanCoding;
 import JpegMath.ImageToArrayConverter.ImageToArrayConverterInterface;
 import JpegMath.ImageToArrayConverter.ImageToYCbCrArray;
@@ -19,20 +22,25 @@ import JpegMath.Tilers.JpegTiler;
 import JpegMath.Tilers.TilerInterface;
 
 public abstract class AbstractJpegEncoder implements EncoderInterface {
+	String inputPath;
+	String outputPath;
 	Integer quality;
+	
 	FileOutputStream fileOutput;
 	HuffmanCoding encoder;
 	JpegFileWriter writer;
 	JpegUniformQuantizier quant;
-	String outputPath;
+	
 
-	public AbstractJpegEncoder(Integer quality_, String outputPath_) {
+	public AbstractJpegEncoder(String inputPath_, String outputPath_,
+			Integer quality_) {
 		quality = quality_;
 		outputPath = outputPath_;
-
+		inputPath = inputPath_;
+		
 		encoder = new HuffmanCoding();
 		quant = new JpegUniformQuantizier(quality);
-		writer = new JpegFileWriter(quant,encoder);
+		writer = new JpegFileWriter(quant, encoder);
 		try {
 			fileOutput = new FileOutputStream(outputPath);
 		} catch (FileNotFoundException e) {
@@ -41,7 +49,11 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 		}
 	}
 
-	public void encode(BufferedImage img) {
+	public void encode() {
+		File inputFile = new File(inputPath);
+		ImageLoaderInterface imgLoader = new SimpleImageLoader();
+		BufferedImage img = imgLoader.getImage(inputPath);
+		
 		JpegInfo info = new JpegInfo(img);
 
 		// [color component][tile y position][tile x position]
@@ -96,11 +108,12 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 		List<List<Tile<Integer>>> out = new ArrayList<List<Tile<Integer>>>();
 		for (List<Tile<Double>> t : tiles) {
 			List<Tile<Integer>> comp = new ArrayList<Tile<Integer>>();
-			
+
 			Integer tableNo = 0;
 			for (Tile<Double> component : t) {
 				comp.add(quant.quantize(component, tableNo));
-				tableNo = 1; //2nd. and 3rd. component should be quantizied with chrominance table
+				tableNo = 1; // 2nd. and 3rd. component should be quantizied
+								// with chrominance table
 			}
 
 			out.add(comp);
@@ -131,5 +144,5 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 	public Integer getQuality() {
 		return quality;
 	}
-	
+
 }

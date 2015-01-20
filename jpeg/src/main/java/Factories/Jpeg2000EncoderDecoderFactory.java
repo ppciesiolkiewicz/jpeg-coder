@@ -1,24 +1,28 @@
 package Factories;
 
+import ArgParser.ArgInfo;
+import Jpeg2000Decoder.Jpeg2000Decoder;
+import Jpeg2000Encoder.Jpeg2000Encoder;
+import JpegInterfaces.DecoderInterface;
+import JpegInterfaces.EncoderInterface;
 
-import JpegDecoder.DecoderInterface;
-import JpegEncoder.EncoderInterface;
-
-public class Jpeg2000EncoderDecoderFactory implements AbstractJpegEncoderDecoderFactory {
+public class Jpeg2000EncoderDecoderFactory implements
+		AbstractJpegEncoderDecoderFactory {
 	Integer quality;
 	String outputPath;
-	
-	public Jpeg2000EncoderDecoderFactory(Integer quality_, String outputPath_) {
-		quality = quality_;
-		outputPath = outputPath_;
+	String inputPath;
+
+	public Jpeg2000EncoderDecoderFactory(ArgInfo info) {
+		quality = info.quality;
+		outputPath = info.output;
+		inputPath = info.input;
 	}
+
 	public EncoderInterface getEncoder() {
-		throw new RuntimeException("not implemented");
-		//return null;
+		return new Jpeg2000Encoder(inputPath, outputPath, quality);
 	}
 
 	public DecoderInterface getDecoder() {
-		throw new RuntimeException("not implemented");
-		//return null;
+		return new Jpeg2000Decoder(inputPath, outputPath, quality);
 	}
 }

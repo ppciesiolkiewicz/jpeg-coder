@@ -1,25 +1,29 @@
 package Factories;
 
-import JpegDecoder.DecoderInterface;
+import ArgParser.ArgInfo;
 import JpegDecoder.JpegDecoder;
 import JpegEncoder.AbstractJpegEncoder;
-import JpegEncoder.EncoderInterface;
 import JpegEncoder.JpegEncoder;
+import JpegInterfaces.DecoderInterface;
+import JpegInterfaces.EncoderInterface;
 
 public class JpegEncoderDecoderFactory implements AbstractJpegEncoderDecoderFactory {
 	Integer quality;
 	String outputPath;
+	String inputPath;
 	
-	public JpegEncoderDecoderFactory(Integer quality_, String outputPath_) {
-		quality = quality_;
-		outputPath = outputPath_;
+	public JpegEncoderDecoderFactory(ArgInfo info) {
+		quality = info.quality;
+		outputPath = info.output;
+		inputPath = info.input;
 	}
+	
 	public EncoderInterface getEncoder() {
-		return new JpegEncoder(quality, outputPath);
+		return new JpegEncoder(inputPath, outputPath, quality);
 	}
 
 	public DecoderInterface getDecoder() {
-		return new JpegDecoder(outputPath);
+		return new JpegDecoder(inputPath, outputPath);
 	}
 
 }

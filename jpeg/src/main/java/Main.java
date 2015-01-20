@@ -1,14 +1,18 @@
+import ArgParser.ArgInfo;
+import ArgParser.ArgParser;
+import GUI.MainWIndow;
+
 public class Main {
 	static Application app;
 	public static void main(String[] args) {
 		final ArgInfo info = ArgParser.parseArg(args);
 		
-		if(info.gui == false) {
+		if(!info.action.equals("--gui")) {
 			app = new ConsoleApplication();
 		}
 		else {
+			MainWIndow.main(args);
 			return;
-			//app = new GuiApplication(); TODO
 		}
 		
 		System.out.println(info.toString());
