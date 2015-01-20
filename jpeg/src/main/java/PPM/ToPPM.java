@@ -1,5 +1,7 @@
 package PPM;
 
+import ImageLoader.SimpleImageLoader;
+
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 import java.io.IOException;
@@ -11,19 +13,26 @@ import java.io.PrintWriter;
 public class ToPPM {
 
 	public static void convert(BufferedImage bufferedImage) throws IOException {
-		byte[] pixels = ((DataBufferByte) bufferedImage.getRaster().getDataBuffer()).getData();
 		int height = bufferedImage.getHeight();
 		int width = bufferedImage.getWidth();
-
-		PrintWriter out = new PrintWriter("tmp.ppm");
-		out.println("3P");
+		PrintWriter out = new PrintWriter("/tmp/tmp.ppm");
+		out.println("P3");
 		out.println(width + " " + height);
+		out.println("255");
 		for (int i = 0; i < height; i++) {
-			String bitline = "";
-			for (int j = 0; j < width * 3; j++) {
-				bitline += pixels[i * width * 3 + j] + " ";
+			for (int j = 0; j < width; j++) {
+				printPixelARGB(bufferedImage.getRGB(i,j), out);
 			}
-			out.println(bitline.trim());
+			out.println("");
 		}
+		out.close();
 	}
+
+	private static void printPixelARGB(int pixel , PrintWriter out) {
+		int red = (pixel >> 16) & 0xff;
+		int green = (pixel >> 8) & 0xff;
+		int blue = (pixel) & 0xff;
+		out.print(red + " " + green + " " + blue + " ");
+	}
+
 }
