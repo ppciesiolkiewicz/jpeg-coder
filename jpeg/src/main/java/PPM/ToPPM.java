@@ -22,24 +22,20 @@ public class ToPPM {
 		int height = bufferedImage.getHeight();
 		int width = bufferedImage.getWidth();
 
-		FileOutputStream out = new FileOutputStream(outputPath);
-		out.write("P6\n".getBytes());
-		out.write((width + " " + height+"\n").getBytes());
-		out.write("255\n".getBytes());
-		
 		ImageToArrayConverterInterface rgb = new SimpleImageToArrayConverter();
 		Integer[][][] img = rgb.convert(bufferedImage);
-		
+		byte[] data = new byte[3 * width * height];
+
 		for (int row = 0; row < height; row++)
 			for (int col = 0; col < width; col++) {
-				int r = img[0][row][col], g = img[1][row][col], b = img[2][row][col];
-				printPixelARGB(r,g,b, out);
-		}
-
-		out.close();
-	}
-	
-	private static void printPixelARGB(int r, int g, int b, FileOutputStream out) throws IOException {
-		out.write((r + " " + g + " " + b + " ").getBytes());
+				data[3*(col + width * row)] = (byte) (img[0][row][col] & 0xff);
+				data[3*(col + width * row)+1] = (byte) (img[1][row][col] & 0xff);
+				data[3*(col + width * row)+2] = (byte) (img[2][row][col] & 0xff);
+			}
+		FileOutputStream fos = new FileOutputStream(outputPath);
+		String header = "P6\n" + width + " " + height + "\n255\n";
+		fos.write(header.getBytes());
+		fos.write(data);
+		fos.close();
 	}
 }
