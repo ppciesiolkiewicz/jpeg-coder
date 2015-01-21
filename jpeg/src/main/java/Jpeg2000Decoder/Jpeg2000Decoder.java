@@ -23,7 +23,6 @@ public class Jpeg2000Decoder implements DecoderInterface {
 	}
 
 	public void decode() throws IOException {
-		ToPPM.convert(new SimpleImageLoader().getImage(input));
 		String[] args = new String[] { "-i", "/tmp/tmp.ppm", "-o", output };
 		CmdLnDecoder.main(args);
 	}
