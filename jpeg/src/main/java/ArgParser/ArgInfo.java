@@ -59,13 +59,13 @@ public class ArgInfo {
 			if (dotPos == -1)
 				return false;
 			return (formatMap.get(output.substring(dotPos, output.length()))
-					.equals("jpeg"));
+					.equals(ConversionType.JPEG));
 		} else { // Couldnt be "else if (doDecode())"
 			int dotPos = input.indexOf('.');
 			if (dotPos == -1)
 				return false;
 			return (formatMap.get(input.substring(dotPos, input.length()))
-					.equals("jpeg"));
+					.equals(ConversionType.JPEG));
 		}
 	}
 
@@ -75,14 +75,14 @@ public class ArgInfo {
 			if (dotPos == -1)
 				return false;
 			return (formatMap.get(output.substring(dotPos, output.length()))
-					.equals("jpeg2000"));
+					.equals(ConversionType.JPEG2000));
 		} else { // Couldnt be "else if (doDecode())"
 			int dotPos = input.indexOf('.');
 
 			if (dotPos == -1)
 				return false;
 			return (formatMap.get(input.substring(dotPos, input.length()))
-					.equals("jpeg2000"));
+					.equals(ConversionType.JPEG2000));
 		}
 	}
 

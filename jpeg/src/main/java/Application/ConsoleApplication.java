@@ -17,23 +17,28 @@ public class ConsoleApplication implements Application {
 	private AbstractJpegEncoderDecoderFactory jpegAlgorithmFactory;
 
 	public void run() {
-		
+		throw new RuntimeException("Cannot do this");
 	}
 
 	public void run(ArgInfo info) {
+		System.out.println(info.toString());
 		AbstractJpegEncoderDecoderFactory factory = null;
 		if( info.isJpeg() ) {
+			System.out.println("dupa A");
 			factory = new JpegEncoderDecoderFactory(info);
 		}
 		else if( info.isJpeg2000() ) {
+			System.out.println("dupa B");
 			factory = new Jpeg2000EncoderDecoderFactory(info);
 		}
 		
 		if( info.doEncode() ) {
+			System.out.println("dupa C");
 			EncoderInterface enc = factory.getEncoder();
 			enc.encode();
 		}
 		else {
+			System.out.println("dupa D");
 			DecoderInterface dec = factory.getDecoder();
 			try {
 				dec.decode();

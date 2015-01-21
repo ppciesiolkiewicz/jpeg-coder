@@ -2,18 +2,18 @@ y=[7937,7937,8040,8277,8559,8881,9174,9439,9741,10065,10408,10688,11008,11293,11
 x=1:100;
 
 original_size = 669000;
-y_scaled = y./original_size;
+y_scaled = 10*log(y./original_size);
 
 
 figure;
-plot(x,y)
+plot(x,y./1000)
 grid on;
-xlabel('Quality');
+xlabel('Quality [kB]');
 ylabel('Output file size');
 
 
 figure;
-plot(x,y)
+plot(x,y_scaled)
 grid on;
 xlabel('Quality');
-ylabel('Output to original file size ratio');
+ylabel('Output to original file size ratio [dB]');

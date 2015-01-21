@@ -6,6 +6,8 @@ public class ArgParser {
 
 		try {
 			for (int i = 0; i < args.length; i++) {
+				System.out.println(i);
+				System.out.println(args[i]);
 				if (args[i].equals("encode")) {
 					info.action = ArgInfo.ActionType.encode;
 				} 
@@ -23,12 +25,12 @@ public class ArgParser {
 
 				} else if (args[i].equals("--gui")) {
 					info.gui = true;
-
 				} else {
 					throw new RuntimeException();
 				}
+				System.out.println(info.toString());
 			}
-
+		
 		} catch (Exception e) {
 			System.err.print("Argument parse error\n\n");
 			System.err.print(getInfo());
