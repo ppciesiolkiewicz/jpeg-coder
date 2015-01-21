@@ -6,7 +6,7 @@ import java.util.Map;
 public class ArgInfo {
 	public ArgInfo() {
 		gui = false; 
-		action = "";
+		action = null;
 		input = "";
 		output = "output.jpg";
 		quality = 80;
@@ -33,7 +33,9 @@ public class ArgInfo {
 	public String input;
 	public String output;
 	public Integer quality;
-	public String action;
+	public ActionType action;
+	
+	public enum ActionType {encode, decode};
 	
 	@Override
 	public String toString() {
