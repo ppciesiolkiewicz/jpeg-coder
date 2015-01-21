@@ -30,7 +30,7 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 	HuffmanCoding encoder;
 	JpegFileWriter writer;
 	JpegUniformQuantizier quant;
-	
+
 
 	public AbstractJpegEncoder(String inputPath_, String outputPath_,
 			Integer quality_) {
@@ -50,7 +50,6 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 	}
 
 	public void encode() {
-		File inputFile = new File(inputPath);
 		ImageLoaderInterface imgLoader = new SimpleImageLoader();
 		BufferedImage img = imgLoader.getImage(inputPath);
 		
@@ -115,7 +114,6 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 				tableNo = 1; // 2nd. and 3rd. component should be quantizied
 								// with chrominance table
 			}
-
 			out.add(comp);
 		}
 
@@ -128,14 +126,6 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 		return encoder.encodeImage(tiles);
 	}
 
-	// TODO ++JpegInfo?
-	protected BufferedImage compose(Tile[][][] tiles) {
-		/*
-		 * WritableRaster raster = mergeToRaster(tiles); addHeader(raster);
-		 * //dunnos dunnos dunnos
-		 */
-		return null;
-	}
 
 	public void setQuality(Integer quality_) {
 		quality = quality_;

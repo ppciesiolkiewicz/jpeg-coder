@@ -1,17 +1,24 @@
 package JpegMath.Coders;
 
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
-import javax.imageio.*;
-
 import DataObjects.Tile;
+import ImageLoader.ImageLoaderInterface;
+import ImageLoader.SimpleImageLoader;
+import JpegMath.ImageToArrayConverter.ImageToArrayConverterInterface;
+import JpegMath.ImageToArrayConverter.ImageToYCbCrArray;
+import JpegMath.Quantiziers.JpegUniformQuantizier;
+import JpegMath.Tilers.JpegTiler;
+import JpegMath.Tilers.TilerInterface;
+import JpegMath.Transformations.FastDctTransformation;
+import JpegMath.Transformations.TransformationInterface;
 
 public class HuffmanCoding {
 	int bufferPutBits, bufferPutBuffer;
@@ -361,35 +368,82 @@ public class HuffmanCoding {
 		AC_matrix[1] = AC_matrix1;
 	}
 
-	public List<List<Tile<Integer>>> decodeImage(ByteArrayInputStream bais) {
-		try {
-			BufferedImage bImageFromConvert = ImageIO.read(bais);
-		} catch (IOException e) {
-			throw new RuntimeException("unexpected fail");
-		}
-		/*int sym;
-		while ((sym = bais.read()) != -1) {
-			if (sym == 0 && (sym = bais.read()) != -1)
-				if (sym == 63 && (sym = bais.read()) != -1)
-					if (sym == 0)
-						break;
-		}
+	public List<List<Tile<Integer>>> decodeImage(String inputPath) {
+		ImageLoaderInterface load = new SimpleImageLoader();
+		BufferedImage image = load.getImage(inputPath);
+		Tile[][][] tiles = preprocessing(image);
+		List<List<Tile<Double>>> transformedTiles = transform(tiles);
+		List<List<Tile<Integer>>> quantiziedTiles = quantize(transformedTiles);
+		return quantiziedTiles;
 
-		System.out.println("\n\n====" + bais.available() + "====");
-		int i = 0;
-		Integer[] lastDCval = { 0, 0, 0 };
-		Integer[] dcTable = { 0, 1, 1 };
-		Integer[] acTable = { 0, 1, 1 };
-		List<List<Tile<Integer>>> tiles = new ArrayList<List<Tile<Integer>>>(3);
-		while ((sym = bais.read()) != -1) {
-			if (i < 512) {
-				/*System.out.print(String.format("%8s",
-						Integer.toBinaryString(sym & 0xFF)).replace(' ', '0')
-						+ "(" + (0xff & sym) + ") ");
-				System.out.print((0xff & sym) + " ");
+		/*
+		 * int sym; while ((sym = bais.read()) != -1) { if (sym == 0 && (sym =
+		 * bais.read()) != -1) if (sym == 63 && (sym = bais.read()) != -1) if
+		 * (sym == 0) break; }
+		 * 
+		 * System.out.println("\n\n====" + bais.available() + "===="); int i =
+		 * 0; Integer[] lastDCval = { 0, 0, 0 }; Integer[] dcTable = { 0, 1, 1
+		 * }; Integer[] acTable = { 0, 1, 1 }; List<List<Tile<Integer>>> tiles =
+		 * new ArrayList<List<Tile<Integer>>>(3); while ((sym = bais.read()) !=
+		 * -1) { if (i < 512) { /*System.out.print(String.format("%8s",
+		 * Integer.toBinaryString(sym & 0xFF)).replace(' ', '0') + "(" + (0xff &
+		 * sym) + ") "); System.out.print((0xff & sym) + " "); } i++; }
+		 */
+	}
+	
+	protected Tile<Integer>[][][] preprocessing(BufferedImage image) {
+		Integer[][][] subpixels = image2Array(image);
+		Tile<Integer>[][][] tiles = tile(subpixels);
+		return tiles;
+	}
+	
+	private Integer[][][] image2Array(BufferedImage image) {
+		ImageToArrayConverterInterface image2Array = new ImageToYCbCrArray();
+		Integer[][][] subpixels = image2Array.convert(image);
+		return subpixels;
+	}
+
+	protected Tile<Integer>[][][] tile(Integer[][][] subpixels) {
+		TilerInterface<Integer> tiler = new JpegTiler();
+		Tile<Integer>[][][] tiles = (Tile<Integer>[][][]) new Tile[3][][];
+		int component = 0;
+		// for Y[][], Cb[][], Cr[][]
+		for (Integer[][] componentArray : subpixels)
+			tiles[component++] = tiler.tile(componentArray);
+
+		return tiles;
+	}
+
+	protected List<List<Tile<Integer>>> quantize(List<List<Tile<Double>>> tiles) {
+		JpegUniformQuantizier quant = new JpegUniformQuantizier(80);
+		List<List<Tile<Integer>>> out = new ArrayList<List<Tile<Integer>>>();
+		for (List<Tile<Double>> t : tiles) {
+			List<Tile<Integer>> comp = new ArrayList<Tile<Integer>>();
+
+			Integer tableNo = 0;
+			for (Tile<Double> component : t) {
+				comp.add(quant.quantize(component, tableNo));
+				tableNo = 1; // 2nd. and 3rd. component should be quantizied
+								// with chrominance table
 			}
-			i++;
-		}*/
-		return null;
+
+			out.add(comp);
+		}
+		return out;
+	}
+
+	protected List<List<Tile<Double>>> transform(Tile<Integer>[][][] tiles) {
+		TransformationInterface dct = new FastDctTransformation();
+		List<List<Tile<Double>>> out = new ArrayList<List<Tile<Double>>>();
+
+		for (int j = 0; j < tiles[0].length; j++)
+			for (int k = 0; k < tiles[0][0].length; k++) {
+				ArrayList<Tile<Double>> components = new ArrayList<Tile<Double>>();
+				for (int i = 0; i < tiles.length; i++) {
+					components.add(dct.transfom(tiles[i][j][k]));
+				}
+				out.add(components);
+			}
+		return out;
 	}
 }

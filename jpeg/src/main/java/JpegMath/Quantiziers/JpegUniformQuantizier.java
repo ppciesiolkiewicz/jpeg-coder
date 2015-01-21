@@ -109,9 +109,14 @@ public class JpegUniformQuantizier {
 		return out;
 	}
 
-	public Tile dequantize(Tile t) {
-		// TODO Auto-generated method stub
-		return null;
+	public Tile<Double> dequantize(Tile<Integer> t, Integer tableNo) {
+		Tile<Double> out = new Tile<Double>(0d);
+		
+		for(int i = 0; i < t.getLength(); i++) {
+			out.setVal(i, t.getVal(i).doubleValue());
+		}
+		
+		return out;
 	}
 
 }

@@ -32,8 +32,11 @@ public class JpegTiler implements TilerInterface<Integer> {
 	}
 
 	public Integer[][] connect(Tile<Integer>[][] tiles) {
-		// TODO Auto-generated method stub
-		return null;
+		Integer[][] componentPix = new Integer[tiles.length*8][tiles[0].length*8];
+		
+		
+		
+		return componentPix;
 	}
 
 }
