@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class ArgInfo {
 	public ArgInfo() {
-		gui = false; 
+		gui = false;
 		action = null;
 		input = "";
 		output = "output.jpg";
@@ -17,6 +17,10 @@ public class ArgInfo {
 	public enum ConversionType {
 		JPEG, JPEG2000
 	}
+
+	public enum ActionType {
+		encode, decode
+	};
 
 	private void initFormatMap() {
 		formatMap.put(".jpg", ConversionType.JPEG);
@@ -34,8 +38,6 @@ public class ArgInfo {
 	public String output;
 	public Integer quality;
 	public ActionType action;
-	public enum ActionType {encode, decode};
-	
 
 	@Override
 	public String toString() {
@@ -91,7 +93,7 @@ public class ArgInfo {
 			return true;
 
 		return (!action.equals("") && !input.equals(""))
-				&& ((isJpeg2000() && !isJpeg()) || (isJpeg() && !isJpeg2000()));
+				&& (isJpeg2000() != isJpeg());
 	}
 
 }

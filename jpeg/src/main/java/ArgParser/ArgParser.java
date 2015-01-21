@@ -6,8 +6,6 @@ public class ArgParser {
 
 		try {
 			for (int i = 0; i < args.length; i++) {
-				System.out.println(i);
-				System.out.println(args[i]);
 				if (args[i].equals("encode")) {
 					info.action = ArgInfo.ActionType.encode;
 				} 
@@ -28,7 +26,6 @@ public class ArgParser {
 				} else {
 					throw new RuntimeException();
 				}
-				System.out.println(info.toString());
 			}
 		
 		} catch (Exception e) {
@@ -36,6 +33,7 @@ public class ArgParser {
 			System.err.print(getInfo());
 			System.exit(-1);
 		}
+		
 		if (!info.isCorrect()) {
 			System.err.print("Argument parse error\n\n");
 			System.err.print(getInfo());
@@ -50,8 +48,8 @@ public class ArgParser {
 		s += "java -jar jpeg.jar encode/decode -i input_file ";
 		s += "-o output_file (default output.jpg) ";
 		s += "-q quality_of_image_in_percent (default 80)\n";
-
 		s += "OR\njava -jar jpeg.jar --gui- opens graphical user interface\n";
+		
 		return s;
 	}
 }

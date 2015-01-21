@@ -23,22 +23,23 @@ public class ConsoleApplication implements Application {
 	public void run(ArgInfo info) {
 		System.out.println(info.toString());
 		AbstractJpegEncoderDecoderFactory factory = null;
+		
 		if( info.isJpeg() ) {
-			System.out.println("dupa A");
+			System.out.println("JPEG");
 			factory = new JpegEncoderDecoderFactory(info);
 		}
 		else if( info.isJpeg2000() ) {
-			System.out.println("dupa B");
+			System.out.println("JPEG2000");
 			factory = new Jpeg2000EncoderDecoderFactory(info);
 		}
 		
 		if( info.doEncode() ) {
-			System.out.println("dupa C");
+			System.out.println("Encoding");
 			EncoderInterface enc = factory.getEncoder();
 			enc.encode();
 		}
 		else {
-			System.out.println("dupa D");
+			System.out.println("Decoding");
 			DecoderInterface dec = factory.getDecoder();
 			try {
 				dec.decode();
@@ -47,6 +48,7 @@ public class ConsoleApplication implements Application {
 				e.printStackTrace();
 			}
 		}
+		System.out.println("Finished sucessfully");
 	}
 
 }

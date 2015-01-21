@@ -20,6 +20,5 @@ public class Main {
 
 		
 		app.run(info);
-		System.out.println("Finished sucessfully");
 	}
 }
