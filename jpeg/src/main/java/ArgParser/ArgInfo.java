@@ -46,11 +46,11 @@ public class ArgInfo {
 	}
 
 	public boolean doEncode() {
-		return action.equals("encode");
+		return action == ActionType.encode;
 	}
 
 	public boolean doDecode() {
-		return action.equals("decode");
+		return action == ActionType.decode;
 	}
 
 	public boolean isJpeg() {

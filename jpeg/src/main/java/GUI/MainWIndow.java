@@ -53,12 +53,10 @@ public class MainWIndow extends JPanel{
 	private JLabel photoLabel;
 	private JTextField textImagePath;
 	private JScrollPane scrollPane;
-	private JFileChooser fc;
 	private JComboBox cbType;
 	private JSlider slider;
 	
-	private BufferedImage bi;
-	
+	private String currentDir;
 	private File plikObrazek;
 
 	/**
@@ -106,9 +104,11 @@ public class MainWIndow extends JPanel{
 		btnLoadImage.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 		btnLoadImage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(fc == null)
+				JFileChooser fc = new JFileChooser();
+				
+				if(plikObrazek != null)
 				{
-					fc = new JFileChooser();
+					fc.setCurrentDirectory(plikObrazek);
 				}
 				fc.addChoosableFileFilter(new MyFilter());
 		   
@@ -118,7 +118,7 @@ public class MainWIndow extends JPanel{
 							textImagePath.setText(plikObrazek.getPath());
 				try {
 					File file = new File(plikObrazek.getAbsolutePath());
-					bi = ImageIO.read(file);
+					BufferedImage bi = ImageIO.read(file);
 					//photoLabel.setSize(bi.getWidth(),bi.getHeight());
 					ImageIcon imgIcon = new ImageIcon(bi);
 					photoLabel.setIcon(imgIcon);
@@ -147,14 +147,14 @@ public class MainWIndow extends JPanel{
 				
 				JFileChooser saveFC = new JFileChooser();
 				saveFC.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-				if(fc != null)
+				if(plikObrazek != null)
 				{
-					saveFC.setCurrentDirectory(fc.getCurrentDirectory());
+					saveFC.setCurrentDirectory(plikObrazek);
 				}
 
-				if (bi != null) {
+				if (plikObrazek != null) {
 					if( saveFC.showSaveDialog(null)==JFileChooser.APPROVE_OPTION){
-						String path = (String)saveFC.getCurrentDirectory().getAbsolutePath();
+						String outPath = (String)saveFC.getCurrentDirectory().getAbsolutePath();
 
 						try {
 							Application console;
@@ -167,7 +167,9 @@ public class MainWIndow extends JPanel{
 								args = new ArgInfo();
 								args.action = ActionType.encode;
 								args.input = plikObrazek.getAbsolutePath();
+								System.out.print(args.input);
 								args.quality = slider.getValue();
+								//args.outp
 								console = new ConsoleApplication();
 								console.run(args);
 							}
