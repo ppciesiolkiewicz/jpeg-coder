@@ -1,3 +1,5 @@
+package Application;
+
 import ArgParser.ArgInfo;
 import Factories.AbstractJpegEncoderDecoderFactory;
 

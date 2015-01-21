@@ -1,5 +1,8 @@
+package Application;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 
 import ArgParser.ArgInfo;
 import Factories.AbstractJpegEncoderDecoderFactory;
@@ -32,7 +35,12 @@ public class ConsoleApplication implements Application {
 		}
 		else {
 			DecoderInterface dec = factory.getDecoder();
-			dec.decode();
+			try {
+				dec.decode();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 

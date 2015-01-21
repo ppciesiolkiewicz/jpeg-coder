@@ -1,3 +1,5 @@
+import Application.Application;
+import Application.ConsoleApplication;
 import ArgParser.ArgInfo;
 import ArgParser.ArgParser;
 import GUI.MainWIndow;

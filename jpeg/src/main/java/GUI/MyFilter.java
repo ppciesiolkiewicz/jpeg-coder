@@ -36,6 +36,6 @@ class MyFilter extends FileFilter {
      
     // The description of this filter
     public String getDescription() {
-    return "Just Images (*.bmp, *.jpg, *.jp2,*.png)";
+    return "Image Files (*.bmp, *.jpg, *.jp2,*.png)";
     }
  }
