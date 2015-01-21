@@ -41,8 +41,8 @@ public class JpegDecoder implements DecoderInterface {
 	public void decode() {
 		List<List<Tile<Integer>>> huffmanDecoded = huf.decodeImage(inputPath);
 		List<List<Tile<Double>>> dequantized = dequantize(huffmanDecoded);
-		Tile<Integer>[][][] inversedTiles = transform(dequantized);
-		postprocessing(inversedTiles);
+		Tile<Integer>[][][] inversedDct = transform(dequantized);
+		postprocessing(inversedDct);
 	}
 	
 	protected BufferedImage postprocessing(Tile<Integer>[][][] subpixels) {
@@ -53,12 +53,13 @@ public class JpegDecoder implements DecoderInterface {
 		return img;
 	}
 	
-	private BufferedImage Array2Image(Integer[][][] image) {
+	private BufferedImage Array2Image(Integer[][][] array) {
 		BufferedImage img = null;
+		img = new BufferedImage(array.length, array[0].length, BufferedImage.TYPE_INT_RGB); //TODO
 		//ImageToArrayConverterInterface image2Array = new ImageToYCbCrArray();
 		//Integer[][][] subpixels = image2Array.convert(image);
 		//return subpixels;
-		return null;
+		return img;
 	}
 
 	protected Integer[][][] detile(Tile<Integer>[][][] subpixels) {
