@@ -9,7 +9,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		final ArgInfo info = ArgParser.parseArg(args);
-		System.out.println(info.toString());
 		
 		if (info.gui == false) {
 			app = new ConsoleApplication();

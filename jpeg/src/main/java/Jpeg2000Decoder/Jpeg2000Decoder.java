@@ -23,7 +23,7 @@ public class Jpeg2000Decoder implements DecoderInterface {
 	}
 
 	public void decode() throws IOException {
-		String[] args = new String[] { "-i", "/tmp/tmp.ppm", "-o", output };
+		String[] args = new String[] { "-i", input, "-o", output };
 		CmdLnDecoder.main(args);
 	}
 
