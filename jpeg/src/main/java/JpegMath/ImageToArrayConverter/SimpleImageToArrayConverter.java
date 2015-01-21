@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage;
  * 
  * [0=r,1=g,2=b][row][col]
  */
-public class SimpleImageToArrayConverter implements ImageToArrayConverterInterface {
+public class SimpleImageToArrayConverter implements ImageArrayConverterInterface {
 	
 	public Integer[][][] convert(BufferedImage image) {
 		int width = image.getWidth();
@@ -29,5 +29,10 @@ public class SimpleImageToArrayConverter implements ImageToArrayConverterInterfa
 		}
 
 		return result;
+	}
+
+	public BufferedImage convert(Integer[][][] arr) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -6,11 +6,11 @@ import DataObjects.Tile;
 
 
 
-public class ImageToYCbCrArray implements ImageToArrayConverterInterface {
+public class ImageYCbCrArrayConverter implements ImageArrayConverterInterface {
 
 	//according to JFIF specification
 	public Integer[][][] convert(BufferedImage image) {
-		ImageToArrayConverterInterface rgb = new SimpleImageToArrayConverter();
+		ImageArrayConverterInterface rgb = new SimpleImageToArrayConverter();
 		Integer[][][] img = rgb.convert(image);
 		
 		int width = image.getWidth();
@@ -26,6 +26,11 @@ public class ImageToYCbCrArray implements ImageToArrayConverterInterface {
 		}
 		
 		return img;
+	}
+
+	public BufferedImage convert(Integer[][][] arr) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

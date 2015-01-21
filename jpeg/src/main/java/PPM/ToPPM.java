@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import ImageLoader.ImageLoaderInterface;
 import ImageLoader.SimpleImageLoader;
-import JpegMath.ImageToArrayConverter.ImageToArrayConverterInterface;
+import JpegMath.ImageToArrayConverter.ImageArrayConverterInterface;
 import JpegMath.ImageToArrayConverter.SimpleImageToArrayConverter;
 
 /**
@@ -22,7 +22,7 @@ public class ToPPM {
 		int height = bufferedImage.getHeight();
 		int width = bufferedImage.getWidth();
 
-		ImageToArrayConverterInterface rgb = new SimpleImageToArrayConverter();
+		ImageArrayConverterInterface rgb = new SimpleImageToArrayConverter();
 		Integer[][][] img = rgb.convert(bufferedImage);
 		byte[] data = new byte[3 * width * height];
 

@@ -14,7 +14,7 @@ public class JpegTiler_TC {
 
 	@Test
 	public void onlyOneTile() {
-		TilerInterface<Integer> tiler = new JpegTiler();
+		JpegTiler tiler = new JpegTiler();
 		Integer[][] pixels = new Integer[8][8];
 		
 		for(int i = 0; i < pixels.length; i++)
@@ -31,7 +31,7 @@ public class JpegTiler_TC {
 	
 	@Test
 	public void moreTiles() {
-		TilerInterface<Integer> tiler = new JpegTiler();
+		JpegTiler tiler = new JpegTiler();
 		Integer[][] pixels = new Integer[16][16];
 		
 		for(int i = 0; i < pixels.length; i++)
@@ -42,13 +42,13 @@ public class JpegTiler_TC {
 		assertEquals(2, tiles.length);
 		assertEquals(2, tiles[0].length);
 		
-		Integer[][] reconstructedPix = tiler.connect(tiles);
+		Integer[][] reconstructedPix = tiler.connect(tiles,16,16);
 		assertArrayEquals(pixels, reconstructedPix);
 	}
 	
 	@Test
 	public void unequalSize() {
-		TilerInterface<Integer> tiler = new JpegTiler();
+		JpegTiler tiler = new JpegTiler();
 		Integer[][] pixels = new Integer[10][12];
 		
 		for(int i = 0; i < pixels.length; i++)

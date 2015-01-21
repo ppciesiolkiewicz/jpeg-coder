@@ -1,4 +1,4 @@
-for (( i=1; $i <= 10; i++ )) ; do
+for (( i=10; $i >= 1; i )) ; do
 	echo BMP to JP2 measurments $(($i-1))
 	time -p (java -jar ../jpeg.jar encode -i A"$i".bmp -o jp2/bmp2jp2_"$i".jp2 > /dev/null);
 

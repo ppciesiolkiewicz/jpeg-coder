@@ -15,8 +15,8 @@ import ImageLoader.ImageLoaderInterface;
 import ImageLoader.SimpleImageLoader;
 import JpegInterfaces.EncoderInterface;
 import JpegMath.Coders.HuffmanCoding;
-import JpegMath.ImageToArrayConverter.ImageToArrayConverterInterface;
-import JpegMath.ImageToArrayConverter.ImageToYCbCrArray;
+import JpegMath.ImageToArrayConverter.ImageArrayConverterInterface;
+import JpegMath.ImageToArrayConverter.ImageYCbCrArrayConverter;
 import JpegMath.Quantiziers.JpegUniformQuantizier;
 import JpegMath.Tilers.JpegTiler;
 import JpegMath.Tilers.TilerInterface;
@@ -25,19 +25,18 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 	String inputPath;
 	String outputPath;
 	Integer quality;
-	
+
 	FileOutputStream fileOutput;
 	HuffmanCoding encoder;
 	JpegFileWriter writer;
 	JpegUniformQuantizier quant;
-
 
 	public AbstractJpegEncoder(String inputPath_, String outputPath_,
 			Integer quality_) {
 		quality = quality_;
 		outputPath = outputPath_;
 		inputPath = inputPath_;
-		
+
 		encoder = new HuffmanCoding();
 		quant = new JpegUniformQuantizier(quality);
 		writer = new JpegFileWriter(quant, encoder);
@@ -52,15 +51,13 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 	public void encode() {
 		ImageLoaderInterface imgLoader = new SimpleImageLoader();
 		BufferedImage img = imgLoader.getImage(inputPath);
-		
+
 		JpegInfo info = new JpegInfo(img);
 
 		// [color component][tile y position][tile x position]
 		Tile[][][] tiles = preprocessing(img);
 		List<List<Tile<Double>>> transformedTiles = transform(tiles);
-		System.out.println("transformedTiles:"+transformedTiles.size()+" "+transformedTiles.get(0).size());
 		List<List<Tile<Integer>>> quantiziedTiles = quantize(transformedTiles);
-		System.out.println("quantiziedTiles:"+quantiziedTiles.size()+" "+quantiziedTiles.get(0).size());
 		ByteArrayOutputStream os = entropyCoding(quantiziedTiles);
 
 		writer.writeHeaders(fileOutput, info);
@@ -71,30 +68,24 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		// Iterator<EncodedTile<Binary>> it = encodedTiles.iterator();
-		// while(it.hasNext())
-		// System.out.println(it.next().tile.toString()+"\n");
-		// this image part probably will not be used
-		// img = compose(tiles);
 	}
 
 	protected Tile<Integer>[][][] preprocessing(BufferedImage image) {
 		Integer[][][] subpixels = image2Array(image);
-		System.out.println("image2Array:"+subpixels.length+" "+subpixels[0].length+" "+subpixels[0][0].length);
 		Tile<Integer>[][][] tiles = tile(subpixels);
-		System.out.println("tile:"+tiles.length+" "+tiles[0].length+" "+tiles[0][0].length);
 		return tiles;
 	}
 
-	private Integer[][][] image2Array(BufferedImage image) {
-		ImageToArrayConverterInterface image2Array = new ImageToYCbCrArray();
+	public Integer[][][] image2Array(BufferedImage image) {
+		ImageArrayConverterInterface image2Array = new ImageYCbCrArrayConverter();
 		Integer[][][] subpixels = image2Array.convert(image);
 		return subpixels;
 	}
 
-	protected Tile<Integer>[][][] tile(Integer[][][] subpixels) {
-		TilerInterface<Integer> tiler = new JpegTiler();
+	public Tile<Integer>[][][] tile(Integer[][][] subpixels) {
+		System.out.println("przed tile:"+subpixels.length + " " + subpixels[0].length + " "
+				+ subpixels[0][0].length);// ###
+		JpegTiler tiler = new JpegTiler();
 		Tile<Integer>[][][] tiles = (Tile<Integer>[][][]) new Tile[3][][];
 		int component = 0;
 		// for Y[][], Cb[][], Cr[][]
@@ -129,7 +120,6 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 			List<List<Tile<Integer>>> tiles) {
 		return encoder.encodeImage(tiles);
 	}
-
 
 	public void setQuality(Integer quality_) {
 		quality = quality_;

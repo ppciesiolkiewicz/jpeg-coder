@@ -16,6 +16,7 @@ public class JpegEncoder extends AbstractJpegEncoder {
 
 	@Override
 	protected List<List<Tile<Double>>> transform(Tile<Integer>[][][] tiles) {
+		System.out.println(tiles.length+" "+tiles[0].length+" "+tiles[0][0].length);
 		TransformationInterface dct = new FastDctTransformation();
 		List<List<Tile<Double>>> out = new ArrayList<List<Tile<Double>>>();
 
@@ -27,7 +28,6 @@ public class JpegEncoder extends AbstractJpegEncoder {
 				}
 				out.add(components);
 			}
-		System.out.println("transform:"+out.size()+" "+out.get(0).size());
 		return out;
 	}
 

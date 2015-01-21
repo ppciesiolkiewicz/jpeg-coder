@@ -12,8 +12,8 @@ import java.util.Vector;
 import DataObjects.Tile;
 import ImageLoader.ImageLoaderInterface;
 import ImageLoader.SimpleImageLoader;
-import JpegMath.ImageToArrayConverter.ImageToArrayConverterInterface;
-import JpegMath.ImageToArrayConverter.ImageToYCbCrArray;
+import JpegMath.ImageToArrayConverter.ImageArrayConverterInterface;
+import JpegMath.ImageToArrayConverter.ImageYCbCrArrayConverter;
 import JpegMath.Quantiziers.JpegUniformQuantizier;
 import JpegMath.Tilers.JpegTiler;
 import JpegMath.Tilers.TilerInterface;
@@ -368,29 +368,17 @@ public class HuffmanCoding {
 		AC_matrix[1] = AC_matrix1;
 	}
 
-	public List<List<Tile<Integer>>> decodeImage(String inputPath) {
+	public List<List<Tile<Double>>> decodeImage(String inputPath) {
 		ImageLoaderInterface load = new SimpleImageLoader();
 		BufferedImage image = load.getImage(inputPath);
 		Tile[][][] tiles = preprocessing(image);
 		List<List<Tile<Double>>> transformedTiles = transform(tiles);
-		List<List<Tile<Integer>>> quantiziedTiles = quantize(transformedTiles);
-		return quantiziedTiles;
-
-		/*
-		 * int sym; while ((sym = bais.read()) != -1) { if (sym == 0 && (sym =
-		 * bais.read()) != -1) if (sym == 63 && (sym = bais.read()) != -1) if
-		 * (sym == 0) break; }
-		 * 
-		 * System.out.println("\n\n====" + bais.available() + "===="); int i =
-		 * 0; Integer[] lastDCval = { 0, 0, 0 }; Integer[] dcTable = { 0, 1, 1
-		 * }; Integer[] acTable = { 0, 1, 1 }; List<List<Tile<Integer>>> tiles =
-		 * new ArrayList<List<Tile<Integer>>>(3); while ((sym = bais.read()) !=
-		 * -1) { if (i < 512) { /*System.out.print(String.format("%8s",
-		 * Integer.toBinaryString(sym & 0xFF)).replace(' ', '0') + "(" + (0xff &
-		 * sym) + ") "); System.out.print((0xff & sym) + " "); } i++; }
-		 */
+		
+		//List<List<Tile<Integer>>> quantiziedTiles = quantize(transformedTiles);
+		//return quantiziedTiles;
+		return transformedTiles;
 	}
-	
+
 	protected Tile<Integer>[][][] preprocessing(BufferedImage image) {
 		Integer[][][] subpixels = image2Array(image);
 		Tile<Integer>[][][] tiles = tile(subpixels);
@@ -398,13 +386,13 @@ public class HuffmanCoding {
 	}
 	
 	private Integer[][][] image2Array(BufferedImage image) {
-		ImageToArrayConverterInterface image2Array = new ImageToYCbCrArray();
+		ImageArrayConverterInterface image2Array = new ImageYCbCrArrayConverter();
 		Integer[][][] subpixels = image2Array.convert(image);
 		return subpixels;
 	}
 
 	protected Tile<Integer>[][][] tile(Integer[][][] subpixels) {
-		TilerInterface<Integer> tiler = new JpegTiler();
+		JpegTiler tiler = new JpegTiler();
 		Tile<Integer>[][][] tiles = (Tile<Integer>[][][]) new Tile[3][][];
 		int component = 0;
 		// for Y[][], Cb[][], Cr[][]
