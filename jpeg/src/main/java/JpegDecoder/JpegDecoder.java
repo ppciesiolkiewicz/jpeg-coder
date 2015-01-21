@@ -2,17 +2,15 @@ package JpegDecoder;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jtransforms.utils.IOUtils;
+import javax.imageio.ImageIO;
 
 import DataObjects.Tile;
 import JpegInterfaces.DecoderInterface;
 import JpegMath.Coders.HuffmanCoding;
-import JpegMath.ImageToArrayConverter.ImageToArrayConverterInterface;
-import JpegMath.ImageToArrayConverter.ImageToYCbCrArray;
 import JpegMath.Quantiziers.JpegUniformQuantizier;
 import JpegMath.Tilers.JpegTiler;
 import JpegMath.Tilers.TilerInterface;
@@ -26,6 +24,7 @@ public class JpegDecoder implements DecoderInterface {
 	DctTransformation dct;
 	JpegUniformQuantizier quant;
 	TilerInterface<Integer> tiler;
+	int width, height;
 
 	HuffmanCoding huf;
 
@@ -36,38 +35,57 @@ public class JpegDecoder implements DecoderInterface {
 		quant = new JpegUniformQuantizier(80);
 		dct = new DctTransformation();
 		tiler = new JpegTiler();
+		width = 34; // TODO
+		height = 16;
 	}
 
 	public void decode() {
 		List<List<Tile<Integer>>> huffmanDecoded = huf.decodeImage(inputPath);
+		System.out.println("hufDec:" + huffmanDecoded.size() + " "
+				+ huffmanDecoded.get(0).size());
 		List<List<Tile<Double>>> dequantized = dequantize(huffmanDecoded);
-		Tile<Integer>[][][] inversedDct = transform(dequantized);
-		postprocessing(inversedDct);
+		System.out.println("dequan:" + dequantized.size() + " "
+				+ dequantized.get(0).size());
+		Tile<Integer>[][][] inversedDct = inverseTransform(dequantized);
+		System.out.println("inversedDct:" + inversedDct.length + " "
+				+ inversedDct[0].length);
+		BufferedImage img = postprocessing(inversedDct);
+		File outputfile = new File(outputPath);
+		try {
+			ImageIO.write(img, "bmp", outputfile);
+		} catch (IOException e) {
+			System.err.println("Error while saving file to " + outputfile);
+			System.exit(-1);
+		}
 	}
-	
+
 	protected BufferedImage postprocessing(Tile<Integer>[][][] subpixels) {
-		BufferedImage img = null;
 		Integer[][][] tiles = detile(subpixels);
-		//Integer[][][] subpixels = image2Array(image);
-		
+		System.out.println("detile:" + subpixels.length + " "
+				+ subpixels[0].length + " " + subpixels[0][0].length);
+		BufferedImage img = array2Image(tiles);
+
 		return img;
 	}
-	
-	private BufferedImage Array2Image(Integer[][][] array) {
+
+	private BufferedImage array2Image(Integer[][][] array) {
 		BufferedImage img = null;
-		img = new BufferedImage(array.length, array[0].length, BufferedImage.TYPE_INT_RGB); //TODO
-		//ImageToArrayConverterInterface image2Array = new ImageToYCbCrArray();
-		//Integer[][][] subpixels = image2Array.convert(image);
-		//return subpixels;
+		img = new BufferedImage(array.length, array[0].length,
+				BufferedImage.TYPE_INT_RGB); // TODO
+		// ImageToArrayConverterInterface image2Array = new ImageToYCbCrArray();
+		// Integer[][][] subpixels = image2Array.convert(image);
+		// return subpixels;
 		return img;
 	}
 
 	protected Integer[][][] detile(Tile<Integer>[][][] subpixels) {
-		Integer[][][] out = new Integer[3][subpixels[0].length*8][subpixels[0][0].length*8];
+		Integer[][][] out = new Integer[3][][];
+
 		int component = 0;
 		// for Y[][], Cb[][], Cr[][]
-		for (Tile<Integer>[][] componentArray : subpixels)
+		for (Tile<Integer>[][] componentArray : subpixels) { // TODO
 			out[component++] = tiler.connect(componentArray);
+		}
 
 		return out;
 	}
@@ -90,18 +108,38 @@ public class JpegDecoder implements DecoderInterface {
 		return out;
 	}
 
-	protected Tile<Integer>[][][] transform(List<List<Tile<Double>>> tiles) {
+	protected Tile<Integer>[][][] inverseTransform(
+			List<List<Tile<Double>>> tiles) {
 		TransformationInterface dct = new FastDctTransformation();
-		Tile<Integer>[][][] out = new Tile[tiles.size()][tiles.get(0).size()][];
+		// Tile<Integer>[][][] out = new
+		// Tile[tiles.size()][tiles.get(0).size()][];
+		Tile<Integer>[][][] out = new Tile[3][][]; // hardcoded 3 :(
+		
+		
+		for (int i = 0; i < out.length; i++) {
+			Tile<Integer>[][] component;
+			for (int j = 0; j < tiles.size(); j++)
+				for (int k = 0; k < tiles.get(0).size(); k += 3) {
+					//component[][] = dct.inverseTransform(tiles.get(j).get(k));
+					//out[i] = component;
+				}
+		}
 
-		for (int j = 0; j < tiles.size(); j++)
-			for (int k = 0; k < tiles.get(0).size(); k+=3) {
-				Tile<Integer>[] components = new Tile[3]; // hardcoded 3 :(
-				components[0] = dct.inverseTransform(tiles.get(j).get(k));
-				components[0] = dct.inverseTransform(tiles.get(j).get(k+1));
-				components[0] = dct.inverseTransform(tiles.get(j).get(k+2));
-				out[j][k]=components;
-			}
+		/*for (int i = 0; i < tiles.length; i++) {
+			for (int j = 0; j < tiles.size(); j++)
+				for (int k = 0; k < tiles.get(0).size(); k += 3) {
+					Tile<Integer>[][] component = new Tile[j][]; // hardcoded 3
+																	// :(
+
+					/*
+					 * component[0] = dct.inverseTransform(tiles.get(j).get(k));
+					 * component[1] = dct.inverseTransform(tiles.get(j).get(k +
+					 * 1)); component[2] =
+					 * dct.inverseTransform(tiles.get(j).get(k + 2)); out[0] =
+					 * components; out[1] = ; out[2] = ;
+					 */
+		/*		}
+		}*/
 		return out;
 	}
 }

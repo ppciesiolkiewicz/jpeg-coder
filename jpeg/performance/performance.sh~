@@ -1,0 +1,8 @@
+for (( i=2; $i <= 11; i++ )) ; do
+	echo BMP to JP2 measurments $(($i-1))
+	time (java -jar jpeg.jar encode -i A"$i".bmp -o jp2/bmp2jp2-"$i".jp2 > /dev/null);
+done
+for (( i=2; $i <= 11; i++ )) ; do
+	echo jp2 to BMP measurments $(($i-1))
+	time (java -jar jpeg.jar decode -i jp2/bmp2jp2-"$i".jp2 -o /jp2toBMP/A"$i".bmp  > /dev/null);
+done

@@ -1,0 +1,11 @@
+	convert A.bmp -resize 2500×1296 A2.bmp
+	convert A.bmp -resize 2220×1296 A3.bmp
+	convert A.bmp -resize 1500×1680 A4.bmp
+	convert A.bmp -resize 1500×1440 A5.bmp
+	convert A.bmp -resize 1250×1440 A6.bmp
+	convert A.bmp -resize 1250×1152 A7.bmp
+	convert A.bmp -resize 938×1152 A8.bmp
+	convert A.bmp -resize 938×768 A9.bmp
+	convert A.bmp -resize 469×768 A10.bmp
+	
+

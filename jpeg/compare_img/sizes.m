@@ -8,8 +8,8 @@ y_scaled = 10*log(y./original_size);
 figure;
 plot(x,y./1000)
 grid on;
-xlabel('Quality [kB]');
-ylabel('Compressed file size');
+xlabel('Quality');
+ylabel('Compressed file size [kB]');
 
 
 figure;

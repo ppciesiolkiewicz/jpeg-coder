@@ -42,9 +42,8 @@ public class JpegTiler_TC {
 		assertEquals(2, tiles.length);
 		assertEquals(2, tiles[0].length);
 		
-		throw new RuntimeException("Unimplemented test");
-		//test values
-		//assertArrayEquals(Arrays.copyOfRange(pixels, 0, 8), tiles[0][0].toMatrix());
+		Integer[][] reconstructedPix = tiler.connect(tiles);
+		assertArrayEquals(pixels, reconstructedPix);
 	}
 	
 	@Test

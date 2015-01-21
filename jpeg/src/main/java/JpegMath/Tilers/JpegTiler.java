@@ -31,10 +31,15 @@ public class JpegTiler implements TilerInterface<Integer> {
 		return tiles;
 	}
 
-	public Integer[][] connect(Tile<Integer>[][] tiles) {
-		Integer[][] componentPix = new Integer[tiles.length*8][tiles[0].length*8];
+	public Integer[][] connect(Tile<Integer>[][] component) {
+		//y x
+		Integer[][] componentPix = new Integer[component.length*tileSize][component[0].length*tileSize];
 		
-		
+		for(int y = 0; y < componentPix.length; y++) {
+			for(int x = 0; x < componentPix[0].length; x++) {
+				//componentPix[y][x] = component[y/tileSize][x/tileSize].getVal(x%tileSize, y%tileSize);
+			}
+		}
 		
 		return componentPix;
 	}

@@ -58,7 +58,9 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 		// [color component][tile y position][tile x position]
 		Tile[][][] tiles = preprocessing(img);
 		List<List<Tile<Double>>> transformedTiles = transform(tiles);
+		System.out.println("transformedTiles:"+transformedTiles.size()+" "+transformedTiles.get(0).size());
 		List<List<Tile<Integer>>> quantiziedTiles = quantize(transformedTiles);
+		System.out.println("quantiziedTiles:"+quantiziedTiles.size()+" "+quantiziedTiles.get(0).size());
 		ByteArrayOutputStream os = entropyCoding(quantiziedTiles);
 
 		writer.writeHeaders(fileOutput, info);
@@ -79,7 +81,9 @@ public abstract class AbstractJpegEncoder implements EncoderInterface {
 
 	protected Tile<Integer>[][][] preprocessing(BufferedImage image) {
 		Integer[][][] subpixels = image2Array(image);
+		System.out.println("image2Array:"+subpixels.length+" "+subpixels[0].length+" "+subpixels[0][0].length);
 		Tile<Integer>[][][] tiles = tile(subpixels);
+		System.out.println("tile:"+tiles.length+" "+tiles[0].length+" "+tiles[0][0].length);
 		return tiles;
 	}
 

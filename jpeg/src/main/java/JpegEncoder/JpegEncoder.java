@@ -27,6 +27,7 @@ public class JpegEncoder extends AbstractJpegEncoder {
 				}
 				out.add(components);
 			}
+		System.out.println("transform:"+out.size()+" "+out.get(0).size());
 		return out;
 	}
 
