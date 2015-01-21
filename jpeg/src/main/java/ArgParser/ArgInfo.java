@@ -14,20 +14,21 @@ public class ArgInfo {
 		initFormatMap();
 	}
 
-	private void initFormatMap() {
-		String jpeg = "jpeg";
-		String jpeg2000 = "jpeg2000";
-
-		formatMap.put(".jpg", jpeg);
-		formatMap.put(".JPG", jpeg);
-		formatMap.put(".jpeg", jpeg);
-		formatMap.put(".JPEG", jpeg);
-
-		formatMap.put(".j2k", jpeg2000);
-		formatMap.put(".jp2", jpeg2000);
+	public enum ConversionType {
+		JPEG, JPEG2000
 	}
 
-	public static Map<String, String> formatMap = new HashMap<String, String>();
+	private void initFormatMap() {
+		formatMap.put(".jpg", ConversionType.JPEG);
+		formatMap.put(".JPG", ConversionType.JPEG);
+		formatMap.put(".jpeg", ConversionType.JPEG);
+		formatMap.put(".JPEG", ConversionType.JPEG);
+
+		formatMap.put(".j2k", ConversionType.JPEG2000);
+		formatMap.put(".jp2", ConversionType.JPEG2000);
+	}
+
+	public static Map<String, ConversionType> formatMap = new HashMap<String, ConversionType>();
 	public boolean gui;
 	public String input;
 	public String output;
@@ -59,7 +60,7 @@ public class ArgInfo {
 				return false;
 			return (formatMap.get(output.substring(dotPos, output.length()))
 					.equals("jpeg"));
-		} else { //Couldnt be "else if (doDecode())"
+		} else { // Couldnt be "else if (doDecode())"
 			int dotPos = input.indexOf('.');
 			if (dotPos == -1)
 				return false;
@@ -75,9 +76,9 @@ public class ArgInfo {
 				return false;
 			return (formatMap.get(output.substring(dotPos, output.length()))
 					.equals("jpeg2000"));
-		} else {  //Couldnt be "else if (doDecode())"
+		} else { // Couldnt be "else if (doDecode())"
 			int dotPos = input.indexOf('.');
-			
+
 			if (dotPos == -1)
 				return false;
 			return (formatMap.get(input.substring(dotPos, input.length()))

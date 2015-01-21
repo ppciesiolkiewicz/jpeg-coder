@@ -6,9 +6,13 @@ public class ArgParser {
 
 		try {
 			for (int i = 0; i < args.length; i++) {
-				if (args[i].equals("encode") || args[i].equals("decode")) {
-					info.action = args[i];
-				} else if (args[i].equals("-q")) {
+				if (args[i].equals("encode")) {
+					info.action = ArgInfo.ActionType.encode;
+				} 
+				else if(args[i].equals("decode")) {
+					info.action = ArgInfo.ActionType.decode;
+				}
+				else if (args[i].equals("-q")) {
 					info.quality = Integer.parseInt(args[++i]);
 
 				} else if (args[i].equals("-i")) {
