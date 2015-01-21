@@ -8,6 +8,7 @@ import jj2000.j2k.encoder.CmdLnEncoder;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by krzaczek on 18.01.15.
@@ -25,7 +26,17 @@ public class Jpeg2000Encoder implements EncoderInterface {
 	}
 
 	public void encode() {
-		String[] args = new String[] { "-i", input, "-o", output };
+	    String property = "java.io.tmpdir";
+	    String tempDir = System.getProperty(property);
+	    String tempPpm = tempDir + File.separator + "tmp.ppm";
+	    
+		try {
+			ToPPM.saveAsPpm("example_bmp/example1.bmp", tempPpm);
+		} catch (IOException e) {
+			System.err.println("Error while converting");
+			System.exit(-1);
+		}
+		String[] args = new String[] { "-i", tempPpm, "-o", output };
 		CmdLnEncoder.main(args);
 	}
 }
