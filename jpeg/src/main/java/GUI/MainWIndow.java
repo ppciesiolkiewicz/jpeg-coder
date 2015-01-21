@@ -154,8 +154,8 @@ public class MainWIndow extends JPanel {
 						} else if ((String) cbType.getSelectedItem() == "JPEG") {
 							args = new ArgInfo();
 							args.action = ActionType.encode;
-							args.input = plikObrazek.getAbsolutePath()+".jpg";
-							args.output = outFile;
+							args.input = plikObrazek.getAbsolutePath();
+							args.output = outFile+".jpg";
 
 							args.quality = slider.getValue();
 							// args.outp
