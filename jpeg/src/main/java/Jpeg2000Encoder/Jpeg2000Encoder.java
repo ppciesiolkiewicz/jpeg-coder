@@ -28,11 +28,10 @@ public class Jpeg2000Encoder implements EncoderInterface {
 	public void encode() {
 	    String property = "java.io.tmpdir";
 	    String tempDir = System.getProperty(property);
-	    //tempDir = tempDir.substring(0, tempDir.length() -1 );
 	    String tempPpm = tempDir + File.separator + "tmp.ppm";
 	    
 		try {
-			ToPPM.saveAsPpm(input, tempPpm);
+			ToPPM.saveAsPpm("example_bmp/example1.bmp", tempPpm);
 		} catch (IOException e) {
 			System.err.println("Error while converting");
 			System.exit(-1);

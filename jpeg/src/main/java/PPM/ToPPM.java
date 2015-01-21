@@ -1,8 +1,8 @@
 package PPM;
 
 import java.awt.image.BufferedImage;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import ImageLoader.ImageLoaderInterface;
 import ImageLoader.SimpleImageLoader;
@@ -22,10 +22,11 @@ public class ToPPM {
 		int height = bufferedImage.getHeight();
 		int width = bufferedImage.getWidth();
 
-		PrintWriter out = new PrintWriter(outputPath, "UTF-8");
-		out.println("P3");
-		out.println(width + " " + height);
-		out.println("255");
+		FileOutputStream out = new FileOutputStream(outputPath);
+		out.write("P6\n".getBytes());
+		out.write((width + " " + height+"\n").getBytes());
+		out.write("255\n".getBytes());
+		
 		ImageToArrayConverterInterface rgb = new SimpleImageToArrayConverter();
 		Integer[][][] img = rgb.convert(bufferedImage);
 		
@@ -38,7 +39,7 @@ public class ToPPM {
 		out.close();
 	}
 	
-	private static void printPixelARGB(int r, int g, int b, PrintWriter out) {
-		out.print(r + " " + g + " " + b + " ");
+	private static void printPixelARGB(int r, int g, int b, FileOutputStream out) throws IOException {
+		out.write((r + " " + g + " " + b + " ").getBytes());
 	}
 }
