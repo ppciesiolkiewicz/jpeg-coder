@@ -36,6 +36,7 @@ public class Jpeg2000Encoder implements EncoderInterface {
 			System.err.println("Error while converting");
 			System.exit(-1);
 		}
+		System.out.println(tempPpm);
 		String[] args = new String[] { "-i", tempPpm, "-o", output };
 		CmdLnEncoder.main(args);
 	}
