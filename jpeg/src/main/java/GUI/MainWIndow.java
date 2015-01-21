@@ -19,6 +19,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSlider;
@@ -150,6 +151,13 @@ public class MainWIndow extends JPanel {
 						ArgInfo args;
 
 						if ((String) cbType.getSelectedItem() == "BMP") {
+							args = new ArgInfo();
+							args.action = ActionType.decode;
+							args.input = plikObrazek.getAbsolutePath();
+							args.output = outFile+".bmp";
+							
+							console = new ConsoleApplication();
+							console.run(args);
 
 						} else if ((String) cbType.getSelectedItem() == "JPEG") {
 							args = new ArgInfo();
@@ -158,14 +166,25 @@ public class MainWIndow extends JPanel {
 							args.output = outFile+".jpg";
 
 							args.quality = slider.getValue();
-							// args.outp
+							
 							console = new ConsoleApplication();
 							console.run(args);
 						} else if ((String) cbType.getSelectedItem() == "JPEG2000") {
+							args = new ArgInfo();
+							args.action = ActionType.encode;
+							args.input = plikObrazek.getAbsolutePath();
+							args.output = outFile+".jp2";
 
+							args.quality = slider.getValue();
+							
+							console = new ConsoleApplication();
+							console.run(args);
 						}
+						
+						JOptionPane.showMessageDialog(null, "Operation successful.");
 					} catch (Exception e) {
 						// TODO: handle exception
+						JOptionPane.showMessageDialog(null, "An error occured.");
 					}
 				}
 
@@ -280,13 +299,19 @@ public class MainWIndow extends JPanel {
 		slider.setMinorTickSpacing(10);
 		slider.setMajorTickSpacing(10);
 
-		String[] conversionType = { "BMP", "JPEG", "JPEG2000" };
+		String[] conversionType = { "JPEG", "JPEG2000", "BMP" };
 
 		cbType = new JComboBox(conversionType);
 		cbType.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JComboBox cb = (JComboBox) e.getSource();
-				// selectedConvType = (String)cb.getSelectedItem();
+				if(((String)cb.getSelectedItem()).equals("BMP")) {
+					slider.setEnabled(false);
+				}
+				else {
+					slider.setEnabled(true);
+				}
+				
 			}
 		});
 		cbType.setBounds(311, 72, 182, 25);
