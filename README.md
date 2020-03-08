@@ -1,4 +1,3 @@
-MultimediaAndCompVisual
+JPEG coder
 =======================
 
-Multimedia and comp. visual projec
